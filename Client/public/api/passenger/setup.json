@@ -1,0 +1,8 @@
+{
+	"routeId": 1,
+	"routeName": "360",
+	"stopName": "Pai Layout",
+	"timeBeforeStop": 10,
+	"smsEnabled": true,
+	"missCallEnabled": true
+}

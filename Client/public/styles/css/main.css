@@ -1,0 +1,42 @@
+.user-login {
+	font-weight: bold !important;
+	text-transform: uppercase;
+	padding: 0 10px !important;
+	margin-top: -1px;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(/public/styles/fonts/OpenSans-Light.ttf) format('ttf');
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(/public/styles/fonts/OpenSans-Regular.ttf) format('ttf');
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(/public/styles/fonts/OpenSans-Bold.ttf) format('ttf');
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(/public/styles/fonts/OpenSans-Italic.ttf) format('ttf');
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(/public/styles/fonts/OpenSans-BoldItalic.ttf) format('ttf');
+}
