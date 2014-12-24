@@ -1,0 +1,19 @@
+<div class="dropdown">
+	<div class="btn input-sm" ng-click="toggleSelect()" ng-disabled="disabled">
+		<span class="text pull-left">{{header}}</span>
+		<span class="caret pull-right"></span>
+	</div>
+	<ul class="dropdown-menu">
+		<!-- <li>
+			<input class="form-control" type="text" ng-model="searchText.label" autofocus="autofocus" placeholder="Filter" />
+		</li> -->
+		<li ng-show="multiple" class="helper-links">
+			<span class="btn-link" ng-click="checkAll()"><i class="fa fa-check fa-fw"></i> Check all</span>
+			<span class="btn-link" ng-click="uncheckAll()"><i class="fa fa-times fa-fw"></i> Uncheck all</span>
+		</li>
+		<li ng-repeat="i in items | filter:searchText">
+			<a ng-click="select(i); focus()">
+			<i ng-class="{'fa fa-check fa-fw': i.checked, 'fa fa-fw': !i.checked}"></i>{{i.label}}</a>
+		</li>
+	</ul>
+</div>

@@ -61,7 +61,10 @@
     "moment-timezone": "~0.2.3",
     "requirejs": "*",
     "angular-xeditable": "~0.1.8",
-    "satellizer": "~0.8.7"
+    "satellizer": "~0.8.7",
+    "datatables-colfilter": "https://jquery-datatables-column-filter.googlecode.com/files/JQuery-DataTables-ColumnFilter.zip",
+    "jquery.groupToggle": "https://github.com/toXXIc/jquery.groupToggle.git",
+    "datatables-selectable": "https://github.com/toXXIc/datatables.Selectable.git"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

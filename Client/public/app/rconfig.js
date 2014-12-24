@@ -110,9 +110,12 @@ var require = {
 		// Datatables related.
 		'datatables': '../plugin/datatables/media/js/jquery.dataTables.min',
 		'datatables-bootstrap': '../plugin/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap',
-		'datatables-tools': '../plugin/datatables-tabletools/js/dataTables.tableTools',
+		'datatables-tabletools': '../plugin/datatables-tabletools/js/dataTables.tableTools',
 		'datatables-colvis': '../plugin/datatables-colvis/js/dataTables.colVis',
+		'datatables-colfilter': '../plugin/datatables-colfilter/media/js/jquery.dataTables.columnFilter',
 		'datatables-responsive': '../plugin/datatables-responsive/files/1.10/js/datatables.responsive',
+		'jquery-grouptoggle': '../plugin/datatables-selectable/src/jquery.groupToggle',
+		'datatables-selectable': '../plugin/datatables-selectable/src/datatables.Selectable',
 		
 		// 'angular-x-editable': '../plugin/angular-xeditable/dist/js/xeditable.min',
 
@@ -170,9 +173,11 @@ var require = {
 
 		'datatables':{deps: ['jquery']},
 		'datatables-colvis':{deps: ['datatables']},
-		'datatables-tools':{deps: ['datatables']},
-		'datatables-bootstrap':{deps: ['datatables','datatables-tools','datatables-colvis']},
+		'datatables-tabletools':{deps: ['datatables']},
+		'datatables-bootstrap':{deps: ['datatables','datatables-tabletools','datatables-colvis']},
 		'datatables-responsive': {deps: ['datatables']},
+		'datatables-colfilter': {deps: ['datatables']},
+		'datatables-selectable': {deps: ['datatables', 'jquery-grouptoggle']},
 
 		'jqgrid' : {deps: ['jquery']},
 		'jqgrid-locale-en' : {deps: ['jqgrid']},

@@ -7,7 +7,7 @@
  "/angular-sanitize/angular-sanitize.min.js",
  "/angular-animate/angular-animate.min.js",
  "/angular-resource/angular-resource.min.js",
-  "/es5-shim/es5-shim.js",
+ "/es5-shim/es5-shim.js",
   "/json3/lib/json3.min.js",
   "/requirejs/require.js",
   "/requirejs-domready/domReady.js",
@@ -67,5 +67,8 @@
   "/jquery-nestable/jquery.nestable.js",
   "/lodash/dist/lodash.min.js",
   "/restangular/dist/restangular.min.js",
-  "/satellizer/satellizer.min.js"
+  "/satellizer/satellizer.min.js",
+  "/datatables-colfilter/media/js/jquery.dataTables.columnFilter.js",
+  "/datatables-selectable/src/jquery.groupToggle.js",
+  "/datatables-selectable/src/datatables.Selectable.js"
 ]

@@ -5,6 +5,56 @@
 	margin-top: -1px;
 }
 
+/* Web Artists Multi Select */
+wa-multi-select {
+    display:block;
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 13px;
+}
+wa-multi-select .btn {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+wa-multi-select .btn-link {
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 13px;
+}
+wa-multi-select .helper-links {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+wa-multi-select span {
+    font-size: 12px;
+}
+wa-multi-select .dropdown-menu {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+    font-size: 13px;
+}
+wa-multi-select .dropdown-menu > li > a {
+    padding: 3px 10px;
+    cursor:pointer;
+}
+wa-multi-select .dropdown-menu > li > a > i {
+    margin-right: 4px;
+}
+wa-multi-select .caret {
+    margin-top: 7px;
+}
+
+wa-multi-select.devices-filters .text {
+    font-weight: bold;
+}
+
+wa-multi-select.font-bold .text {
+    font-weight: bold;
+}
+
 /* latin */
 @font-face {
   font-family: 'Open Sans';
