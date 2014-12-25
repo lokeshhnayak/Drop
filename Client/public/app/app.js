@@ -140,20 +140,30 @@ define([
 		'app.widgets',
 		// Client
 		'app.client',
+		'app.client.account',
 		'app.client.setup',
-		'app.client.inspect',
+		'app.client.monitor',
 		'app.client.backup',
+		'app.client.messages',
 		// Host
 		'app.host',
-		'app.host.agencies',
-		'app.host.devices',
-		'app.host.device-software',
+		'app.host.account',
+		'app.host.equipment',
+		'app.host.messages',
 		'app.host.finance',
+		// Agency
+		'app.agency',
+		'app.agency.account',
+		'app.agency.devices',
+		'app.agency.messages',
+		'app.agency.finance',
 		// Passenger
 		'app.passenger',
+		'app.passenger.account',
 		'app.passenger.setup',
-		'app.passenger.inspect',
-		'app.passenger.feedback',
+		'app.passenger.monitor',
+		'app.passenger.alerts',
+		'app.passenger.messages',
 		// Samples
 		'app.sample'
 	]);

@@ -6,7 +6,7 @@ define([
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.agency', [
+	var module = ng.module('app.passenger.account', [
 		'ui.router'
 	]);
 
@@ -15,10 +15,19 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.agency', {
-					abstract: true,
-					data:{
-						title: 'Agency'
+				.state('app.passenger.profile', {
+					url: '/passenger/account/profile',
+					data: {
+						title: 'Accounts'
+					},
+					views: {
+						"content@app": {
+							templateUrl: "app/passenger/account/views/profile.html",
+							resolve: {
+								deps: $couchPotatoProvider.resolveDependencies([
+								])
+							}
+						}
 					}
 				});
 		}

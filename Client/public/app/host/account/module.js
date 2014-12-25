@@ -6,7 +6,7 @@ define([
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.client.backup', [
+	var module = ng.module('app.host.account', [
 		'ui.router'
 	]);
 
@@ -15,20 +15,20 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.client.backup', {
+				.state('app.host.account', {
 					abstract: true,
 					data:{
-						title: 'Backup'
+						title: 'Account'
 					}
 				})
-				.state('app.client.backup.device', {
-					url: '/client/backup/device',
+				.state('app.host.account.users', {
+					url: '/host/account/users',
 					data: {
-						title: 'Device Storage'
+						title: 'Users'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/device.html",
+							templateUrl: "app/host/account/views/users.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,14 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.client.backup.primary', {
-					url: '/client/backup/primary',
+				.state('app.host.account.access-control', {
+					url: '/host/account/access-control',
 					data: {
-						title: 'Primary Storage'
+						title: 'Access Control'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/primary.html",
+							templateUrl: "app/host/account/views/access-control.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -51,14 +51,14 @@ define([
 						}
 					}
 				})
-				.state('app.client.backup.secondary', {
-					url: '/client/backup/secondary',
+				.state('app.host.account.agencies', {
+					url: '/host/account/agencies',
 					data: {
-						title: 'Secondary Storage'
+						title: 'Agencies'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/secondary.html",
+							templateUrl: "app/host/account/views/agencies.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

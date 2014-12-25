@@ -34,22 +34,33 @@ define([
 
 	// client
 	'client/module',
+	'client/account/module',
 	'client/setup/module',
-	'client/inspect/module',
+	'client/monitor/module',
 	'client/backup/module',
+	'client/messages/module',
 
 	// host
 	'host/module',
-	'host/agencies/module',
-	'host/devices/module',
-	'host/device-software/module',
+	'host/account/module',
+	'host/equipment/module',
 	'host/finance/module',
+	'host/messages/module',
+
+	// agency
+	'agency/module',
+	'agency/account/module',
+	'agency/devices/module',
+	'agency/finance/module',
+	'agency/messages/module',
 
 	// passenger
 	'passenger/module',
+	'passenger/account/module',
 	'passenger/setup/module',
-	'passenger/inspect/module',
-	'passenger/feedback/module',
+	'passenger/monitor/module',
+	'passenger/alerts/module',
+	'passenger/messages/module',
 
 	// home
 	'home/module',

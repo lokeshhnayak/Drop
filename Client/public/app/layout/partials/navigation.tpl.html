@@ -22,6 +22,10 @@
 				<a data-ui-sref="app.home" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span
 						class="menu-item-parent">{{getWord('Home')}}</span></a>
 			</li>
+			<li data-ui-sref-active="active" ng-show="user.role === 'client'">
+				<a data-ui-sref="app.client.accounts" title="Home"><i class="fa fa-lg fa-fw fa-group"></i> <span
+						class="menu-item-parent">{{getWord('Accounts')}}</span></a>
+			</li>
 			<li data-menu-collapse ng-show="user.role === 'client'">
 				<a href="#">
 					<i class="fa fa-lg fa-fw fa-institution"></i> <span class="menu-item-parent">{{getWord('Setup')}}</span>
@@ -39,69 +43,131 @@
 					<li data-ui-sref-active="active">
 						<a data-ui-sref="app.client.setup.passengers">{{getWord('Passengers')}}</a>
 					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.client.setup.settings">{{getWord('Settings')}}</a>
+					</li>
 				</ul>
 			</li>
 
-			<li data-menu-collapse ng-show="user.role === 'client'">
-				<a href="#"><i class="fa fa-lg fa-fw fa-search-plus"></i> <span class="menu-item-parent">{{getWord('Inspect')}}</span></a>
-				<ul>
-					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.client.inspect.track">{{getWord('Tracking')}}</a>
-					</li>
-					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.client.inspect.message">{{getWord('Messaging')}}</a>
-					</li>
-					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.client.inspect.review">{{getWord('Review')}}</a>
-					</li>
-					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.client.inspect.feedback">{{getWord('Feedback')}}</a>
-					</li>
-				</ul>
+			<li data-ui-sref-active="active" ng-show="user.role === 'client'">
+				<a data-ui-sref="app.client.monitor" title="Home"><i class="fa fa-lg fa-fw fa-compass"></i> <span
+						class="menu-item-parent">{{getWord('Monitor')}}</span></a>
 			</li>
 
 			<li data-menu-collapse ng-show="user.role === 'client'">
 				<a href="#"><i class="fa fa-lg fa-fw fa-database"></i> <span class="menu-item-parent">{{getWord('Backup')}}</span></a>
 				<ul>
 					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.client.backup.device">{{getWord('Device')}}</a>
+						<a data-ui-sref="app.client.backup.device">{{getWord('Device Storage')}}</a>
 					</li>
 					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.client.backup.backup">{{getWord('Backup')}}</a>
+						<a data-ui-sref="app.client.backup.primary">{{getWord('Primary Storage')}}</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.client.backup.secondary">{{getWord('Secondary Storage')}}</a>
 					</li>
 				</ul>
 			</li>
 
 			<!-- Host -->
-			<li data-ui-sref-active="active" ng-show="user.role === 'host'">
-				<a data-ui-sref="app.host.agencies" title="Agencies"><i class="fa fa-lg fa-fw fa-building"></i> <span
-						class="menu-item-parent">{{getWord('Agencies')}}</span></a>
+			<li data-menu-collapse ng-show="user.role === 'host'">
+				<a href="#" title="Account"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span
+						class="menu-item-parent">{{getWord('Account')}}</span></a>
+				<ul>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.host.account.users">{{getWord('Accounts')}}</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.host.account.agencies">{{getWord('Agencies')}}</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.host.account.access-control">{{getWord('Access Control')}}</a>
+					</li>
+				</ul>
+			</li>
+			<li data-menu-collapse ng-show="user.role === 'host'">
+				<a href="#" title="Equipment"><i class="fa fa-lg fa-fw fa-mobile"></i> <span
+						class="menu-item-parent">{{getWord('Equipment')}}</span></a>
+				<ul>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.host.equipment.devices">{{getWord('Devices')}}</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.host.equipment.device-software">{{getWord('Device Software')}}</a>
+					</li>
+				</ul>
+			</li>
+			<li data-menu-collapse ng-show="user.role === 'host'">
+				<a href="#" title="Finance"><i class="fa fa-lg fa-fw fa-money"></i> <span
+						class="menu-item-parent">{{getWord('Finance')}}</span></a>
+				<ul>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.host.finance.cost-policy">{{getWord('Cost Policy')}}</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.host.finance.cost-report">{{getWord('Cost Report')}}</a>
+					</li>
+				</ul>
 			</li>
 			<li data-ui-sref-active="active" ng-show="user.role === 'host'">
-				<a data-ui-sref="app.host.devices" title="Devices"><i class="fa fa-lg fa-fw fa-desktop"></i> <span
+				<a data-ui-sref="app.host.messages" title="Messages"><i class="fa fa-lg fa-fw fa-comments"></i> <span
+						class="menu-item-parent">{{getWord('Messages')}}</span></a>
+			</li>
+
+			<!-- Agency -->
+			<li data-menu-collapse ng-show="user.role === 'agency'">
+				<a href="#" title="Account"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span
+						class="menu-item-parent">{{getWord('Account')}}</span></a>
+				<ul>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.agency.account.users">{{getWord('Accounts')}}</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.agency.account.clients">{{getWord('Clients')}}</a>
+					</li>
+				</ul>
+			</li>
+			<li data-ui-sref-active="active" ng-show="user.role === 'agency'">
+				<a data-ui-sref="app.agency.devices" title="Devices"><i class="fa fa-lg fa-fw fa-comments"></i> <span
 						class="menu-item-parent">{{getWord('Devices')}}</span></a>
 			</li>
-			<li data-ui-sref-active="active" ng-show="user.role === 'host'">
-				<a data-ui-sref="app.host.device-software" title="Device Software"><i class="fa fa-lg fa-fw fa-code"></i> <span
-						class="menu-item-parent">{{getWord('Device Software')}}</span></a>
-			</li>
-			<li data-ui-sref-active="active" ng-show="user.role === 'host'">
-				<a data-ui-sref="app.host.finance" title="Finance"><i class="fa fa-lg fa-fw fa-money"></i> <span
+			<li data-menu-collapse ng-show="user.role === 'agency'">
+				<a href="#" title="Finance"><i class="fa fa-lg fa-fw fa-money"></i> <span
 						class="menu-item-parent">{{getWord('Finance')}}</span></a>
+				<ul>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.agency.finance.cost-structure">{{getWord('Cost Structure')}}</a>
+					</li>
+					<li data-ui-sref-active="active">
+						<a data-ui-sref="app.agency.finance.cost-report">{{getWord('Cost Report')}}</a>
+					</li>
+				</ul>
+			</li>
+			<li data-ui-sref-active="active" ng-show="user.role === 'agency'">
+				<a data-ui-sref="app.agency.messages" title="Messages"><i class="fa fa-lg fa-fw fa-comments"></i> <span
+						class="menu-item-parent">{{getWord('Messages')}}</span></a>
 			</li>
 
 			<!-- Passenger -->
+			<li data-ui-sref-active="active" ng-show="user.role === 'passenger'">
+				<a data-ui-sref="app.passenger.profile" title="Account"><i class="fa fa-lg fa-fw fa-group"></i> <span
+						class="menu-item-parent">{{getWord('Profile')}}</span></a>
+			</li>
 			<li data-ui-sref-active="active" ng-show="user.role === 'passenger'">
 				<a data-ui-sref="app.passenger.setup" title="Setup"><i class="fa fa-lg fa-fw fa-institution"></i> <span
 						class="menu-item-parent">{{getWord('Setup')}}</span></a>
 			</li>
 			<li data-ui-sref-active="active" ng-show="user.role === 'passenger'">
-				<a data-ui-sref="app.passenger.inspect" title="Inspect"><i class="fa fa-lg fa-fw fa-search-plus"></i> <span
-						class="menu-item-parent">{{getWord('Inspect')}}</span></a>
+				<a data-ui-sref="app.passenger.monitor" title="Monitor"><i class="fa fa-lg fa-fw fa-search-plus"></i> <span
+						class="menu-item-parent">{{getWord('Monitor')}}</span></a>
 			</li>
 			<li data-ui-sref-active="active" ng-show="user.role === 'passenger'">
-				<a data-ui-sref="app.passenger.feedback" title="Feedback"><i class="fa fa-lg fa-fw fa-mail-reply"></i> <span
-						class="menu-item-parent">{{getWord('Feedback')}}</span></a>
+				<a data-ui-sref="app.passenger.alerts" title="Alerts"><i class="fa fa-lg fa-fw fa-bell"></i> <span
+						class="menu-item-parent">{{getWord('Alerts')}}</span></a>
+			</li>
+			<li data-ui-sref-active="active" ng-show="user.role === 'passenger'">
+				<a data-ui-sref="app.passenger.messages" title="Messages"><i class="fa fa-lg fa-fw fa-comments"></i> <span
+						class="menu-item-parent">{{getWord('Messages')}}</span></a>
 			</li>
 
 			<!-- Samples -->

@@ -6,7 +6,7 @@ define([
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.client.backup', [
+	var module = ng.module('app.host.equipment', [
 		'ui.router'
 	]);
 
@@ -15,20 +15,20 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.client.backup', {
+				.state('app.host.equipment', {
 					abstract: true,
 					data:{
-						title: 'Backup'
+						title: 'Equipment'
 					}
 				})
-				.state('app.client.backup.device', {
-					url: '/client/backup/device',
+				.state('app.host.equipment.devices', {
+					url: '/host/equipment/devices',
 					data: {
-						title: 'Device Storage'
+						title: 'Devices'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/device.html",
+							templateUrl: "app/host/equipment/views/devices.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,29 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.client.backup.primary', {
-					url: '/client/backup/primary',
+				.state('app.host.equipment.device-software', {
+					url: '/host/equipment/device-software',
 					data: {
-						title: 'Primary Storage'
+						title: 'Device Software'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/primary.html",
-							resolve: {
-								deps: $couchPotatoProvider.resolveDependencies([
-								])
-							}
-						}
-					}
-				})
-				.state('app.client.backup.secondary', {
-					url: '/client/backup/secondary',
-					data: {
-						title: 'Secondary Storage'
-					},
-					views: {
-						"content@app": {
-							templateUrl: "app/client/backup/views/secondary.html",
+							templateUrl: "app/host/equipment/views/device-software.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

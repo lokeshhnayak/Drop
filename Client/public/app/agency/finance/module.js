@@ -6,7 +6,7 @@ define([
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.client.backup', [
+	var module = ng.module('app.agency.finance', [
 		'ui.router'
 	]);
 
@@ -15,20 +15,20 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.client.backup', {
+				.state('app.agency.finance', {
 					abstract: true,
 					data:{
-						title: 'Backup'
+						title: 'Finance'
 					}
 				})
-				.state('app.client.backup.device', {
-					url: '/client/backup/device',
+				.state('app.agency.finance.cost-structure', {
+					url: '/agency/finance/cost-structure',
 					data: {
-						title: 'Device Storage'
+						title: 'Cost Structure'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/device.html",
+							templateUrl: "app/agency/finance/views/cost-structure.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,29 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.client.backup.primary', {
-					url: '/client/backup/primary',
+				.state('app.agency.finance.cost-report', {
+					url: '/agency/finance/cost-report',
 					data: {
-						title: 'Primary Storage'
+						title: 'Cost Report'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/primary.html",
-							resolve: {
-								deps: $couchPotatoProvider.resolveDependencies([
-								])
-							}
-						}
-					}
-				})
-				.state('app.client.backup.secondary', {
-					url: '/client/backup/secondary',
-					data: {
-						title: 'Secondary Storage'
-					},
-					views: {
-						"content@app": {
-							templateUrl: "app/client/backup/views/secondary.html",
+							templateUrl: "app/agency/finance/views/cost-report.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

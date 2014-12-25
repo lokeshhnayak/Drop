@@ -36,6 +36,21 @@ define([
 						}
 					}
 				})
+				.state('app.client.setup.settings', {
+					url: '/client/setup/settings',
+					data: {
+						title: 'Settings'
+					},
+					views: {
+						"content@app": {
+							templateUrl: "app/client/setup/views/settings.html",
+							resolve: {
+								deps: $couchPotatoProvider.resolveDependencies([
+								])
+							}
+						}
+					}
+				})
 				.state('app.client.setup.vehicles', {
 					url: '/client/setup/vehicles',
 					data: {
