@@ -1,56 +1,60 @@
 .user-login {
-  font-weight: bold !important;
-  text-transform: uppercase;
-  padding: 0 10px !important;
-  margin-top: -1px;
+	font-weight: bold !important;
+	text-transform: uppercase;
+	padding: 0 10px !important;
+	margin-top: -1px;
 }
+
 /* Web Artists Multi Select */
 wa-multi-select {
-  display: block;
-  font-family: Arial, Helvetica, Sans-Serif;
-  font-size: 13px;
+    display:block;
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 13px;
 }
 wa-multi-select .btn {
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #ddd;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 wa-multi-select .btn-link {
-  padding-left: 10px;
-  margin-top: 20px;
-  font-size: 13px;
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 13px;
 }
 wa-multi-select .helper-links {
-  padding-top: 10px;
-  padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 wa-multi-select span {
-  font-size: 12px;
+    font-size: 12px;
 }
 wa-multi-select .dropdown-menu {
-  max-height: 300px;
-  overflow-y: auto;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 2px;
-  font-size: 13px;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+    font-size: 13px;
 }
 wa-multi-select .dropdown-menu > li > a {
-  padding: 3px 10px;
-  cursor: pointer;
+    padding: 3px 10px;
+    cursor:pointer;
 }
 wa-multi-select .dropdown-menu > li > a > i {
-  margin-right: 4px;
+    margin-right: 4px;
 }
 wa-multi-select .caret {
-  margin-top: 7px;
+    margin-top: 7px;
 }
+
 wa-multi-select.devices-filters .text {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 wa-multi-select.font-bold .text {
-  font-weight: bold;
+    font-weight: bold;
 }
+
 /* latin */
 @font-face {
   font-family: 'Open Sans';
@@ -86,20 +90,34 @@ wa-multi-select.font-bold .text {
   font-weight: 700;
   src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(/public/styles/fonts/OpenSans-BoldItalic.ttf) format('ttf');
 }
-.dataTables_wrapper .DTTT.btn-group {
-  float: right;
-  padding-left: 5px;
-}
+
+.dataTables_wrapper {
+  .DTTT {
+    &.btn-group {
+      float: right;
+      padding-left: 5px;
+    }
+  }
+} 
+
 .dt-toolbar {
   border-top: 1px solid #ddd;
 }
+
 .dataTables_selectionControls {
   padding: 5px 10px;
   display: inline-block;
+  .selection_counter {
+    cursor: pointer;
+  }
 }
-.dataTables_selectionControls .selection_counter {
-  cursor: pointer;
-}
-#vehiclesTable thead tr.filters th:first-child input {
-  display: none;
+
+#vehiclesTable {
+  thead tr.filters {
+    th:first-child {
+      input {
+        display: none;
+      }
+    }
+  }
 }

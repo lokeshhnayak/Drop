@@ -4,4 +4,51 @@
 			class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></wa-big-breadcrumbs>
 		<div data-wa-include="app/layout/partials/sub-header.tpl.html"></div>
 	</div>
+	<section id="vehicles-grid" data-widget-grid>
+		<div class="row">
+			<div class="col-sm-12">
+				<div jarvis-widget id="vehicles-widget" 
+					data-widget-color="blueLight" 
+					data-widget-editbutton="false"
+					data-widget-deletebutton="false">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+						<h2>Manage Vehicles </h2>
+					</header>
+					<div>
+						<div class="widget-body no-padding">
+							<table id="vehiclesTable" class="table table-hover table-striped table-bordered" width="100%"
+								wa-datatables
+								aa-data="vehicles.data"
+								ao-column-defs="vehicles.dtOptions.dtColumns"
+								col-filter-ao-columns="vehicles.dtOptions.dtColumnFilters"
+								selectable-options="vehicles.dtOptions.dtSelectableOptions"
+								on-selection-changed="onVehiclesSelectionChanged(selection)"
+								custom-actions="vehicles.dtOptions.dtCustomActions">
+								<thead>
+									<tr class="filters text-muted">
+										<th data-hide="phone"></th>
+										<th data-class="expand">Filter</th>
+										<th data-hide="phone">Filter</th>
+										<th data-hide="phone">Filter</th>
+										<th data-hide="phone">Filter</th>
+										<th></th>
+									</tr>
+									<tr>
+										<th data-hide="phone">Select All</th>
+										<th data-class="expand">Registration #</th>
+										<th data-hide="phone">Client</th>
+										<th data-hide="phone">Type</th>
+										<th data-hide="phone">Capacity</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>

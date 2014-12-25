@@ -59,9 +59,20 @@ define([
 					views: {
 						"content@app": {
 							templateUrl: "app/client/setup/views/vehicles.html",
+							controller: "VehiclesController",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
-								])
+									'client/setup/controllers/VehiclesController',
+									'client/setup/services/TableDefaults',
+									'client/setup/services/VehiclesService',
+									'common/directives/waDatatables'
+								]),
+								vehicles: [
+									'VehiclesService',
+									function(VehiclesService) {
+										return VehiclesService.getVehicles();
+									}
+								]
 							}
 						}
 					}

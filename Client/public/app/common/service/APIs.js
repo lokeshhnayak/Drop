@@ -14,7 +14,8 @@ define([
 				// Host
 				// 
 				// Passenger
-				PASSENGER_SETUP: "api/passenger/setup.json"
+				PASSENGER_SETUP: "api/passenger/setup.json",
+				VEHICLES: "api/client/vehicles.json"
 			};
 
 			return APIs;

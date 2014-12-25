@@ -13,6 +13,7 @@ define([
 	'datatables-colvis',    // Datatables Col Visibility plugin
 	'datatables-bootstrap', // Datatables bootstrap styles
 	'datatables-colfilter', // Datatables column filter plugin
+	'datatables-responsive',// Datatables responsive plugin
 	'datatables-selectable' // Datatables Selectables plugin
 ],
 function(module, supplant) {
@@ -29,35 +30,63 @@ function(module, supplant) {
 
 				// apply DataTable options, use defaults if none specified.
 				var options = {};
+				// Responsive parameters
+				var responsiveHelper = undefined;
+				var breakpointDefinition = {
+					tablet: 1024,
+					phone: 480
+				};
 				if (attrs.waDatatables.length > 0) {
 					options = scope.$eval(attrs.waDatatables);
 				} else {
 					options = {
 						"bStateSave": true,
-						"bPaginate": false,
-						"bLengthChange": false,
-						"bFilter": false,
-						"bInfo": false,
+						"bPaginate": true,
+						"bLengthChange": true,
+						"bFilter": true,
+						"bInfo": true,
 						"bRetrieve": true,
-						"sDom": "TC<'clear'>R<'dt-toolbar'<'col-xs-6'l><'col-xs-6'f<'toolbar'>>r>" + "t" + "<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
+						"sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'lL><'col-sm-6 hidden-xs'TC>r>" +
+							"t" +
+							"<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
+						//"sDom": "LTC<'clear'>R<'dt-toolbar'lr>" + "t" + "<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
 						"oTableTools": {
 							"aButtons": ["copy", {
 								"sExtends": "print",
-								"sMessage": "Ended Live Events <i>(press Esc to close)</i>"
-							}, {
-								"sExtends": "collection",
-								"sButtonText": "Export",
-								"aButtons": ["csv", "xls", "pdf"]
-							}],
-							"sSwfPath": "/reports/vendor/dataTables/copy_csv_xls_pdf.swf"
+								"sMessage": "Print Report <i>(press Esc to close)</i>"
+							}, "csv", "xls", "pdf"],
+							"sSwfPath": "plugin/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
+						},
+						"colVis": {
+							activate: "mouseover",
+							aiExclude: [0]
+						},
+						preDrawCallback: function () {
+							// Initialize the responsive datatables helper once.
+							if (!responsiveHelper) {
+								responsiveHelper = new ResponsiveDatatablesHelper(element, breakpointDefinition);
+							}
+						},
+						rowCallback: function (nRow) {
+							responsiveHelper.createExpandIcon(nRow);
+						},
+						drawCallback: function (oSettings) {
+							responsiveHelper.respond();
+							if ($.fn.DataTable.ColVis) {
+								$('.ColVis_MasterButton').addClass('btn btn-default');
+								$('.ColVis_Button').removeClass('ColVis_Button');
+							}
+							$('.DTTT_container a').removeClass('DTTT_button').addClass("btn btn-default");
+							$('.DTTT_container').removeClass('DTTT_container').addClass('DTTT btn-group');
+							$('.dt-toolbar input, select').addClass('form-control input-sm');
 						}
-
 					};
 				}
 
 				// Tell the dataTables plugin what columns to use
 				// We can either derive them from the dom, or use setup from the controller           
 				var explicitColumns = [];
+				
 				// Reverting to jQuery here since element.find in angular is only limited to tag ids.
 				$(element).find('thead>tr[0]>th').each(function(index, elem) {
 					explicitColumns.push($(elem).text());

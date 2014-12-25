@@ -1,0 +1,142 @@
+[
+  {
+    "client": "KENEGY",
+    "passengerCapacity": 33,
+    "type": "Car",
+    "registrationNumber": "KA-14 MB 3413",
+    "id": 7
+  },
+  {
+    "client": "BLUEGRAIN",
+    "passengerCapacity": 48,
+    "type": "Bus",
+    "registrationNumber": "KA-13 MB 5654",
+    "id": 4
+  },
+  {
+    "client": "DIGITALUS",
+    "passengerCapacity": 16,
+    "type": "Van",
+    "registrationNumber": "KA-37 MB 3638",
+    "id": 20
+  },
+  {
+    "client": "PLASMOX",
+    "passengerCapacity": 29,
+    "type": "Bus",
+    "registrationNumber": "KA-11 MB 3874",
+    "id": 10
+  },
+  {
+    "client": "CYTRAK",
+    "passengerCapacity": 32,
+    "type": "Car",
+    "registrationNumber": "KA-47 MB 2213",
+    "id": 2
+  },
+  {
+    "client": "SOPRANO",
+    "passengerCapacity": 15,
+    "type": "Bus",
+    "registrationNumber": "KA-28 MB 7082",
+    "id": 7
+  },
+  {
+    "client": "KOG",
+    "passengerCapacity": 45,
+    "type": "Bus",
+    "registrationNumber": "KA-49 MB 7695",
+    "id": 12
+  },
+  {
+    "client": "KEGULAR",
+    "passengerCapacity": 29,
+    "type": "Van",
+    "registrationNumber": "KA-42 MB 1368",
+    "id": 10
+  },
+  {
+    "client": "REALMO",
+    "passengerCapacity": 48,
+    "type": "Bus",
+    "registrationNumber": "KA-36 MB 9937",
+    "id": 9
+  },
+  {
+    "client": "PARAGONIA",
+    "passengerCapacity": 15,
+    "type": "Car",
+    "registrationNumber": "KA-18 MB 5732",
+    "id": 13
+  },
+  {
+    "client": "AQUASSEUR",
+    "passengerCapacity": 18,
+    "type": "Bus",
+    "registrationNumber": "KA-4 MB 9923",
+    "id": 11
+  },
+  {
+    "client": "QUILTIGEN",
+    "passengerCapacity": 49,
+    "type": "Bus",
+    "registrationNumber": "KA-48 MB 4544",
+    "id": 14
+  },
+  {
+    "client": "MANTRO",
+    "passengerCapacity": 47,
+    "type": "Bus",
+    "registrationNumber": "KA-20 MB 9070",
+    "id": 16
+  },
+  {
+    "client": "ADORNICA",
+    "passengerCapacity": 17,
+    "type": "Van",
+    "registrationNumber": "KA-38 MB 4858",
+    "id": 10
+  },
+  {
+    "client": "ISOSWITCH",
+    "passengerCapacity": 49,
+    "type": "Car",
+    "registrationNumber": "KA-38 MB 5106",
+    "id": 2
+  },
+  {
+    "client": "ZOINAGE",
+    "passengerCapacity": 19,
+    "type": "Van",
+    "registrationNumber": "KA-13 MB 3038",
+    "id": 5
+  },
+  {
+    "client": "MINGA",
+    "passengerCapacity": 30,
+    "type": "Van",
+    "registrationNumber": "KA-24 MB 1584",
+    "id": 17
+  },
+  {
+    "client": "ARTIQ",
+    "passengerCapacity": 17,
+    "type": "Bus",
+    "registrationNumber": "KA-33 MB 4164",
+    "id": 10
+  },
+  {
+    "client": "FLUM",
+    "passengerCapacity": 38,
+    "type": "Van",
+    "registrationNumber": "KA-20 MB 8029",
+    "id": 5
+  },
+  {
+    "client": "GEOFARM",
+    "passengerCapacity": 29,
+    "type": "Car",
+    "registrationNumber": "KA-43 MB 2719",
+    "id": 16
+  }
+]

@@ -14,6 +14,13 @@ define([
 
 	var logger = ng.module('wa.logger', ['ngSanitize']);
 
+	var lodash = ng.module('lodash', ['ngSanitize']);
+
+	// Expose lodash as a factory so that it can be used by angular.
+	lodash.factory('_', function() {
+		return window._; // assumes lodash has already been loaded on the page
+	});
+
 	logger.provider('Logger', [function() {
 		// Set this to false if logging is not required in PROD.
 		var isLoggingEnabled = true;
@@ -122,6 +129,7 @@ define([
 
 	var app = ng.module('app', [
 		'ngSanitize',
+		'lodash',
 		'restangular',
 		'scs.couch-potato',
 		'ngAnimate',
@@ -209,6 +217,40 @@ define([
 							return $q.reject(rejection);
 						}
 					};
+				}
+			]);
+
+			// Enhance $q to provide a handy "spread" delegate during $q.all
+			var resolveWith = function($q) {
+				return function resolved(val) {
+					var dfd = $q.defer();
+					dfd.resolve(val);
+					return dfd.promise;
+				};
+			};
+
+			$provide.decorator('$q', [
+				'$delegate',
+				function($delegate) {
+					if (ng.isUndefined($delegate.spread)) {
+						// Let's add a `spread()` that is very useful
+						// when using $q.all()
+						$delegate.spread = function(targetFn, scope) {
+							return function() {
+								var params = [].concat(arguments[0]);
+								targetFn.apply(scope, params);
+							};
+						};
+					}
+
+					if (ng.isUndefined($delegate.resolve)) {
+						// Similar to $q.reject(), add $q.resolve()
+						// to easily make an immediately-resolved promise
+						// ... this is useful for mock promise-returning APIs.
+						$delegate.resolve = resolveWith($delegate);
+					}
+
+					return $delegate;
 				}
 			]);
 

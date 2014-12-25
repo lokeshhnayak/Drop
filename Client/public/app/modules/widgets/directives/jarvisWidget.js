@@ -1,14 +1,14 @@
 /**
- * Jarvis Widget Directive
+ * Web Artists Widget Directive
  *
- *    colorbutton="false"
- *    editbutton="false"
-	  togglebutton="false"
-	   deletebutton="false"
-		fullscreenbutton="false"
-		custombutton="false"
-		collapsed="true"
-		  sortable="false"
+ *  colorbutton="false"
+ *  editbutton="false"
+	togglebutton="false"
+	deletebutton="false"
+	fullscreenbutton="false"
+	custombutton="false"
+	collapsed="true"
+	sortable="false"
  *
  *
  */
