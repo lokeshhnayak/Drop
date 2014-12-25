@@ -5,7 +5,7 @@ define([
 
 	'use strict';
 
-	module.registerDirective('bigBreadcrumbs', function () {
+	module.registerDirective('waBigBreadcrumbs', function () {
 		return {
 			restrict: 'E',
 			replace: true,

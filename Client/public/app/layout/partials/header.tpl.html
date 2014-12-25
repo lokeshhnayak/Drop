@@ -11,7 +11,7 @@
 
 	<!-- collapse menu button -->
 	<div id="hide-menu" class="btn-header pull-right">
-		<span> <a toggle-menu title="Collapse Menu"><i
+		<span> <a data-wa-toggle-menu title="Collapse Menu"><i
 				class="fa fa-reorder"></i></a> </span>
 	</div>
 	<!-- end collapse menu -->
@@ -25,7 +25,7 @@
 			</a>
 			<ul class="dropdown-menu pull-right">
 				<li>
-					<a href-void class="padding-10 padding-top-0 padding-bottom-0"><i
+					<a wa-href-void class="padding-10 padding-top-0 padding-bottom-0"><i
 							class="fa fa-cog"></i> Setting</a>
 				</li>
 				<li class="divider"></li>
@@ -35,12 +35,12 @@
 				</li>
 				<li class="divider"></li>
 				<li>
-					<a href-void class="padding-10 padding-top-0 padding-bottom-0"
+					<a wa-href-void class="padding-10 padding-top-0 padding-bottom-0"
 					   data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
 				</li>
 				<li class="divider"></li>
 				<li>
-					<a href-void class="padding-10 padding-top-0 padding-bottom-0"
+					<a wa-href-void class="padding-10 padding-top-0 padding-bottom-0"
 					   data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
 				</li>
 				<li class="divider"></li>
@@ -61,7 +61,7 @@
 	<!-- end logout button -->
 
 	<!-- search mobile button (this is hidden till mobile view port) -->
-	<div id="search-mobile" class="btn-header transparent pull-right" data-search-mobile>
+	<div id="search-mobile" class="btn-header transparent pull-right" data-wa-search-mobile>
 		<span> <a href="#" title="Search"><i class="fa fa-search"></i></a> </span>
 	</div>
 	<!-- end search mobile button -->
@@ -101,8 +101,8 @@
 						<br>
 						<small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
 					</h4>
-					<a href-void class="btn btn-success" id="speech-help-btn">See Commands</a>
-					<a href-void class="btn bg-color-purple txt-color-white"
+					<a wa-href-void class="btn btn-success" id="speech-help-btn">See Commands</a>
+					<a wa-href-void class="btn bg-color-purple txt-color-white"
 					   onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
 				</div>
 			</div>

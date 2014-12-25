@@ -4,11 +4,11 @@ define([
 
 	'use strict';
 
-	module.registerDirective('searchMobile', function () {
+	module.registerDirective('waSearchMobile', function () {
 		return {
 			restrict: 'A',
 			compile: function (element, attrs) {
-				element.removeAttr('search-mobile data-search-mobile');
+				element.removeAttr('wa-search-mobile data-wa-search-mobile');
 
 				element.on('click', function (e) {
 					$('body').addClass('search-mobile');

@@ -3,7 +3,7 @@ define([
 ], function (module) {
 	"use strict";
 
-	module.registerDirective('toggleMenu', function(){
+	module.registerDirective('waToggleMenu', function(){
 		return {
 			restrict: 'A',
 			link: function(scope, element){

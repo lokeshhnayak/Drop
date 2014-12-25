@@ -4,7 +4,7 @@ define([
 
 	"use strict";
 
-	module.registerDirective('resetWidgets', [
+	module.registerDirective('waResetWidgets', [
 		'$state',
 		function($state){
 

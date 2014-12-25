@@ -4,7 +4,7 @@ define([
 
 	'use strict';
 
-	module.registerDirective('hrefVoid', function () {
+	module.registerDirective('waHrefVoid', function () {
 		return {
 			restrict: 'A',
 			link: function (scope, element, attrs) {

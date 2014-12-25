@@ -4,7 +4,7 @@ define([
 
 	"use strict";
 
-	module.registerDirective('fullScreen', function(){
+	module.registerDirective('waFullScreen', function(){
 		return {
 			restrict: 'A',
 			link: function(scope, element){

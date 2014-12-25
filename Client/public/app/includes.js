@@ -4,15 +4,15 @@ define([
 	'auth/models/User',
 
 	// layout
-
 	'layout/module',
+
+	// common
 	'common/module',
-	'common/actions/minifyMenu',
-	'common/actions/toggleMenu',
-	'common/actions/fullScreen',
-	'common/actions/resetWidgets',
-	'common/actions/resetWidgets',
-	'common/actions/searchMobile',
+	'common/actions/waMinifyMenu',
+	'common/actions/waToggleMenu',
+	'common/actions/waFullScreen',
+	'common/actions/waResetWidgets',
+	'common/actions/waSearchMobile',
 	'common/actions/waAction',
 	'common/directives/waInclude',
 	'common/directives/waDeviceDetect',
@@ -20,15 +20,18 @@ define([
 	'common/directives/waLayout',
 	'common/directives/waRouterAnimationWrap',
 	'common/directives/waFitAppView',
-	'common/directives/radioToggle',
-	'common/directives/dismisser',
+	'common/directives/waRadioToggle',
+	'common/directives/waDismisser',
 	'common/directives/waMenu',
-	'common/directives/bigBreadcrumbs',
-	'common/directives/stateBreadcrumbs',
+	'common/directives/waBigBreadcrumbs',
+	'common/directives/waStateBreadcrumbs',
 	'common/directives/waPageTitle',
-	'common/directives/hrefVoid',
+	'common/directives/waHrefVoid',
 	'common/service/SmartCss',
 	'common/service/APIs',
+
+	// widgets
+	'modules/widgets/module',
 	'modules/widgets/directives/widgetGrid',
 	'modules/widgets/directives/jarvisWidget',
 
@@ -69,10 +72,7 @@ define([
 	'components/language/Language',
 	'components/language/languageSelector',
 	'components/language/LanguageController',
-	'components/shortcut/shortcut-directive',
-
-	// widgets
-	'modules/widgets/module',
+	'components/shortcut/waToggleShortcut',
 
 	// forms
 	'modules/forms/module',

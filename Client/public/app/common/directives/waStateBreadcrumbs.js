@@ -4,7 +4,7 @@ define([
 
 	'use strict';
 
-	module.registerDirective('stateBreadcrumbs', [
+	module.registerDirective('waStateBreadcrumbs', [
 		'$rootScope',
 		'$state',
 		function ($rootScope, $state) {
@@ -17,7 +17,7 @@ define([
 				link: function (scope, element) {
 
 					function setBreadcrumbs(breadcrumbs) {
-						var html = '<li>Home</li>';
+						var html = '';
 						angular.forEach(breadcrumbs, function (crumb) {
 							html += '<li>' + crumb + '</li>'
 						});

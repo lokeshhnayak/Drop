@@ -3,7 +3,7 @@ define([
 ], function(app){
 	"use strict";
 
-	return app.directive('toggleShortcut', [
+	return app.directive('waToggleShortcut', [
 		'$log',
 		'$timeout',
 		function ($log, $timeout) {

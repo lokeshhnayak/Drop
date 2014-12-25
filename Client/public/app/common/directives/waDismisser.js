@@ -4,7 +4,7 @@ define([
 
 	'use strict';
 
-	module.registerDirective('dismisser', function () {
+	module.registerDirective('waDismisser', function () {
 		return {
 			restrict: 'A',
 			compile: function (element) {

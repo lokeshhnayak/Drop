@@ -3,7 +3,7 @@ define([
 ], function (module) {
 	"use strict";
 
-	module.registerDirective('minifyMenu', function(){
+	module.registerDirective('waMinifyMenu', function(){
 		return {
 			restrict: 'A',
 			link: function(scope, element){

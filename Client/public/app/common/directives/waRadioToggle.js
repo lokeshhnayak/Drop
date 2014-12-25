@@ -9,7 +9,7 @@ define([
 	* Source: https://gist.github.com/aeife/9374784
 	*/
 
-	module.registerDirective('radioToggle', function () {
+	module.registerDirective('waRadioToggle', function () {
 		return {
 			scope: {
 				model: "=ngModel",
