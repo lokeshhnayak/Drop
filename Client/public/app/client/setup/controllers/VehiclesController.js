@@ -14,17 +14,20 @@ function(module, supplant) {
 		'$timeout',
 		'_',
 		'Logger',
+		'VehiclesService',
 		'TableDefaults',
-		'vehicles',
-		function ($scope, $state, $timeout, _, Logger, TableDefaults, vehicles) {
+		function ($scope, $state, $timeout, _, Logger, VehiclesService, TableDefaults) {
 			var logger = Logger.getInstance('VehiclesController');
 			logger.info("In VehiclesController");
 
 			$scope.vehicles = {
-				dtOptions: TableDefaults.getVehiclesTableDefaults(),
-				data: vehicles
+				dtOptions: TableDefaults.getVehiclesTableDefaults()
 			};
-			logger.warn(vehicles);
+
+			VehiclesService.getVehicles()
+				.then(function(vehicles) {
+					$scope.vehicles.data = vehicles;
+				});
 		}
 	]);
 });

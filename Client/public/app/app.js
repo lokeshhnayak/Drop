@@ -270,6 +270,11 @@ define([
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
 			// editableOptions.theme = 'bs3';
+			
+			// handle any route related errors (specifically used to check for hidden resolve errors)
+			$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){ 
+				console.log(error);
+			});
 		}
 	]);
 

@@ -94,12 +94,19 @@ wa-multi-select.font-bold .text {
   border-top: 1px solid #ddd;
 }
 .dataTables_selectionControls {
-  padding: 5px 10px;
+  padding: 15px 7px;
   display: inline-block;
 }
-.dataTables_selectionControls .selection_counter {
+.dataTables_selectionControls .selection_clear {
   cursor: pointer;
 }
 #vehiclesTable thead tr.filters th:first-child input {
   display: none;
+}
+#vehiclesTable tbody td:first-child {
+  text-align: center;
+}
+.table-actions {
+  padding-top: 10px;
+  padding-right: 7px;
 }

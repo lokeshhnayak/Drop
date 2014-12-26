@@ -15,6 +15,36 @@ function(module, supplant) {
 			var logger = Logger.getInstance('TableDefaults');
 			logger.info("In TableDefaults");
 
+			var getVehiclesDTOptions = function () {
+				return {
+					"sDom": "L<'dt-toolbar'<'col-xs-12 col-sm-6'l><'col-sm-6 hidden-xs'TC>r>" +
+						"t" +
+						"<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
+					//"sDom": "LTC<'clear'>R<'dt-toolbar'lr>" + "t" + "<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
+					"oTableTools": {
+						"aButtons": ["copy", {
+							"sExtends": "print",
+							"sMessage": "Print Vehicles Report <i>(press Esc to close)</i>"
+						}, "csv", "xls", "pdf"],
+						"sSwfPath": "plugin/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
+					},
+					"colVis": {
+						activate: "mouseover",
+						aiExclude: [0]
+					},
+					"aaSorting": [[1, "asc"]],
+					drawCallback: function (oSettings) {
+						if ($.fn.DataTable.ColVis) {
+							$('.ColVis_MasterButton').addClass('btn btn-default');
+							$('.ColVis_Button').removeClass('ColVis_Button');
+						}
+						$('.DTTT_container a').removeClass('DTTT_button').addClass("btn btn-default");
+						$('.DTTT_container').removeClass('DTTT_container').addClass('DTTT btn-group');
+						$('.dt-toolbar input, select').addClass('form-control input-sm');
+					}
+				};
+			};
+
 			var getVehiclesColumns = function () {
 				return [{
 					"bSortable": false,
@@ -54,10 +84,10 @@ function(module, supplant) {
 				{
 					"mDataProp": null,
 					"aTargets": [5],
-					"sWidth": "60px",
+					"sWidth": "70px",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' + 
-						'<button type="button" data-toggle="tooltip" title="Edit Vehicle Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit text-primary"></i></button>' +
-						'<button type="button" data-toggle="tooltip" title="Delete Vehicle" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o text-success"></i></button>' +
+						'<button type="button" data-toggle="tooltip" title="Edit Vehicle Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
+						'<button type="button" data-toggle="tooltip" title="Delete Vehicle" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
 						'</div>',
 					"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 						// $(".btn-icon", nTd).tooltip();
@@ -104,6 +134,7 @@ function(module, supplant) {
 
 			var getVehiclesTableDefaults = function() {
 				return {
+					dtOptions : getVehiclesDTOptions(),
 					dtColumns : getVehiclesColumns(),
 					dtColumnFilters : getVehiclesFilters(),
 					dtCustomActions : getVehiclesCustomActions(),

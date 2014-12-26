@@ -46,7 +46,7 @@ function(module, supplant) {
 						"bFilter": true,
 						"bInfo": true,
 						"bRetrieve": true,
-						"sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'lL><'col-sm-6 hidden-xs'TC>r>" +
+						"sDom": "L<'dt-toolbar'<'col-xs-12 col-sm-6'l><'col-sm-6 hidden-xs'TC>r>" +
 							"t" +
 							"<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
 						//"sDom": "LTC<'clear'>R<'dt-toolbar'lr>" + "t" + "<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",

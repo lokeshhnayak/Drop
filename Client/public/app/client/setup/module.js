@@ -63,16 +63,10 @@ define([
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 									'client/setup/controllers/VehiclesController',
-									'client/setup/services/TableDefaults',
 									'client/setup/services/VehiclesService',
+									'client/setup/services/TableDefaults',
 									'common/directives/waDatatables'
-								]),
-								vehicles: [
-									'VehiclesService',
-									function(VehiclesService) {
-										return VehiclesService.getVehicles();
-									}
-								]
+								])
 							}
 						}
 					}
