@@ -75,7 +75,7 @@ module.exports = function (grunt) {
             this.files.forEach(function (mapping) {
 
                 var matchScriptRe = new RegExp('templateUrl\\s*:\\s*(\'|\")/?' + options.from + '[^\'\"]+', 'gm');
-                var matchHtmlRe = new RegExp('smart-include\\s*=\\s*(\'|\")/?' + options.from + '[^\'\"]+', 'gm');
+                var matchHtmlRe = new RegExp('wa-include\\s*=\\s*(\'|\")/?' + options.from + '[^\'\"]+', 'gm');
                 var matchWidgetsRe = new RegExp('widget-load\\s*=\\s*(\'|\")/?' + options.from + '[^\'\"]+', 'gm');
                 var matchNgIncludeRe = new RegExp('ng-include\\s*=\\s*(\'|\")/?' + options.from + '[^\'\"]+', 'gm');
                 var updateRe = new RegExp('/?\\b' + options.from);

@@ -23,8 +23,10 @@ define([
 					views: {
 						"content@app": {
 							templateUrl: "app/client/monitor/views/monitor.html",
+							controller: "MonitorController",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
+									"client/monitor/controllers/MonitorController"
 								])
 							}
 						}

@@ -1,0 +1,37 @@
+<div class="demo">
+	<span id="demo-setting"><i class="fa fa-cog txt-color-blueDark"></i></span>
+	<form>
+		<legend class="no-padding margin-bottom-10">Layout Options</legend>
+		<section>
+			<label><input type="checkbox" ng-model="fixedHeader"
+						  class="checkbox style-0"><span>Fixed Header</span></label>
+			<label><input type="checkbox"
+						  ng-model="fixedNavigation"
+						  class="checkbox style-0"><span>Fixed Navigation</span></label>
+			<!-- <label><input type="checkbox"
+						  ng-model="fixedRibbon"
+						  class="checkbox style-0"><span>Fixed Ribbon</span></label>
+			<label><input type="checkbox"
+						  ng-model="fixedPageFooter"
+						  class="checkbox style-0"><span>Fixed Footer</span></label>
+			<label><input type="checkbox"
+						  ng-model="insideContainer"
+						  class="checkbox style-0"><span>Inside <b>.container</b></span></label>
+			<label><input type="checkbox"
+						  ng-model="menuOnTop"
+						  class="checkbox style-0"><span>Menu on <b>top</b></span></label> -->
+		</section>
+
+		<h6 class="margin-top-10 semi-bold margin-bottom-5">VTSS Roles</h6>
+
+		<section id="wa-styles">
+			<a ng-repeat="role in roles" ng-click="setRole(role)" class="{{role.class}}" style="{{role.style}}"><i ng-if="role.role == $parent.waRole" class="fa fa-check fa-fw"></i> {{role.label}}</a>
+		</section>
+
+		<h6 class="margin-top-10 semi-bold margin-bottom-5">Web Artists Skins</h6>
+
+		<section id="wa-styles">
+			<a ng-repeat="skin in skins" ng-click="setSkin(skin)" class="{{skin.class}}" style="{{skin.style}}"><i ng-if="skin.name == $parent.waSkin" class="fa fa-check fa-fw"></i> {{skin.label}}</a>
+		</section>
+	</form>
+</div>

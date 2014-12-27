@@ -27,6 +27,7 @@ define([
 	'common/directives/waStateBreadcrumbs',
 	'common/directives/waPageTitle',
 	'common/directives/waHrefVoid',
+	'common/directives/demo/demoStates',
 	'common/service/SmartCss',
 	'common/service/APIs',
 

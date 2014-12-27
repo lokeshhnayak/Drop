@@ -26,6 +26,12 @@ define([
 				$scope.user = User;
 				logger.info($scope.user);
 			});
+
+			$scope.$on("$waRoleChange", function(event, role) {
+				$scope.user.role = role.role;
+				$scope.user.getShortcuts($scope.user.role);
+				logger.info($scope.user);
+			});
 		}
 	]);
 });

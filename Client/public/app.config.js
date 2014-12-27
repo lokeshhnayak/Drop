@@ -10,7 +10,6 @@ appConfig.menu_speed = 200;
 * The colors are best displayed in chrome browser.
 */
 
-
 appConfig.debugState = false;	
 appConfig.debugStyle = 'font-weight: bold; color: #00f;';
 appConfig.debugStyle_green = 'font-weight: bold; font-style:italic; color: #46C246;';
@@ -19,9 +18,55 @@ appConfig.debugStyle_warning = 'background-color:yellow';
 appConfig.debugStyle_success = 'background-color:green; font-weight:bold; color:#fff;';
 appConfig.debugStyle_error = 'background-color:#ed1c24; font-weight:bold; color:#fff;';
 
-
 appConfig.voice_command = true;
 appConfig.voice_command_auto = false;
+
+appConfig.sound_path = "sound/";
+appConfig.sound_on = true;
+
+appConfig.waSkin = "wa-style-0";
+appConfig.waRole = "passenger";
+
+appConfig.skins = [
+	{name: "wa-style-0",
+		logo: "styles/img/VTSS_logo_dark.png",
+		class: "btn btn-block btn-xs txt-color-white margin-right-5",
+		style: "background-color:#4E463F;",
+		label: "Web Artists - Dark"},
+
+	{name: "wa-style-1",
+		logo: "styles/img/VTSS_logo.png",
+		class: "btn btn-block btn-xs txt-color-white",
+		style: "background:#4d8ba5;",
+		label: "Web Artists - Light"}
+];
+
+appConfig.roles = [
+	{
+		role: "host",
+		class: "btn btn-xs btn-block txt-color-white margin-top-5",
+		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+		label: "Host"
+	},
+	{
+		role: "client",
+		class: "btn btn-xs btn-block txt-color-white margin-top-5",
+		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+		label: "Client"
+	},
+	{
+		role: "agency",
+		class: "btn btn-xs btn-block txt-color-white margin-top-5",
+		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+		label: "Agency"
+	},
+	{
+		role: "passenger",
+		class: "btn btn-xs btn-block txt-color-white margin-top-5",
+		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+		label: "Passenger"
+	}
+];
 
 /*
  *  Sets the language to the default 'en-US'. (supports over 50 languages 
@@ -100,9 +145,9 @@ appConfig.voice_localStorage = false;
  * Defines all voice command variables and functions
  */ 
 if (appConfig.voice_command) {
-        
- 	appConfig.commands = {
-    };
+		
+	appConfig.commands = {
+	};
 }; 
 
 

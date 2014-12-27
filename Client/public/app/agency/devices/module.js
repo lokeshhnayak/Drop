@@ -16,7 +16,7 @@ define([
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
 				.state('app.agency.devices', {
-					url: '/agency/devices/devices',
+					url: '/agency/devices',
 					data: {
 						title: 'Devices'
 					},

@@ -13,14 +13,23 @@ define([
 			var UserModel = {
 				initialized: dfd.promise,
 				username: undefined,
-				picture: undefined
+				picture: undefined,
+				getShortcuts: function(role) {
+					var that = this;
+					$http.get('api/userShortcuts.json').then(function(shortcuts) {
+						that.shortcuts = shortcuts.data[role];
+					});
+				}
 			};
 			
 			$http.get('api/user.json').then(function(response){
 				UserModel.username = response.data.username;
 				UserModel.picture= response.data.picture;
 				UserModel.role = response.data.role;
-				dfd.resolve(UserModel)
+				$http.get('api/userShortcuts.json').then(function(shortcuts) {
+					UserModel.shortcuts = shortcuts.data[response.data.role];
+					dfd.resolve(UserModel);
+				});
 			});
 
 			return UserModel;

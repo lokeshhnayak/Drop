@@ -1,13 +1,9 @@
 <div id="shortcut">
 	<ul>
-		<li>
-			<a href="#/client/setup/general" ng-class="{'selected': isStateActive('app.client.setup.general')}" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-cogs fa-4x"></i> <span>Setup </span> </span> </a>
-		</li>
-		<li>
-			<a href="#/client/inspect/track" ng-class="{'selected': isStateActive('app.client.inspect.track')}" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-search-plus fa-4x"></i> <span>Inspect</span> </span> </a>
-		</li>
-		<li>
-			<a href="#/client/backup/device" ng-class="{'selected': isStateActive('app.client.backup.device')}" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-database fa-4x"></i> <span>Backup</span> </span> </a>
+		<li ng-repeat="shortcut in user.shortcuts">
+			<a ui-sref="{{ shortcut.route }}" ng-class="{'selected': isStateActive(shortcut.route)}" class="jarvismetro-tile big-cubes {{ shortcut.bgcolor }}">
+				<span class="iconbox"><i class="fa fa-4x {{ shortcut.icon }}"></i> <span>{{ shortcut.heading }}</span></span>
+			</a>
 		</li>
 		<li>
 			<a href="#/sample/general" ng-class="{'selected': isStateActive('app.sample.general')}" class="jarvismetro-tile big-cubes bg-color-green"> <span class="iconbox"> <i class="fa fa-dedent fa-4x"></i> <span>Samples</span> </span> </a>
