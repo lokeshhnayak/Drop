@@ -3,7 +3,7 @@ define([
 	'common/module', // App Module
 	'jquery',        // jQuery
 	// Services
-	'common/service/FullscreenService'
+	'common/services/FullscreenService'
 ],
 function(module) {
 

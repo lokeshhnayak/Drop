@@ -3,7 +3,7 @@ define([
 	'common/utils/supplant',               // Supplant
 	'common/utils/Utils',                  // Utils Library
 	'lodash',                              // Lodash Library
-	'common/service/resources/Vehicles'    // Vehicles Resource
+	'common/services/resources/Vehicles'    // Vehicles Resource
 ],
 function(module, supplant) {
 
@@ -20,7 +20,7 @@ function(module, supplant) {
 			logger.info("In VehiclesService");
 
 			var getVehicles = function () {
-				return Vehicles.getVehicles()
+				return Vehicles.getList()
 					.then(function(vehicles) {
 						return vehicles;
 					});

@@ -28,8 +28,8 @@ define([
 	'common/directives/waPageTitle',
 	'common/directives/waHrefVoid',
 	'common/directives/demo/demoStates',
-	'common/service/SmartCss',
-	'common/service/APIs',
+	'common/services/SmartCss',
+	'common/services/APIs',
 
 	// widgets
 	'modules/widgets/module',

@@ -1,6 +1,6 @@
 define([
 	'common/module',
-	'common/service/FullscreenService'
+	'common/services/FullscreenService'
 ], function (module) {
 
 	"use strict";
