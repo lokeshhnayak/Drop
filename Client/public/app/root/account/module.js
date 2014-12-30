@@ -6,7 +6,7 @@ define([
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.client.account', [
+	var module = ng.module('app.root.account', [
 		'ui.router'
 	]);
 
@@ -15,35 +15,14 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.client.accounts', {
-					abstract: true,
-					data:{
-						title: 'Accounts'
-					}
-				})
-				.state('app.client.accounts.profile', {
-					url: '/client/account/profile',
+				.state('app.root.profile', {
+					url: '/root/profile',
 					data: {
 						title: 'Profile'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/account/views/profile.html",
-							resolve: {
-								deps: $couchPotatoProvider.resolveDependencies([
-								])
-							}
-						}
-					}
-				})
-				.state('app.client.accounts.users', {
-					url: '/client/account/users',
-					data: {
-						title: 'Users'
-					},
-					views: {
-						"content@app": {
-							templateUrl: "app/client/account/views/users.html",
+							templateUrl: "app/root/account/views/profile.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

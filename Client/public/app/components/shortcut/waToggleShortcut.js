@@ -18,19 +18,10 @@ define([
 						shortcut_buttons_hide();
 					} else {
 						shortcut_buttons_show();
+						attachHandlers();
 					}
 
-				})
-
-				shortcut_dropdown.find('a').click(function(e) {
-					e.preventDefault();
-					window.location = $(this).attr('href');
-					removeSelected();
-					$(this).addClass("selected");
-					setTimeout(shortcut_buttons_hide, 300);
 				});
-
-				
 
 				// SHORTCUT buttons goes away if mouse is clicked outside of the area
 				$(document).mouseup(function(e) {
@@ -61,6 +52,19 @@ define([
 					}, 200, "easeOutCirc");
 					$('body').addClass('shortcut-on');
 				}
+
+				// Attach Handlers
+				function attachHandlers() {
+					shortcut_dropdown.find('a').click(function(e) {
+						e.preventDefault();
+						window.location = $(this).attr('href');
+						removeSelected();
+						$(this).addClass("selected");
+						setTimeout(shortcut_buttons_hide, 300);
+					});
+				}
+
+				attachHandlers();
 			}
 
 			var link = function(scope, element){

@@ -66,14 +66,14 @@ define([
 							$root.toggleClass('fixed-page-footer', fixedPageFooter);
 						});
 
-						$scope.$watch('insideContainer', function (insideContainer) {
+						/*$scope.$watch('insideContainer', function (insideContainer) {
 							localStorage.setItem('sm-inside-container', insideContainer);
 							$root.toggleClass('container', insideContainer);
 							if (insideContainer) {
 								$scope.fixedRibbon = false;
 								$scope.fixedNavigation = false;
 							}
-						});
+						});*/
 
 						$scope.$watch('menuOnTop', function (menuOnTop) {
 							$rootScope.$broadcast('$waLayoutMenuOnTop', menuOnTop);
@@ -87,7 +87,7 @@ define([
 						$scope.fixedNavigation = localStorage.getItem('sm-fixed-navigation') == 'true';
 						$scope.fixedRibbon = localStorage.getItem('sm-fixed-ribbon') == 'true';
 						$scope.fixedPageFooter = localStorage.getItem('sm-fixed-page-footer') == 'true';
-						$scope.insideContainer = localStorage.getItem('sm-inside-container') == 'true';
+						//$scope.insideContainer = localStorage.getItem('sm-inside-container') == 'true';
 						$scope.menuOnTop = localStorage.getItem('sm-menu-on-top') == 'true' || $root.hasClass('menu-on-top');
 
 
@@ -113,16 +113,16 @@ define([
 								label: "Host"
 							},
 							{
-								role: "client",
-								class: "btn btn-xs btn-block txt-color-white margin-top-5",
-								style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
-								label: "Client"
-							},
-							{
 								role: "agency",
 								class: "btn btn-xs btn-block txt-color-white margin-top-5",
 								style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
 								label: "Agency"
+							},
+							{
+								role: "client",
+								class: "btn btn-xs btn-block txt-color-white margin-top-5",
+								style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+								label: "Client"
 							},
 							{
 								role: "passenger",

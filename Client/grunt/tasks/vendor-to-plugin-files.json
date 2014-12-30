@@ -70,5 +70,7 @@
   "/satellizer/satellizer.min.js",
   "/datatables-colfilter/media/js/jquery.dataTables.columnFilter.js",
   "/datatables-selectable/src/jquery.groupToggle.js",
-  "/datatables-selectable/src/datatables.Selectable.js"
+  "/datatables-selectable/src/datatables.Selectable.js",
+  "/angular-loading-bar/build/loading-bar.min.js",
+  "/angular-loading-bar/build/loading-bar.min.css"
 ]

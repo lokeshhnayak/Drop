@@ -6,7 +6,7 @@ define([
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.host.equipment', [
+	var module = ng.module('app.client.connection-settings', [
 		'ui.router'
 	]);
 
@@ -15,20 +15,20 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.host.equipment', {
+				.state('app.client.connection-settings', {
 					abstract: true,
 					data:{
-						title: 'Equipment'
+						title: 'Accounts'
 					}
 				})
-				.state('app.host.equipment.devices', {
-					url: '/host/equipment/devices',
+				.state('app.client.connection-settings.device-settings', {
+					url: '/client/connection-settings/device-settings',
 					data: {
-						title: 'Devices'
+						title: 'Device Settings'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/host/equipment/views/devices.html",
+							templateUrl: "app/client/connection-settings/views/device-settings.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,14 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.host.equipment.device-software', {
-					url: '/host/equipment/device-software',
+				.state('app.client.connection-settings.office-settings', {
+					url: '/client/connection-settings/office-settings',
 					data: {
-						title: 'Device Software'
+						title: 'Office Settings'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/host/equipment/views/device-software.html",
+							templateUrl: "app/client/connection-settings/views/office-settings.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

@@ -21,14 +21,14 @@ define([
 						title: 'Finance'
 					}
 				})
-				.state('app.agency.finance.cost-structure', {
-					url: '/agency/finance/cost-structure',
+				.state('app.agency.finance.policies', {
+					url: '/agency/finance/policies',
 					data: {
 						title: 'Cost Structure'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/agency/finance/views/cost-structure.html",
+							templateUrl: "app/agency/finance/views/policies.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,14 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.agency.finance.cost-report', {
-					url: '/agency/finance/cost-report',
+				.state('app.agency.finance.reports', {
+					url: '/agency/finance/reports',
 					data: {
 						title: 'Cost Report'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/agency/finance/views/cost-report.html",
+							templateUrl: "app/agency/finance/views/reports.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

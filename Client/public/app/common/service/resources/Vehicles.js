@@ -21,8 +21,10 @@ function(module, supplant) {
 			var Vehicles = Restangular.all(APIs.VEHICLES);
 
 			var getVehicles = function() {
+				logger.time("getVehicles");
 				return Vehicles.getList()
 					.then(function(vehicles) {
+						logger.timeEnd("getVehicles");
 						return vehicles;
 					});
 			};

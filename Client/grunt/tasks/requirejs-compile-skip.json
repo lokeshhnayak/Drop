@@ -76,5 +76,6 @@
   "notification": "empty:",
   "socket.io": "empty:",
   "angular-x-editable": "empty:",
-  "restangular": "empty:"
+  "restangular": "empty:",
+  "loadingbar": "empty:"
 }

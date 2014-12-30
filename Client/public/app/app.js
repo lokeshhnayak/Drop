@@ -9,7 +9,8 @@ define([
 	'angular-bootstrap',
 	'smartwidgets',
 	'notification',
-	'restangular'
+	'restangular',
+	'loadingbar'
 ], function (ng, couchPotato) {
 
 	var logger = ng.module('wa.logger', ['ngSanitize']);
@@ -132,6 +133,7 @@ define([
 		'lodash',
 		'restangular',
 		'scs.couch-potato',
+		'angular-loading-bar',
 		'ngAnimate',
 		'ui.router',
 		'ui.bootstrap',
@@ -146,25 +148,33 @@ define([
 		'app.forms',
 		'app.home',
 		'app.widgets',
+		// Root
+		'app.root',
+		'app.root.account',
+		'app.root.access-control',
+		'app.root.hosts',
+		'app.root.device-software',
 		// Client
 		'app.client',
 		'app.client.account',
 		'app.client.setup',
 		'app.client.monitor',
 		'app.client.backup',
+		'app.client.finance',
+		'app.client.connection-settings',
 		'app.client.messages',
 		// Host
 		'app.host',
 		'app.host.account',
-		'app.host.equipment',
-		'app.host.messages',
+		'app.host.devices',
 		'app.host.finance',
+		'app.host.messages',
 		// Agency
 		'app.agency',
 		'app.agency.account',
 		'app.agency.devices',
-		'app.agency.messages',
 		'app.agency.finance',
+		'app.agency.messages',
 		// Passenger
 		'app.passenger',
 		'app.passenger.account',

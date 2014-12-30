@@ -21,14 +21,14 @@ define([
 						title: 'Setup'
 					}
 				})
-				.state('app.client.setup.general', {
-					url: '/client/setup/general',
+				.state('app.client.setup.holidays', {
+					url: '/client/setup/holidays',
 					data: {
-						title: 'General'
+						title: 'Holidays'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/setup/views/general.html",
+							templateUrl: "app/client/setup/views/holidays.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,14 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.client.setup.settings', {
-					url: '/client/setup/settings',
+				.state('app.client.setup.exceptions', {
+					url: '/client/setup/exceptions',
 					data: {
-						title: 'Settings'
+						title: 'Exceptions'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/setup/views/settings.html",
+							templateUrl: "app/client/setup/views/exceptions.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

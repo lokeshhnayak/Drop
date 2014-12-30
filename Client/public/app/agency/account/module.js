@@ -21,6 +21,21 @@ define([
 						title: 'Account'
 					}
 				})
+				.state('app.agency.account.profile', {
+					url: '/agency/account/profile',
+					data: {
+						title: 'Profile'
+					},
+					views: {
+						"content@app": {
+							templateUrl: "app/agency/account/views/profile.html",
+							resolve: {
+								deps: $couchPotatoProvider.resolveDependencies([
+								])
+							}
+						}
+					}
+				})
 				.state('app.agency.account.users', {
 					url: '/agency/account/users',
 					data: {

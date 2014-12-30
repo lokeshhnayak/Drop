@@ -24,8 +24,8 @@ appConfig.voice_command_auto = false;
 appConfig.sound_path = "sound/";
 appConfig.sound_on = true;
 
-appConfig.waSkin = "wa-style-0";
-appConfig.waRole = "passenger";
+appConfig.waSkin = "wa-style-1";
+appConfig.waRole = "host";
 
 appConfig.skins = [
 	{name: "wa-style-0",
@@ -43,22 +43,28 @@ appConfig.skins = [
 
 appConfig.roles = [
 	{
+		role: "root",
+		class: "btn btn-xs btn-block txt-color-white margin-top-5",
+		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+		label: "Root"
+	},
+	{
 		role: "host",
 		class: "btn btn-xs btn-block txt-color-white margin-top-5",
 		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
 		label: "Host"
 	},
 	{
-		role: "client",
-		class: "btn btn-xs btn-block txt-color-white margin-top-5",
-		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
-		label: "Client"
-	},
-	{
 		role: "agency",
 		class: "btn btn-xs btn-block txt-color-white margin-top-5",
 		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
 		label: "Agency"
+	},
+	{
+		role: "client",
+		class: "btn btn-xs btn-block txt-color-white margin-top-5",
+		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+		label: "Client"
 	},
 	{
 		role: "passenger",

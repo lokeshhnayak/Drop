@@ -6,7 +6,7 @@ define([
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.host.account', [
+	var module = ng.module('app.client.finance', [
 		'ui.router'
 	]);
 
@@ -15,20 +15,20 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.host.account', {
+				.state('app.client.finance', {
 					abstract: true,
 					data:{
-						title: 'Account'
+						title: 'Finance'
 					}
 				})
-				.state('app.host.account.profile', {
-					url: '/host/account/profile',
+				.state('app.client.finance.policies', {
+					url: '/client/finance/policies',
 					data: {
-						title: 'Profile'
+						title: 'Cost Structure'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/host/account/views/profile.html",
+							templateUrl: "app/client/finance/views/policies.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,29 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.host.account.users', {
-					url: '/host/account/users',
+				.state('app.client.finance.reports', {
+					url: '/client/finance/reports',
 					data: {
-						title: 'Users'
+						title: 'Cost Report'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/host/account/views/users.html",
-							resolve: {
-								deps: $couchPotatoProvider.resolveDependencies([
-								])
-							}
-						}
-					}
-				})
-				.state('app.host.account.agencies', {
-					url: '/host/account/agencies',
-					data: {
-						title: 'Agencies'
-					},
-					views: {
-						"content@app": {
-							templateUrl: "app/host/account/views/agencies.html",
+							templateUrl: "app/client/finance/views/reports.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

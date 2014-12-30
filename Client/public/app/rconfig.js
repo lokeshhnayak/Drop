@@ -129,7 +129,10 @@ var require = {
 
 		// app js file includes
 		'appConfig': '../app.config',
-		'modules-includes': 'includes'
+		'modules-includes': 'includes',
+
+		// loading bar
+		'loadingbar': '../plugin/angular-loading-bar/build/loading-bar.min'
 
 	},
 	shim: {
@@ -142,6 +145,7 @@ var require = {
 		'angular-ui-router': { deps: ['angular'] },
 		'angular-google-maps': { deps: ['angular'] },
 		'angular-couch-potato': { deps: ['angular'] },
+		'loadingbar': { deps: ['angular']},
 		'socket.io': { deps: ['angular'] },
 		'restangular': { deps: ['angular', 'lodash'] },
 		'anim-in-out': { deps: ['angular-animate'] },

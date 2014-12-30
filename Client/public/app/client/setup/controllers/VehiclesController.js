@@ -28,6 +28,14 @@ function(module, supplant) {
 				.then(function(vehicles) {
 					$scope.vehicles.data = vehicles;
 				});
+
+			$scope.editVehicle = function (row) {
+				logger.warn(row);
+			};
+
+			$scope.deleteVehicle = function (row) {
+				logger.info(row);
+			}
 		}
 	]);
 });

@@ -21,14 +21,14 @@ define([
 						title: 'Backup'
 					}
 				})
-				.state('app.client.backup.device', {
-					url: '/client/backup/device',
+				.state('app.client.backup.storage-setup', {
+					url: '/client/backup/storage-setup',
 					data: {
-						title: 'Device Storage'
+						title: 'Storage Setup'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/device.html",
+							templateUrl: "app/client/backup/views/storage-setup.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])
@@ -36,29 +36,14 @@ define([
 						}
 					}
 				})
-				.state('app.client.backup.primary', {
-					url: '/client/backup/primary',
+				.state('app.client.backup.storage-status', {
+					url: '/client/backup/storage-status',
 					data: {
-						title: 'Primary Storage'
+						title: 'Storage Status'
 					},
 					views: {
 						"content@app": {
-							templateUrl: "app/client/backup/views/primary.html",
-							resolve: {
-								deps: $couchPotatoProvider.resolveDependencies([
-								])
-							}
-						}
-					}
-				})
-				.state('app.client.backup.secondary', {
-					url: '/client/backup/secondary',
-					data: {
-						title: 'Secondary Storage'
-					},
-					views: {
-						"content@app": {
-							templateUrl: "app/client/backup/views/secondary.html",
+							templateUrl: "app/client/backup/views/storage-status.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 								])

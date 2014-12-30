@@ -36,18 +36,27 @@ define([
 	'modules/widgets/directives/widgetGrid',
 	'modules/widgets/directives/jarvisWidget',
 
+	// root
+	'root/module',
+	'root/account/module',
+	'root/access-control/module',
+	'root/hosts/module',
+	'root/device-software/module',
+
 	// client
 	'client/module',
 	'client/account/module',
 	'client/setup/module',
 	'client/monitor/module',
 	'client/backup/module',
+	'client/connection-settings/module',
+	'client/finance/module',
 	'client/messages/module',
 
 	// host
 	'host/module',
 	'host/account/module',
-	'host/equipment/module',
+	'host/devices/module',
 	'host/finance/module',
 	'host/messages/module',
 
