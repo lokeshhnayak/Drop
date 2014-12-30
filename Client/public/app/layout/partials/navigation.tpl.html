@@ -30,7 +30,7 @@
 				<a data-ui-sref="app.root.access-control" title="Access Control"><i class="fa fa-lg fa-fw fa-key"></i> <span
 						class="menu-item-parent">{{getWord('Access Control')}}</span></a>
 			</li>
-			<li data-ui-sref-active="active" nxg-show="user.role === 'root'">
+			<li data-ui-sref-active="active" ng-show="user.role === 'root'">
 				<a data-ui-sref="app.root.hosts" title="Hosts"><i class="fa fa-lg fa-fw fa-building"></i> <span
 						class="menu-item-parent">{{getWord('Hosts')}}</span></a>
 			</li>
@@ -38,7 +38,7 @@
 				<a data-ui-sref="app.root.device-software" title="Device Software"><i class="fa fa-lg fa-fw fa-code"></i> <span class="menu-item-parent">{{getWord('Device Software')}}</span></a>
 			</li>
 			<!-- Client -->
-			<li data-ui-sref-active="active" ng-show="user.role === 'client'">
+			<li data-menu-collapse ng-show="user.role === 'client'">
 				<a href="#">
 					<i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">{{getWord('Accounts')}}</span>
 				</a>
@@ -75,7 +75,7 @@
 			</li>
 
 			<li data-ui-sref-active="active" ng-show="user.role === 'client'">
-				<a data-ui-sref="app.client.monitor" title="Home"><i class="fa fa-lg fa-fw fa-compass"></i> <span
+				<a data-ui-sref="app.client.monitor" title="Home"><i class="fa fa-lg fa-fw fa-eye"></i> <span
 						class="menu-item-parent">{{getWord('Monitor')}}</span></a>
 			</li>
 
@@ -190,7 +190,7 @@
 						class="menu-item-parent">{{getWord('Setup')}}</span></a>
 			</li>
 			<li data-ui-sref-active="active" ng-show="user.role === 'passenger'">
-				<a data-ui-sref="app.passenger.monitor" title="Monitor"><i class="fa fa-lg fa-fw fa-search-plus"></i> <span
+				<a data-ui-sref="app.passenger.monitor" title="Monitor"><i class="fa fa-lg fa-fw fa-eye"></i> <span
 						class="menu-item-parent">{{getWord('Monitor')}}</span></a>
 			</li>
 			<li data-ui-sref-active="active" ng-show="user.role === 'passenger'">

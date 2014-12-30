@@ -1,8 +1,39 @@
 {
+	"root" : [{
+			"heading": "Profile",
+			"route": "app.root.profile",
+			"icon": "fa-user",
+			"bgcolor": "bg-color-blue",
+			"active": false
+		}, {
+			"heading": "Access Control",
+			"route": "app.root.access-control",
+			"icon": "fa-key",
+			"bgcolor": "bg-color-purple",
+			"active": false
+		}, {
+			"heading": "Hosts",
+			"route": "app.root.hosts",
+			"icon": "fa-building",
+			"bgcolor": "bg-color-yellow",
+			"active": false
+		}, {
+			"heading": "Device Software",
+			"route": "app.root.device-software",
+			"icon": "fa-code",
+			"bgcolor": "bg-color-orangeDark",
+			"active": false
+		}],
 	"client": [{
-			"heading": "Setup",
+			"heading": "Profile",
+			"route": "app.client.accounts.profile",
+			"icon": "fa-user",
+			"bgcolor": "bg-color-greenLight",
+			"active": false
+		}, {
+			"heading": "Holidays",
 			"route": "app.client.setup.general",
-			"icon": "fa-institution",
+			"icon": "fa-bullhorn",
 			"bgcolor": "bg-color-blue",
 			"active": false
 		}, {
@@ -25,34 +56,28 @@
 			"active": false
 		}, {
 			"heading": "Backup",
-			"route": "app.client.backup.device",
+			"route": "app.client.backup.storage-setup",
 			"icon": "fa-database",
 			"bgcolor": "bg-color-yellow",
 			"active": false
 		}],
 	"host": [{
+			"heading": "Profile",
+			"route": "app.host.account.profile",
+			"icon": "fa-user",
+			"bgcolor": "bg-color-greenLight",
+			"active": false
+		}, {
 			"heading": "Agencies",
 			"route": "app.host.account.agencies",
 			"icon": "fa-building",
 			"bgcolor": "bg-color-blue",
 			"active": false
 		}, {
-			"heading": "Access Control",
-			"route": "app.host.account.access-control",
-			"icon": "fa-key",
-			"bgcolor": "bg-color-orangeDark",
-			"active": false
-		}, {
 			"heading": "Devices",
-			"route": "app.host.equipment.devices",
+			"route": "app.host.devices",
 			"icon": "fa-desktop",
 			"bgcolor": "bg-color-purple",
-			"active": false
-		}, {
-			"heading": "Device Software",
-			"route": "app.host.equipment.device-software",
-			"icon": "fa-cubes",
-			"bgcolor": "bg-color-blueLight",
 			"active": false
 		}, {
 			"heading": "Finance",
@@ -68,6 +93,12 @@
 			"active": false
 		}],
 	"agency": [{
+			"heading": "Profile",
+			"route": "app.agency.account.profile",
+			"icon": "fa-user",
+			"bgcolor": "bg-color-greenLight",
+			"active": false
+		}, {
 			"heading": "Clients",
 			"route": "app.agency.account.clients",
 			"icon": "fa-copy",
@@ -81,7 +112,7 @@
 			"active": false
 		}, {
 			"heading": "Finance",
-			"route": "app.agency.finance.cost-structure",
+			"route": "app.agency.finance.policies",
 			"icon": "fa-money",
 			"bgcolor": "bg-color-yellow",
 			"active": false
