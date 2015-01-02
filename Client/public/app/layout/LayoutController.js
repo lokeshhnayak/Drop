@@ -22,16 +22,30 @@ define([
 				return 
 			};*/
 
-			User.initialized.then(function(){
-				$scope.user = User;
-				logger.info($scope.user);
+			$scope.$on("$waRoleChange", function(event, role) {
+				if(!$scope.user) {
+					User.initialized.then(function() {
+						$scope.user = User;
+						$scope.user.role = role.role;
+						$scope.user.getShortcuts($scope.user.role);
+						logger.info($scope.user);
+					});
+				} else {
+					$scope.user.role = role.role;
+					$scope.user.getShortcuts($scope.user.role);
+				}
 			});
 
-			$scope.$on("$waRoleChange", function(event, role) {
-				$scope.user.role = role.role;
-				$scope.user.getShortcuts($scope.user.role);
-				logger.info($scope.user);
-			});
+			loadUser();
+
+			function loadUser() {
+				if(!$scope.user) {
+					User.initialized.then(function() {
+						$scope.user = User;
+						logger.info($scope.user);
+					});
+				}
+			}
 		}
 	]);
 });

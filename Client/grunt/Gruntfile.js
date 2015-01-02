@@ -58,10 +58,10 @@ module.exports = function (grunt) {
 		// The actual grunt server settings
 		connect: {
 			options: {
-				port: 2014,
+				port: 2015,
 				// Change this to '0.0.0.0' to access the server from outside.
 				hostname: 'localhost',
-				livereload: 2015
+				livereload: 2016
 			},
 			livereload: {
 				options: {
@@ -298,6 +298,21 @@ module.exports = function (grunt) {
 		'clean:post',
 		'connect:livereload',
 		'watch'
+	]);
+
+	grunt.registerTask('build', [
+		'clean:pre',
+		'copy:pre',
+		'turnOffPotatoDeclaration',
+		'turnOnPotatoDeclaration',
+		'adjustTemplateUrls',
+		'htmlmin:dist',
+		'html2js',
+		'addIncludes',
+		'uglify',
+		'requirejs',
+		'copy:post',
+		'clean:post'
 	]);
 
 	grunt.registerTask('vtp', [

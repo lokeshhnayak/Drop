@@ -107,6 +107,12 @@ define([
 						
 						$scope.roles = appConfig.roles || [
 							{
+								role: "root",
+								class: "btn btn-xs btn-block txt-color-white margin-top-5",
+								style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
+								label: "Root"
+							},
+							{
 								role: "host",
 								class: "btn btn-xs btn-block txt-color-white margin-top-5",
 								style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
@@ -133,7 +139,7 @@ define([
 						];
 
 						$scope.waSkin = localStorage.getItem('sm-skin') || appConfig.waSkin;
-						$scope.waRole = appConfig.waRole;
+						$scope.waRole = localStorage.getItem('sm-role') || appConfig.waRole;
 
 
 						$scope.setSkin = function (skin) {
@@ -147,11 +153,15 @@ define([
 						};
 
 						$scope.setRole = function (role) {
-							$scope.waRole = role.role;
-							$rootScope.$broadcast('$waRoleChange', role);
+							if(role) {
+								$scope.waRole = role.role;
+								$rootScope.$broadcast('$waRoleChange', role);
+								localStorage.setItem('sm-role', role.role);
+							}
 						};
 
 						$scope.setSkin(_.find($scope.skins, {name: $scope.waSkin}));
+						$scope.setRole(_.find($scope.roles, {role: $scope.waRole}));
 
 						$scope.factoryReset = function () {
 							$.SmartMessageBox({

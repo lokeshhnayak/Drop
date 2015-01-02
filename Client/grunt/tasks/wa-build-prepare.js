@@ -135,8 +135,7 @@ module.exports = function (grunt) {
                         }
                         grunt.file.write(options.appFile, script);
                     }
-
-
+                    
                     // writing to includes file
                     script = grunt.file.read(options.includesFile);
                     script = script.replace(/\]/gm, ',"' + options.name + '"]');
