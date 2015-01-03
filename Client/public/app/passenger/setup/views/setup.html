@@ -1,14 +1,148 @@
 <div id="content">
-	<div class="row">
-		<wa-big-breadcrumbs items="['Passenger', 'Setup']" icon="institution"
-			class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></wa-big-breadcrumbs>
-		<div data-wa-include="app/layout/partials/sub-header.tpl.html"></div>
-	</div>
+    <div class="row">
+        <wa-big-breadcrumbs items="['Passenger', 'Setup']" icon="institution"
+        class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></wa-big-breadcrumbs>
+        <div data-wa-include="app/layout/partials/sub-header.tpl.html"></div>
+    </div>
+    <div class="row">
+        <!--Start Column Left Aligned-->
+        <article class="col-sm-12 col-md-12">
+        <!-- Widget ID (each widget will need unique ID)-->
 
-	<div class="row">
-		<div class="col-sm-12">
-			<input type="text" name="Route" id="inputRoute" ng-model="passengerSetup.routeName" class="form-control" value="" required="required" pattern="" title="">
-		</div>
-	</div>
+        <div class="widget-body">
+            <ul id="PassengerSetupTab" class="nav nav-tabs bordered">
+
+                <li class="active">
+                    <a data-toggle="tab" href="#pickup"> <i class="fa fa-lg fa-arrow-circle-o-up"></i>  Pickup Alert</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#drop"> <i class="fa fa-lg fa-arrow-circle-o-down"></i>  Drop Alert</a>
+                </li>
+
+            </ul>
+            <div id="PassengerSetupTabContent" class="tab-content padding-10">
+                <div class="tab-pane fade in active" id="pickup">
+                    <form id="formPickUp" class="smart-form">
+                        <fieldset>
+                            <div class="col-sm-5 col-md-5 col-lg-5">
+                                <section>
+                                    <label class="label">Route</label>
+                                    <label class="input">
+                                        <input placeholder="Route" required="required" ng-readonly="true"
+                                        type="text" ng-model="passengerSetup.routeName">
+                                    </label>
+                                </section>
+                                <section>
+                                    <label class="label">Time Before Stop</label>
+                                    <label class="input">
+                                        <input type="number" name="" id="input"  value="" min="0" max="60"
+                                        step="5" required="required" title="" ng-model="passengerSetup.timeBeforeStop">
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-sm-5 col-md-5 col-lg-5">
+                                <section>
+                                    <label class="label">Stop Name</label>
+                                    <label class="select">
+                                        <select>
+                                            <option ng-repeat="stop in passengerSetup.stopNames">{{stop}}
+                                            </option>
+                                        </select><i></i>
+                                    </label>
+                                </section>
+                                <section>
+                                    <label class="label">Alerts</label>
+                                    <div class="inline-group">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox-inline" ng-model="passengerSetup.smsEnabled" checked="checked" ng-checked="passengerSetup.smsEnabled">
+                                        <i></i>Enable SMS</label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox-inline" ng-
+                                            model="passengerSetup.missCallEnabled" ng-checked="passengerSetup.missCallEnabled">
+                                        <i></i>Enable Miss-call</label>
+                                    </div>
+                                </section>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default" onclick="window.history.back();" type="submit">
+                                Cancel
+                                </button>
+                                <button class="btn btn-primary" ng-click="" type="submit">
+                                <i class="fa fa-save"></i>
+                                Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="drop">
+                    <form id="formDrop" class="smart-form">
+                        <fieldset>
+                            <div class="col-sm-5 col-md-5 col-lg-5">
+                                <section>
+                                    <label class="label">Route</label>
+                                    <label class="input">
+                                        <input placeholder="Route" required="required" ng-readonly="true"
+                                        type="text" ng-model="passengerSetup.routeName">
+                                    </label>
+                                </section>
+                                <section>
+                                    <label class="label">Time Before Stop</label>
+                                    <label class="input">
+                                        <input type="number" name="" id="input"  value="" min="0" max="60"
+                                        step="5" required="required" title="" ng-model="passengerSetup.timeBeforeStop">
+                                    </label>
+                                </section>
+                            </div>
+                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                            <div class="col-sm-5 col-md-5 col-lg-5">
+                                <section>
+                                    <label class="label">Stop Name</label>
+                                    <label class="select">
+                                        <select>
+                                            <option ng-repeat="stop in passengerSetup.stopNames">{{stop}}
+                                            </option>
+                                        </select><i></i>
+                                    </label>
+                                </section>
+                                <section>
+                                    <label class="label">Alerts</label>
+                                    <div class="inline-group">
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox-inline" ng-model="passengerSetup.smsEnabled" checked="checked" ng-checked="passengerSetup.smsEnabled">
+                                        <i></i>Enable SMS</label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox-inline" ng-
+                                            model="passengerSetup.missCallEnabled" ng-checked="passengerSetup.missCallEnabled">
+                                        <i></i>Enable Miss-call</label>
+                                    </div>
+                                </section>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default" onclick="window.history.back();" type="submit">
+                                Cancel
+                                </button>
+                                <button class="btn btn-primary" ng-click="" type="submit">
+                                <i class="fa fa-save"></i>
+                                Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </article>
+        <!--End Column Left Aligned-->
+    </div>
 </div>
-
+<!--End Content-->
