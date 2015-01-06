@@ -47,7 +47,7 @@ var require = {
 		'angular-easyfb': '../plugin/angular-easyfb/angular-easyfb.min',
 		'angular-google-plus': '../plugin/angular-google-plus/dist/angular-google-plus.min',
 		'restangular': '../plugin/restangular/dist/restangular.min',
-		'satellizer': '../plugin/satellizer/dist/satellizer.min',
+		'satellizer': '../plugin/satellizer/satellizer.min',
 
 		// jQuery related (Plugins)
 		'pace':'../plugin/pace/pace.min',

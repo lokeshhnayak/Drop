@@ -6017,8 +6017,7 @@ aside {
 #main {
   margin-left: 220px;
   padding: 0;
-  padding-bottom: 52px;
-  min-height: 600px;
+  min-height: 550px;
   position: relative;
 }
 /*
@@ -11495,6 +11494,10 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
 }
 #extr-page #main {
   margin-top: 0px !important;
+}
+
+#extr-page .fixed-header #main {
+  margin-top: 71px !important;
 }
 #mobile-profile-img {
   display: none !important;

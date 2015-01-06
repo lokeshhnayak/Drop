@@ -1,5 +1,6 @@
 define([
-	'auth/module'
+	'auth/module',
+	'common/utils/Notifications'
 ], function (module) {
 
 	"use strict";
@@ -7,30 +8,24 @@ define([
 	module.registerController('LoginController', [
 		'$scope',
 		'$state',
-		'GooglePlus',
+		'Logger',
+		'Notifications',
 		'User',
-		'ezfb',
-		function ($scope, $state, GooglePlus, User, ezfb) {
+		'AuthService',
+		function ($scope, $state, Logger, Notifications, User, AuthService) {
+			$scope.user = {};
+			var logger = Logger.getInstance("LoginController");
 
-			$scope.$on('event:google-plus-signin-success', function (event, authResult) {
-				if (authResult.status.method == 'PROMPT') {
-					GooglePlus.getUser().then(function (user) {
-						User.username = user.name;
-						User.picture = user.picture;
-						$state.go('app.home');
+			$scope.login = function(user) {
+				AuthService.login(user)
+					.then(function(response) {
+						logger.warn(response);
+						Notifications.success({
+							title: "Logged In",
+							content: "Welcome, " + response.user.username
+						});
 					});
-				}
-			});
-
-			$scope.$on('event:facebook-signin-success', 
-				function (event, authResult) {
-					ezfb.api('/me', function (res) {
-						User.username = res.name;
-						User.picture = 'https://graph.facebook.com/' + res.id + '/picture';
-						$state.go('app.home');
-					});
-				}
-			);
+			};
 		}
 	]);
 });

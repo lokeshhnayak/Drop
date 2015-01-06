@@ -32,7 +32,7 @@
 			"active": false
 		}, {
 			"heading": "Holidays",
-			"route": "app.client.setup.general",
+			"route": "app.client.setup.holidays",
 			"icon": "fa-bullhorn",
 			"bgcolor": "bg-color-blue",
 			"active": false
@@ -140,12 +140,6 @@
 			"route": "app.passenger.monitor",
 			"icon": "fa-search-plus",
 			"bgcolor": "bg-color-yellow",
-			"active": false
-		}, {
-			"heading": "Alerts",
-			"route": "app.passenger.alerts",
-			"icon": "fa-bell",
-			"bgcolor": "bg-color-orangeDark",
 			"active": false
 		}, {
 			"heading": "Messages",

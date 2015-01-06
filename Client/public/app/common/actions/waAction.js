@@ -3,16 +3,21 @@ define([
 	'common/module', // App Module
 	'jquery',        // jQuery
 	// Services
-	'common/services/FullscreenService'
+	'common/services/FullscreenService',
+	'common/utils/Notifications',
+	'auth/login/AuthService'
 ],
 function(module) {
 
 	'use strict';
 
 	module.registerDirective('waAction', [
+		'$state',
 		'$timeout',
+		'Notifications',
 		'FullscreenService',
-		function($timeout, FullscreenService) {
+		'AuthService',
+		function($state, $timeout, Notifications, FullscreenService, AuthService) {
 			var linker = function(scope, element, attrs) {
 				var waActions = {
 					 // LAUNCH FULLSCREEN 
@@ -41,6 +46,16 @@ function(module) {
 								element.addClass("in-fullscreen");
 							}
 						});
+					},
+
+					userLogout: function(e) {
+						AuthService.logout()
+							.then(function(response) {
+								Notifications.success({
+									title: "Logged out",
+									content: "You have been successfully logged out"
+								});
+							});
 					}
 				};
 

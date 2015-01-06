@@ -10,7 +10,8 @@ define([
 	'smartwidgets',
 	'notification',
 	'restangular',
-	'loadingbar'
+	'loadingbar',
+	'satellizer'
 ], function (ng, couchPotato) {
 
 	var logger = ng.module('wa.logger', ['ngSanitize']);
@@ -132,6 +133,7 @@ define([
 		'ngSanitize',
 		'lodash',
 		'restangular',
+		'satellizer',
 		'scs.couch-potato',
 		'angular-loading-bar',
 		'ngAnimate',
@@ -191,7 +193,8 @@ define([
 	app.config([
 		'$provide',
 		'$httpProvider',
-		function ($provide, $httpProvider) {
+		'$authProvider',
+		function ($provide, $httpProvider, $authProvider) {
 			// Intercept http calls.
 			$provide.factory('ErrorHttpInterceptor', [
 				'$q',
@@ -201,7 +204,7 @@ define([
 						console.log(rejection);
 						$.bigBox({
 							title: rejection.status + ' ' + rejection.statusText,
-							content: rejection.data,
+							content: (rejection.data && rejection.data.error) ? rejection.data.error : rejection.data,
 							color: "#C46A69",
 							icon: "fa fa-warning shake animated",
 							number: ++errorCounter,
@@ -229,6 +232,9 @@ define([
 					};
 				}
 			]);
+
+			// Add the interceptor to the $httpProvider.
+			$httpProvider.interceptors.push('ErrorHttpInterceptor');
 
 			// Enhance $q to provide a handy "spread" delegate during $q.all
 			var resolveWith = function($q) {
@@ -264,8 +270,19 @@ define([
 				}
 			]);
 
-			// Add the interceptor to the $httpProvider.
-			$httpProvider.interceptors.push('ErrorHttpInterceptor');
+			$authProvider.httpInterceptor = true, // Add Authorization header to HTTP request
+			$authProvider.loginOnSignup = true;
+			$authProvider.loginRedirect = 'http://localhost:1337/auth/login';
+			$authProvider.logoutRedirect = 'http://localhost:1337/auth/login';
+			$authProvider.signupRedirect = '/login';
+			$authProvider.loginUrl = 'http://localhost:1337/auth/login';
+			$authProvider.signupUrl = '/auth/signup';
+			$authProvider.loginRoute = '/login';
+			$authProvider.signupRoute = '/signup';
+			$authProvider.tokenName = 'token';
+			$authProvider.tokenPrefix = 'vtss'; // Local Storage name prefix
+			$authProvider.unlinkUrl = '/auth/unlink/';
+			$authProvider.authHeader = 'Authorization';
 		}
 
 	]);
