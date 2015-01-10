@@ -6,7 +6,13 @@ define([
 	'use strict';
 
 	var module = ng.module('app.passenger', [
-		'ui.router'
+		'ui.router',
+		'app.passenger.home',
+		'app.passenger.account',
+		'app.passenger.setup',
+		'app.passenger.monitor',
+		'app.passenger.alerts',
+		'app.passenger.messages'
 	]);
 
 	module.config([

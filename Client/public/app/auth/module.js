@@ -15,10 +15,7 @@ define([
 	module.config([
 		'$stateProvider',
 		'$couchPotatoProvider',
-		'$urlRouterProvider',
-		function ($stateProvider, $couchPotatoProvider, $urlRouterProvider) {
-
-			$urlRouterProvider.otherwise("login");
+		function ($stateProvider, $couchPotatoProvider) {
 
 			$stateProvider.state('realLogin', {
 				url: '/real-login',
@@ -62,8 +59,7 @@ define([
 					}
 				},
 				data: {
-					title: 'Login',
-					htmlId: 'extr-page'
+					title: 'Login'
 				}
 			})
 

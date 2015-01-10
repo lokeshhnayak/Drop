@@ -72,5 +72,10 @@
   "/datatables-selectable/src/jquery.groupToggle.js",
   "/datatables-selectable/src/datatables.Selectable.js",
   "/angular-loading-bar/build/loading-bar.min.js",
-  "/angular-loading-bar/build/loading-bar.min.css"
+  "/angular-loading-bar/build/loading-bar.min.css",
+  "/sails.io.js/dist/sails.io.js",
+  "/angular-sails/dist/angular-sails.min.js",
+  "/socket.io-client/socket.io.js",
+  "/angularSails/dist/ngsails.io.js",
+  "/angular-permission/dist/angular-permission.js"
 ]

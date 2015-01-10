@@ -51,9 +51,9 @@ function(module) {
 					userLogout: function(e) {
 						AuthService.logout()
 							.then(function(response) {
-								Notifications.success({
+								Notifications.info({
 									title: "Logged out",
-									content: "You have been successfully logged out"
+									content: "You have been successfully logged out."
 								});
 							});
 					}

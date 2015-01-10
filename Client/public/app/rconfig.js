@@ -46,6 +46,8 @@ var require = {
 		'angular-couch-potato': '../plugin/angular-couch-potato/dist/angular-couch-potato',
 		'angular-easyfb': '../plugin/angular-easyfb/angular-easyfb.min',
 		'angular-google-plus': '../plugin/angular-google-plus/dist/angular-google-plus.min',
+		'angular-sails': '../plugin/angular-sails/dist/angular-sails.min',
+		'angular-permission': '../plugin/angular-permission/dist/angular-permission',
 		'restangular': '../plugin/restangular/dist/restangular.min',
 		'satellizer': '../plugin/satellizer/satellizer.min',
 
@@ -132,7 +134,11 @@ var require = {
 		'modules-includes': 'includes',
 
 		// loading bar
-		'loadingbar': '../plugin/angular-loading-bar/build/loading-bar.min'
+		'loadingbar': '../plugin/angular-loading-bar/build/loading-bar.min',
+
+		// sails io
+		'socket-io': 'http://localhost:1337/socket.io/socket.io',
+		'sails-io': '../plugin/sails.io.js/dist/sails.io'
 
 	},
 	shim: {
@@ -145,8 +151,10 @@ var require = {
 		'angular-ui-router': { deps: ['angular'] },
 		'angular-google-maps': { deps: ['angular'] },
 		'angular-couch-potato': { deps: ['angular'] },
-		'loadingbar': { deps: ['angular']},
-		'socket.io': { deps: ['angular'] },
+		'angular-permission': { deps: ['angular'] },
+		'loadingbar': { deps: ['angular'] },
+		'sails-io': { deps: ['socket-io']},
+		'angular-sails': { deps: ['angular', 'sails-io'] },
 		'restangular': { deps: ['angular', 'lodash'] },
 		'anim-in-out': { deps: ['angular-animate'] },
 		'angular-easyfb': { deps: ['angular'] },

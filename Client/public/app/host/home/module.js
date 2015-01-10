@@ -2,19 +2,12 @@ define([
 	'angular',
 	'angular-couch-potato',
 	'angular-ui-router',
-	'angular-permission',
 	'restangular'
 ], function (ng, couchPotato) {
 	'use strict';
 
-	var module = ng.module('app.host', [
-		'ui.router',
-		'permission',
-		'app.host.home',
-		'app.host.account',
-		'app.host.devices',
-		'app.host.finance',
-		'app.host.messages'
+	var module = ng.module('app.host.home', [
+		'ui.router'
 	]);
 
 	module.config([
@@ -22,13 +15,18 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
-				.state('app.host', {
-					abstract: true,
-					data:{
-						title: 'Host',
-						permissions: {
-							except: ['anonymous'],
-							redirectTo: 'login'
+				.state('app.host.home', {
+					url: '/host/home',
+					data: {
+						title: 'Profile'
+					},
+					views: {
+						"content@app": {
+							templateUrl: "app/host/home/views/home.html",
+							resolve: {
+								deps: $couchPotatoProvider.resolveDependencies([
+								])
+							}
 						}
 					}
 				});

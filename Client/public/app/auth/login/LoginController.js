@@ -1,5 +1,6 @@
 define([
 	'auth/module',
+	'lodash',
 	'common/utils/Notifications'
 ], function (module) {
 
@@ -24,6 +25,7 @@ define([
 							title: "Logged In",
 							content: "Welcome, " + response.user.username
 						});
+						$state.go(response.redirectState);
 					});
 			};
 		}

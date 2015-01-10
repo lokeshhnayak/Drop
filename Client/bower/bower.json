@@ -64,7 +64,13 @@
     "satellizer": "~0.8.7",
     "datatables-colfilter": "https://jquery-datatables-column-filter.googlecode.com/files/JQuery-DataTables-ColumnFilter.zip",
     "datatables-selectable": "https://github.com/SanthoshMR/datatables.Selectable.git",
-    "angular-loading-bar": "~0.6.0"
+    "angular-loading-bar": "~0.6.0",
+    "angular-sails": "~1.0.5",
+    "sails.io.js": "~0.11.4",
+    "socket.io": "~1.2.1",
+    "angularSails": "~0.10.0-pre",
+    "socket.io-client": "~1.2.1",
+    "angular-permission": "~0.1.6"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

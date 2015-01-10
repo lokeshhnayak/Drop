@@ -38,6 +38,7 @@ define([
 
 	// root
 	'root/module',
+	'root/home/module',
 	'root/account/module',
 	'root/access-control/module',
 	'root/hosts/module',
@@ -45,6 +46,7 @@ define([
 
 	// client
 	'client/module',
+	'client/home/module',
 	'client/account/module',
 	'client/setup/module',
 	'client/monitor/module',
@@ -55,6 +57,7 @@ define([
 
 	// host
 	'host/module',
+	'host/home/module',
 	'host/account/module',
 	'host/devices/module',
 	'host/finance/module',
@@ -62,6 +65,7 @@ define([
 
 	// agency
 	'agency/module',
+	'agency/home/module',
 	'agency/account/module',
 	'agency/devices/module',
 	'agency/finance/module',
@@ -69,6 +73,7 @@ define([
 
 	// passenger
 	'passenger/module',
+	'passenger/home/module',
 	'passenger/account/module',
 	'passenger/setup/module',
 	'passenger/monitor/module',

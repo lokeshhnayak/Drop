@@ -9,7 +9,8 @@ define([
 		'$state',
 		'User',
 		'Logger',
-		function ($scope, $state, User, Logger) {
+		'AuthService',
+		function ($scope, $state, User, Logger, AuthService) {
 
 			var logger = Logger.getInstance("LayoutController");
 			logger.info("In LayoutController");

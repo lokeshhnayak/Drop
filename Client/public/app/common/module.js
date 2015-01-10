@@ -6,8 +6,7 @@ define([
 	'use strict';
 
 	var module = ng.module('wa.common', [
-		'ui.router',
-		'ngResource'
+		'ui.router'
 	]);
 
 	module.config([

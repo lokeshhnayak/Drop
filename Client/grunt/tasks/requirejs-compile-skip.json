@@ -77,5 +77,6 @@
   "socket.io": "empty:",
   "angular-x-editable": "empty:",
   "restangular": "empty:",
-  "loadingbar": "empty:"
+  "loadingbar": "empty:",
+  "angular-permission": "empty:"
 }

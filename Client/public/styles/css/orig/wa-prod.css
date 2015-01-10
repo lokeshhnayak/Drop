@@ -11496,7 +11496,7 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
   margin-top: 0px !important;
 }
 
-#extr-page .fixed-header #main {
+.fixed-header #extr-page #main {
   margin-top: 71px !important;
 }
 #mobile-profile-img {

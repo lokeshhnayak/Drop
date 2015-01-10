@@ -2,12 +2,19 @@ define([
 	'angular',
 	'angular-couch-potato',
 	'angular-ui-router',
+	'angular-permission',
 	'restangular'
 ], function (ng, couchPotato) {
 	'use strict';
 
 	var module = ng.module('app.agency', [
-		'ui.router'
+		'ui.router',
+		'permission',
+		'app.agency.home',
+		'app.agency.account',
+		'app.agency.devices',
+		'app.agency.finance',
+		'app.agency.messages'
 	]);
 
 	module.config([
@@ -18,7 +25,11 @@ define([
 				.state('app.agency', {
 					abstract: true,
 					data:{
-						title: 'Agency'
+						title: 'Agency',
+						permissions: {
+							except: ['anonymous'],
+							redirectTo: 'login'
+						}
 					}
 				});
 		}

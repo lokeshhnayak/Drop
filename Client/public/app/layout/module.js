@@ -1,12 +1,17 @@
 define([
 	'angular',
 	'angular-couch-potato',
+	'angular-permission',
 	'angular-ui-router'
 ], function (ng, couchPotato) {
 
 	"use strict";
 
-	var module = ng.module('app.layout', ['ui.router']);
+	var module = ng.module('app.layout', [
+		'ui.router',
+		'app.auth',
+		'permission'
+	]);
 
 	couchPotato.configureApp(module);
 
@@ -26,20 +31,30 @@ define([
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 									'auth/directives/loginInfo',
+									'auth/directives/waHasRole',
 									'layout/LayoutController'
 								])
 							}
 						}
 					}
 				});
-			$urlRouterProvider.otherwise('/home');
+			$urlRouterProvider.otherwise('login');
 		}
 	]);
 
 	module.run([
 		'$couchPotato',
-		function($couchPotato){
+		'Permission',
+		'AuthService',
+		function($couchPotato, Permission, AuthService){
 			module.lazy = $couchPotato;
+
+			Permission.defineRole('anonymous', function (stateParams) {
+				if(!AuthService.currentUser()) {
+					return true;
+				}
+				return false;
+			});
 		}
 	]);
 

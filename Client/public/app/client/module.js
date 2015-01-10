@@ -1,12 +1,22 @@
 define([
 	'angular',
 	'angular-couch-potato',
-	'angular-ui-router'
+	'angular-ui-router',
+	'angular-permission'
 ], function (ng, couchPotato) {
 	'use strict';
 
 	var module = ng.module('app.client', [
-		'ui.router'
+		'ui.router',
+		'permission',
+		'app.client.home',
+		'app.client.account',
+		'app.client.setup',
+		'app.client.monitor',
+		'app.client.backup',
+		'app.client.finance',
+		'app.client.connection-settings',
+		'app.client.messages'
 	]);
 
 	module.config([
@@ -17,7 +27,11 @@ define([
 				.state('app.client', {
 					abstract: true,
 					data:{
-						title: 'Client'
+						title: 'Client',
+						permissions: {
+							except: ['anonymous'],
+							redirectTo: 'login'
+						}
 					}
 				});
 		}

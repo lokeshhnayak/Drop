@@ -43,31 +43,31 @@ appConfig.skins = [
 
 appConfig.roles = [
 	{
-		role: "root",
+		role: "RA",
 		class: "btn btn-xs btn-block txt-color-white margin-top-5",
 		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
-		label: "Root"
+		label: "Root Admin"
 	},
 	{
-		role: "host",
+		role: "HA",
 		class: "btn btn-xs btn-block txt-color-white margin-top-5",
 		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
-		label: "Host"
+		label: "Host Admin"
 	},
 	{
-		role: "agency",
+		role: "AA",
 		class: "btn btn-xs btn-block txt-color-white margin-top-5",
 		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
-		label: "Agency"
+		label: "Agency Admin"
 	},
 	{
-		role: "client",
+		role: "CA",
 		class: "btn btn-xs btn-block txt-color-white margin-top-5",
 		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
-		label: "Client"
+		label: "Client Admin"
 	},
 	{
-		role: "passenger",
+		role: "P",
 		class: "btn btn-xs btn-block txt-color-white margin-top-5",
 		style: "background: #bbc0cf; border: 1px solid #59779E; color: #17273D !important;",
 		label: "Passenger"

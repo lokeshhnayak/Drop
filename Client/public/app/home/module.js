@@ -2,13 +2,15 @@ define([
 	'angular',
 	'angular-couch-potato',
 	'angular-ui-router',
-	'angular-resource'
+	'angular-permission',
+	'auth/login/AuthService'
 ], function (ng, couchPotato) {
 	'use strict';
 
 	var module = ng.module('app.home', [
 		'ui.router',
-		'ngResource'
+		'app.auth',
+		'permission'
 	]);
 
 	module.config([
@@ -30,7 +32,11 @@ define([
 						}
 					},
 					data:{
-						title: 'Home'
+						title: 'Home',
+						permissions: {
+							except: ['anonymous'],
+							redirectTo: 'login'
+						}
 					}
 				});
 		}
@@ -40,8 +46,17 @@ define([
 
 	module.run([
 		'$couchPotato',
-		function($couchPotato){
+		'Permission',
+		'AuthService',
+		function($couchPotato, Permission, AuthService){
 			module.lazy = $couchPotato;
+
+			Permission.defineRole('anonymous', function (stateParams) {
+				if(!AuthService.currentUser()) {
+					return true;
+				}
+				return false;
+			});
 		}
 	]);
 

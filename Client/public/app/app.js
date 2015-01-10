@@ -7,6 +7,8 @@ define([
 	'angular-animate',
 	'angular-sanitize',
 	'angular-bootstrap',
+	// 'angular-sails',
+	'angular-permission',
 	'smartwidgets',
 	'notification',
 	'restangular',
@@ -137,8 +139,10 @@ define([
 		'scs.couch-potato',
 		'angular-loading-bar',
 		'ngAnimate',
+		// 'ngSails',
 		'ui.router',
 		'ui.bootstrap',
+		'permission',
 
 		// Common
 		'wa.common',
@@ -152,49 +156,55 @@ define([
 		'app.widgets',
 		// Root
 		'app.root',
-		'app.root.account',
-		'app.root.access-control',
-		'app.root.hosts',
-		'app.root.device-software',
 		// Client
 		'app.client',
-		'app.client.account',
-		'app.client.setup',
-		'app.client.monitor',
-		'app.client.backup',
-		'app.client.finance',
-		'app.client.connection-settings',
-		'app.client.messages',
 		// Host
 		'app.host',
-		'app.host.account',
-		'app.host.devices',
-		'app.host.finance',
-		'app.host.messages',
 		// Agency
 		'app.agency',
-		'app.agency.account',
-		'app.agency.devices',
-		'app.agency.finance',
-		'app.agency.messages',
 		// Passenger
 		'app.passenger',
-		'app.passenger.account',
-		'app.passenger.setup',
-		'app.passenger.monitor',
-		'app.passenger.alerts',
-		'app.passenger.messages',
 		// Samples
 		'app.sample'
 	]);
 
 	couchPotato.configureApp(app);
 
+	app.constant('AUTH_EVENTS', {
+		loginSuccess: 'auth-login-success',
+		loginFailed: 'auth-login-failed',
+		logoutSuccess: 'auth-logout-success',
+		logoutFailed: 'auth-logout-failed',
+		sessionTimeout: 'auth-session-timeout',
+		notAuthenticated: 'auth-not-authenticated',
+		notAuthorized: 'auth-not-authorized'
+	});
+
+	app.constant('USER_ROLES', {
+		A: "A",
+		RA: "RA",
+		HA: "HA",
+		HT: "HT",
+		HF: "HF",
+		AA: "AA",
+		AT: "AT",
+		AF: "AF",
+		CA: "CA",
+		CT: "CT",
+		CF: "CF",
+		P: "P",
+		L: "L"
+	});
+
 	app.config([
 		'$provide',
 		'$httpProvider',
 		'$authProvider',
+		//'$sailsProvider',
 		function ($provide, $httpProvider, $authProvider) {
+
+			// Configure Angular Sails
+			// $sailsProvider.url = 'http://localhost:1337/';
 			// Intercept http calls.
 			$provide.factory('ErrorHttpInterceptor', [
 				'$q',
