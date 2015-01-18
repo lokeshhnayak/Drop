@@ -48,7 +48,7 @@ This README would normally document whatever steps are necessary to get your app
 * Make sure you've configured to run mongodb as a windows service as described in the instructions here: `http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/#configure-a-windows-service-for-mongodb`
 * We will use MongoVue to manage our MongoDB database. 
 * Install MongoVue from here: `http://www.mongovue.com/`
-* Once done, create a new database called **vtssbackend**.
+* Once done, open MongoVUE and create a new database called **vtssbackend**.
 * Ensure the connection settings for vtssMongoServer is right in connections.js file under VTSS\API\config folder.
 * Go to your command line (under API folder) and run `sails lift`
 * This should launch our backend api.
