@@ -41,14 +41,14 @@ This README would normally document whatever steps are necessary to get your app
 * Download WAMP and follow the instructions specified here: `http://www.wampserver.com/en/#download-wrapper`
 * You can also follow the instructions specified in this video: `https://www.youtube.com/watch?v=kVc_9vAO7oI`
 * We will use phpmyadmin to manage our MySQL database. Follow the instructions here to launch phpmyadmin: `https://www.youtube.com/watch?v=DSTVAHee3C0`
-* Create a new database called #vtssbackend#.
+* Create a new database called **vtssbackend**.
 * Create a new user called VTSS (remember the password!) and grant All Permissions to the newly created database.
 * Open the connections.js file under VTSS\API\config folder and setup the credentials for vtssMysqlServer key.
 * Follow the instructions specified here to setup MongoDB on your local system: `http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/`
 * Make sure you've configured to run mongodb as a windows service as described in the instructions here: `http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/#configure-a-windows-service-for-mongodb`
 * We will use MongoVue to manage our MongoDB database. 
 * Install MongoVue from here: `http://www.mongovue.com/`
-* Once done, create a new database called #vtssbackend#.
+* Once done, create a new database called **vtssbackend**.
 * Ensure the connection settings for vtssMongoServer is right in connections.js file under VTSS\API\config folder.
 * Go to your command line (under API folder) and run `sails lift`
 * This should launch our backend api.
