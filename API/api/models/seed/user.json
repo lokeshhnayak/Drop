@@ -1,0 +1,41 @@
+[{
+	"username": "RAdmin",
+	"firstName": "Root Admin",
+	"lastName": "Admin",
+	"email": "rootadmin@vtss.com",
+	"role": "RA",
+	"password": "admin",
+	"entityType": "R"
+}, {
+	"username": "HAdmin",
+	"firstName": "Host Admin",
+	"lastName": "Admin",
+	"email": "hostadmin@vtss.com",
+	"role": "HA",
+	"password": "admin",
+	"entityType": "H"
+}, {
+	"username": "CAdmin",
+	"firstName": "Client Admin",
+	"lastName": "Admin",
+	"email": "clientadmin@vtss.com",
+	"role": "CA",
+	"password": "admin",
+	"entityType": "C"
+}, {
+	"username": "AAdmin",
+	"firstName": "Agency Admin",
+	"lastName": "Admin",
+	"email": "agencyadmin@vtss.com",
+	"role": "AA",
+	"password": "admin",
+	"entityType": "A"
+}, {
+	"username": "Passenger",
+	"firstName": "Passenger",
+	"lastName": "P",
+	"email": "passenger@vtss.com",
+	"role": "P",
+	"password": "passenger",
+	"entityType": "P"
+}]

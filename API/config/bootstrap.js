@@ -19,6 +19,8 @@ module.exports.bootstrap = function(cb) {
   		Vehicle.seed,
   		Address.seed,
   		Agency.seed,
-  		Host.seed
+  		Host.seed,
+      Client.seed,
+      User.seed
   	], cb);
 };

@@ -28,7 +28,7 @@ module.exports = {
 		client: {
 			collection: 'Client',
 			via: 'agency'
-		}
+		},
 		host: {
 			model: 'Host'
 		}

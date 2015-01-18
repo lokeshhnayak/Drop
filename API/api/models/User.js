@@ -10,6 +10,8 @@ module.exports = {
 
 	schema: true,
 
+	seedData: require('./seed/user.json'),
+
 	attributes: require('waterlock').models.user.attributes({
 		firstName: {
 			type: 'string',

@@ -25,7 +25,7 @@
     "datatables": "~1.10.2",
     "datatables-tabletools": "~2.2.3",
     "datatables-colvis": "~1.1.1",
-    "datatables-responsive": "git://github.com/Comanche/datatables-responsive",
+    "datatables-responsive": "https://github.com/Comanche/datatables-responsive.git",
     "datatables-plugins": "*",
     "jquery-validation": "~1.13.0",
     "angular-couch-potato": "~0.1.1",
