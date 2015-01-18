@@ -37,8 +37,8 @@ This README would normally document whatever steps are necessary to get your app
 * Install sails globally using `npm install -g sails`
 * Once sails is installed, type `npm install`. This should install all server side dependencies.
 * On Windows, you might encounter an error with bcrypt when you do `npm install`. If so, please follow the below steps:
-> * Download Python from here (version 2.7.9): `https://www.python.org/getit/windows` and install.
-> * Download Visual Studio 2012/2013 Express from here: `http://go.microsoft.com/?linkid=9816758` and install.
+    * Download Python from here (version 2.7.9): `https://www.python.org/getit/windows` and install.
+    * Download Visual Studio 2012/2013 Express from here: `http://go.microsoft.com/?linkid=9816758` and install.
 * For our backend, we will be using MySQL\mongodb. Next, we will install these 2.
 * The best way to install MySQL is by setting up the WAMP server on your local system. 
 * Download WAMP and follow the instructions specified here: `http://www.wampserver.com/en/#download-wrapper`
