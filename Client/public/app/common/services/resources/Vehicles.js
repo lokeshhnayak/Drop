@@ -11,7 +11,7 @@ function(module, supplant) {
 		'Restangular',
 		'APIs',
 		function (Restangular, APIs) {
-			return Restangular.service(APIs.VEHICLES);
+			return Restangular.service(APIs.CLIENT_VEHICLES);
 		}
 	]);
 });
