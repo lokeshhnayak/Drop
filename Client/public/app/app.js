@@ -201,7 +201,8 @@ define([
 		'$httpProvider',
 		'$authProvider',
 		//'$sailsProvider',
-		function ($provide, $httpProvider, $authProvider) {
+		'RestangularProvider',
+		function ($provide, $httpProvider, $authProvider, RestangularProvider) {
 
 			// Configure Angular Sails
 			// $sailsProvider.url = 'http://localhost:1337/';
@@ -242,6 +243,8 @@ define([
 					};
 				}
 			]);
+
+			RestangularProvider.setBaseUrl("http://localhost:1337");
 
 			// Add the interceptor to the $httpProvider.
 			$httpProvider.interceptors.push('ErrorHttpInterceptor');
@@ -292,7 +295,7 @@ define([
 			$authProvider.tokenName = 'token';
 			$authProvider.tokenPrefix = 'vtss'; // Local Storage name prefix
 			$authProvider.unlinkUrl = '/auth/unlink/';
-			$authProvider.authHeader = 'Authorization';
+			$authProvider.authHeader = 'access_token';
 		}
 
 	]);

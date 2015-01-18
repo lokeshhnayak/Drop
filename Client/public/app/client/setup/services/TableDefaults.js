@@ -66,11 +66,11 @@ function(module, supplant) {
 					"aTargets": [3],
 					"sDefaultContent": '<label for="" class="badge alert-warning">Car</label>',
 					"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
-						if (oData.type === "Car") {
+						if (oData.vehicleType === "Car") {
 							$(nTd)[0].innerHTML = '<div><label for="" class="badge alert-success">Car</label></div>';
-						} else if(oData.type === "Bus") {
+						} else if(oData.vehicleType === "Bus") {
 							$(nTd)[0].innerHTML = '<div><label for="" class="badge alert-warning">Bus</label></div>';
-						} else if(oData.type === "Van") {
+						} else if(oData.vehicleType === "Van") {
 							$(nTd)[0].innerHTML = '<div><label for="" class="badge alert-info">Van</label></div>';
 						} else {
 							$(nTd)[0].innerHTML = '<div><label for="" class="badge alert-danger">Unknown</label></div>';

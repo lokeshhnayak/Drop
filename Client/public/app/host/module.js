@@ -10,6 +10,7 @@ define([
 	var module = ng.module('app.host', [
 		'ui.router',
 		'permission',
+		'app.auth',
 		'app.host.home',
 		'app.host.account',
 		'app.host.devices',
@@ -27,7 +28,7 @@ define([
 					data:{
 						title: 'Host',
 						permissions: {
-							except: ['anonymous'],
+							only: ['HU'],
 							redirectTo: 'login'
 						}
 					}
@@ -39,8 +40,27 @@ define([
 
 	module.run([
 		'$couchPotato',
-		function($couchPotato){
+		'Permission',
+		'AuthService',
+		'USER_ROLES',
+		function($couchPotato, Permission, AuthService, USER_ROLES){
 			module.lazy = $couchPotato;
+
+			Permission.defineRole('HU', function (stateParams) {
+				return AuthService.isAuthorized([USER_ROLES.HA, USER_ROLES.HT, USER_ROLES.HF]);
+			});
+
+			Permission.defineRole('HA', function (stateParams) {
+				return AuthService.isAuthorized(USER_ROLES.HA);
+			});
+
+			Permission.defineRole('HT', function (stateParams) {
+				return AuthService.isAuthorized(USER_ROLES.HT);
+			});
+
+			Permission.defineRole('HF', function (stateParams) {
+				return AuthService.isAuthorized(USER_ROLES.HF);
+			});
 		}
 	]);
 

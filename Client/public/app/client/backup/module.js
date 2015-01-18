@@ -13,7 +13,8 @@ define([
 	module.config([
 		'$stateProvider',
 		'$couchPotatoProvider',
-		function ($stateProvider, $couchPotatoProvider) {
+		'$urlRouterProvider',
+		function ($stateProvider, $couchPotatoProvider, $urlRouterProvider) {
 			$stateProvider
 				.state('app.client.backup', {
 					abstract: true,
@@ -51,6 +52,8 @@ define([
 						}
 					}
 				});
+
+			$urlRouterProvider.when('/client/backup', '/client/backup/storage-setup');
 		}
 	]);
 

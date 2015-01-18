@@ -1,0 +1,53 @@
+[{
+	"id": 1,
+	"name": "RA",
+	"description": "Root Admin"
+}, {
+	"id": 2,
+	"name": "HA",
+	"description": "Host Admin"
+}, {
+	"id": 3,
+	"name": "HT",
+	"description": "Host Technician"
+}, {
+	"id": 4,
+	"name": "HF",
+	"description": "Host Finance"
+}, {
+	"id": 5,
+	"name": "AA",
+	"description": "Agency Admin"
+}, {
+	"id": 6,
+	"name": "AT",
+	"description": "Agency Technician"
+}, {
+	"id": 7,
+	"name": "AF",
+	"description": "Agency Finance"
+}, {
+	"id": 8,
+	"name": "CA",
+	"description": "Client Admin"
+}, {
+	"id": 9,
+	"name": "CT",
+	"description": "Client Technician"
+}, {
+	"id": 10,
+	"name": "CF",
+	"description": "Client Finance"
+}, {
+	"id": 11,
+	"name": "P",
+	"description": "Passenger"
+}, {
+	"id": 12,
+	"name": "A",
+	"description": "All"
+}, {
+	"id": 13,
+	"name": "L",
+	"description": "Logged In"
+}]

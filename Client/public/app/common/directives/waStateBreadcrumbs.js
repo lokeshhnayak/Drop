@@ -1,5 +1,6 @@
 define([
-	'common/module'
+	'common/module',
+	'lodash'
 ], function (module) {
 
 	'use strict';
@@ -7,7 +8,8 @@ define([
 	module.registerDirective('waStateBreadcrumbs', [
 		'$rootScope',
 		'$state',
-		function ($rootScope, $state) {
+		'_',
+		function ($rootScope, $state, _) {
 
 
 			return {
@@ -53,7 +55,9 @@ define([
 					processState($state.current);
 
 					$rootScope.$on('$stateChangeStart', function (event, state) {
-						processState(state);
+						if(_.isObject(state)) {
+							processState(state);
+						}
 					});
 				}
 			};

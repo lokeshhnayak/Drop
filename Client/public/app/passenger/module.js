@@ -1,12 +1,15 @@
 define([
 	'angular',
 	'angular-couch-potato',
-	'angular-ui-router'
+	'angular-ui-router',
+	'angular-permission'
 ], function (ng, couchPotato) {
 	'use strict';
 
 	var module = ng.module('app.passenger', [
 		'ui.router',
+		'permission',
+		'app.auth',
 		'app.passenger.home',
 		'app.passenger.account',
 		'app.passenger.setup',
@@ -23,7 +26,11 @@ define([
 				.state('app.passenger', {
 					abstract: true,
 					data:{
-						title: 'Passenger'
+						title: 'Passenger',
+						permissions: {
+							only: ['P'],
+							redirectTo: 'login'
+						}
 					}
 				});
 		}
@@ -33,8 +40,15 @@ define([
 
 	module.run([
 		'$couchPotato',
-		function($couchPotato){
+		'Permission',
+		'AuthService',
+		'USER_ROLES',
+		function($couchPotato, Permission, AuthService, USER_ROLES){
 			module.lazy = $couchPotato;
+
+			Permission.defineRole('P', function (stateParams) {
+				return AuthService.isAuthorized([USER_ROLES.P]);
+			});
 		}
 	]);
 

@@ -13,7 +13,8 @@ define([
 	module.config([
 		'$stateProvider',
 		'$couchPotatoProvider',
-		function ($stateProvider, $couchPotatoProvider) {
+		'$urlRouterProvider',
+		function ($stateProvider, $couchPotatoProvider, $urlRouterProvider) {
 			$stateProvider
 				.state('app.client.setup', {
 					abstract: true,
@@ -101,6 +102,8 @@ define([
 						}
 					}
 				});
+
+			$urlRouterProvider.when('/client/setup', '/client/setup/holidays');
 		}
 	]);
 

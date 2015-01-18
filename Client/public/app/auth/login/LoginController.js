@@ -20,14 +20,17 @@ define([
 			$scope.login = function(user) {
 				AuthService.login(user)
 					.then(function(response) {
-						logger.warn(response);
 						Notifications.success({
 							title: "Logged In",
-							content: "Welcome, " + response.user.username
+							content: "Welcome, " + response.user.firstName
 						});
 						$state.go(response.redirectState);
 					});
 			};
+
+			/*if(AuthService.isAuthenticated()) {
+				$state.go(AuthService.getRedirectState());
+			}*/
 		}
 	]);
 });

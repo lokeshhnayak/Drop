@@ -1,0 +1,102 @@
+[
+  {
+    "passengerCapacity": 33,
+    "vehicleType": "Car",
+    "registrationNumber": "KA-14 MB 3413"
+  },
+  {
+    "passengerCapacity": 48,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-13 MB 5654"
+  },
+  {
+    "passengerCapacity": 16,
+    "vehicleType": "Van",
+    "registrationNumber": "KA-37 MB 3638"
+  },
+  {
+    "passengerCapacity": 29,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-11 MB 3874"
+  },
+  {
+    "passengerCapacity": 32,
+    "vehicleType": "Car",
+    "registrationNumber": "KA-47 MB 2213"
+  },
+  {
+    "passengerCapacity": 15,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-28 MB 7082"
+  },
+  {
+    "passengerCapacity": 45,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-49 MB 7695"
+  },
+  {
+    "passengerCapacity": 29,
+    "vehicleType": "Van",
+    "registrationNumber": "KA-42 MB 1368"
+  },
+  {
+    "passengerCapacity": 48,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-36 MB 9937"
+  },
+  {
+    "passengerCapacity": 15,
+    "vehicleType": "Car",
+    "registrationNumber": "KA-18 MB 5732"
+  },
+  {
+    "passengerCapacity": 18,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-4 MB 9923"
+  },
+  {
+    "passengerCapacity": 49,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-48 MB 4544"
+  },
+  {
+    "passengerCapacity": 47,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-20 MB 9070"
+  },
+  {
+    "passengerCapacity": 17,
+    "vehicleType": "Van",
+    "registrationNumber": "KA-38 MB 4858"
+  },
+  {
+    "passengerCapacity": 49,
+    "vehicleType": "Car",
+    "registrationNumber": "KA-38 MB 5106"
+  },
+  {
+    "passengerCapacity": 19,
+    "vehicleType": "Van",
+    "registrationNumber": "KA-13 MB 3038"
+  },
+  {
+    "passengerCapacity": 30,
+    "vehicleType": "Van",
+    "registrationNumber": "KA-24 MB 1584"
+  },
+  {
+    "passengerCapacity": 17,
+    "vehicleType": "Bus",
+    "registrationNumber": "KA-33 MB 4164"
+  },
+  {
+    "passengerCapacity": 38,
+    "vehicleType": "Van",
+    "registrationNumber": "KA-20 MB 8029"
+  },
+  {
+    "passengerCapacity": 29,
+    "vehicleType": "Car",
+    "registrationNumber": "KA-43 MB 2719"
+  }
+]
