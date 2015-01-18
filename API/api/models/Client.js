@@ -9,7 +9,7 @@ module.exports = {
 
 	schema: true,
 
-	seedData: require('./seed/client.json'),
+	seedData: require('./seed/clients.json'),
 
 	attributes: {
 		name: {
@@ -39,6 +39,10 @@ module.exports = {
 		},
 		holidays: {
 			collection: 'Holiday',
+			via: 'client'
+		},
+		vehicles: {
+			collection: 'Vehicle',
 			via: 'client'
 		}
 	}

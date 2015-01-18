@@ -16,11 +16,11 @@ module.exports.bootstrap = function(cb) {
   async.series([
   		Role.seed,
   		Permission.seed,
+      Holiday.seed,
   		Vehicle.seed,
   		Address.seed,
   		Agency.seed,
   		Host.seed,
-      Client.seed,
-      User.seed
+      Client.seed
   	], cb);
 };

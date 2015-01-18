@@ -67,7 +67,6 @@ define([
 					if (!isLoggingEnabled) {
 						return;
 					}
-					
 					var now  = Logger.getFormattedTimestamp(new Date());
 					var message = '', supplantData = [];
 					$log[originalFn].call(null, Logger.supplant("Web Artists - VTSS: {0}::{1}", [now, this.context]));
@@ -196,13 +195,23 @@ define([
 		L: "L"
 	});
 
+	app.constant('APP_CONFIG', {
+		BASE_URL: 'http://localhost:1337',
+		ROOT_URL: 'root',
+		HOST_URL: 'host',
+		AGENCY_URL: 'agency',
+		CLIENT_URL: 'client',
+		PASSENGER_URL: 'passenger'
+	});
+
 	app.config([
 		'$provide',
 		'$httpProvider',
 		'$authProvider',
 		//'$sailsProvider',
 		'RestangularProvider',
-		function ($provide, $httpProvider, $authProvider, RestangularProvider) {
+		'APP_CONFIG',
+		function ($provide, $httpProvider, $authProvider, RestangularProvider, APP_CONFIG) {
 
 			// Configure Angular Sails
 			// $sailsProvider.url = 'http://localhost:1337/';
@@ -244,7 +253,7 @@ define([
 				}
 			]);
 
-			RestangularProvider.setBaseUrl("http://localhost:1337");
+			RestangularProvider.setBaseUrl(APP_CONFIG.BASE_URL);
 
 			// Add the interceptor to the $httpProvider.
 			$httpProvider.interceptors.push('ErrorHttpInterceptor');
@@ -310,9 +319,8 @@ define([
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
 			// editableOptions.theme = 'bs3';
-			
 			// handle any route related errors (specifically used to check for hidden resolve errors)
-			$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){ 
+			$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
 				console.log(error);
 			});
 		}

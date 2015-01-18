@@ -2,7 +2,8 @@ define([
 	'auth/module',           // Angular Module for WebArtists VTSS app.
 	'common/utils/supplant', // Supplant
 	'lodash',                // Lodash Library
-	'satellizer'
+	'restangular',           // Restangular
+	'satellizer'             // Satellizer
 ],
 function(module, supplant) {
 
@@ -14,7 +15,9 @@ function(module, supplant) {
 		'_',
 		'Logger',
 		'USER_ROLES',
-		function ($auth, $rootScope, _, Logger, USER_ROLES) {
+		'APP_CONFIG',
+		'Restangular',
+		function ($auth, $rootScope, _, Logger, USER_ROLES, APP_CONFIG, Restangular) {
 			var logger = Logger.getInstance('AuthService');
 			var loggedInUser;
 			logger.info("In AuthService");
@@ -75,24 +78,29 @@ function(module, supplant) {
 						switch(role.name) {
 							case 'RA':
 								redirectState = "app.root.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.ROOT_URL, loggedInUser.id]));
 								break;
 							case 'HA':
 							case 'HT':
 							case 'HF':
 								redirectState = "app.host.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.HOST_URL, loggedInUser.id]));
 								break;
 							case 'CA':
 							case 'CT':
 							case 'CF':
 								redirectState = "app.client.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.CLIENT_URL, loggedInUser.id]));
 								break;
 							case 'AA':
 							case 'AT':
 							case 'AF':
 								redirectState = "app.agency.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.AGENCY_URL, loggedInUser.id]));
 								break;
 							case 'P':
 								redirectState = "app.passenger.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.PASSENGER_URL, loggedInUser.id]));
 								break;
 						}
 						return redirectState;

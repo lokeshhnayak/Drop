@@ -9,6 +9,8 @@ module.exports = {
 
 	schema: true,
 
+	seedData: require('./seed/holidays.json'),
+
 	attributes: {
 		dateFrom: {
 			type: 'date',

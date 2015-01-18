@@ -9,7 +9,7 @@ module.exports = {
 
 	schema: true,
 
-	seedData: require('./seed/address.json'),
+	seedData: require('./seed/addresses.json'),
 
 	attributes: {
  		street: 'string',

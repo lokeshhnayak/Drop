@@ -1,17 +1,16 @@
 /**
- * UserController.js 
- * 
+ * UserController.js
+ *
  * @module      :: Controller
  * @description :: Provides the base user
  *                 actions used to make waterlock work.
- *                 
+ *
  * @docs        :: http://waterlock.ninja/documentation
  */
 
 module.exports = require('waterlock').actions.user({
 	/* e.g.
 		action: function(req, res){
-	
 		}
 	*/
 	// route to create user, user auth and associate them
@@ -55,6 +54,7 @@ module.exports = require('waterlock').actions.user({
 					req.session.authenticated = true;
 					waterlock.engine.attachAuthToUser(auth, user, function (err) {
 						if (err) {
+							user.destroy();
 							waterlock.logger.debug(err);
 							return res.send({success:false, message:err});
 						}
@@ -63,6 +63,8 @@ module.exports = require('waterlock').actions.user({
 						user.roles.add(role.id);
 						user.save(function (err, user) {
 							if (err) {
+								auth.destroy();
+								user.destroy();
 								waterlock.logger.debug(err);
 								return res.send({success:false, message:err});
 							}

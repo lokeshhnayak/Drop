@@ -28,7 +28,7 @@
     "sails-disk": "~0.10.0",
     "sails-mongo": "^0.10.4",
     "sails-mysql": "^0.10.8",
-    "waterlock": "git+https://github.com/davidrivera/waterlock.git",
+    "waterlock": "git+https://github.com/SanthoshMR/waterlock.git",
     "waterlock-local-auth": "git+https://github.com/davidrivera/waterlock-local-auth"
   },
   "scripts": {
