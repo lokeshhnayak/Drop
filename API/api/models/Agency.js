@@ -9,6 +9,8 @@ module.exports = {
 
 	schema: true,
 
+	seedData: require('./seed/agency.json'),
+
 	attributes: {
 		name: {
 			type: 'string',
@@ -23,6 +25,10 @@ module.exports = {
 		address: {
 			model: 'Address'
 		},
+		client: {
+			collection: 'Client',
+			via: 'agency'
+		}
 		host: {
 			model: 'Host'
 		}

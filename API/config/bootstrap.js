@@ -16,6 +16,9 @@ module.exports.bootstrap = function(cb) {
   async.series([
   		Role.seed,
   		Permission.seed,
-  		Vehicle.seed
+  		Vehicle.seed,
+  		Address.seed,
+  		Agency.seed,
+  		Host.seed
   	], cb);
 };

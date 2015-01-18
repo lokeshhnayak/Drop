@@ -37,6 +37,9 @@ module.exports = {
 			enum: ['R', 'H', 'A', 'C', 'P'],
 			defaultsTo: 'P'
 		},
+		address: {
+			model: 'Address'
+		},
 		/*roles: {
 			collection: 'Role',
 			via: 'users',

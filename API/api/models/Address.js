@@ -9,8 +9,11 @@ module.exports = {
 
 	schema: true,
 
+	seedData: require('./seed/address.json'),
+
 	attributes: {
  		street: 'string',
+ 		city: 'string',
  		state: 'string',
  		country: 'string',
  		pincode: 'string',
@@ -19,11 +22,24 @@ module.exports = {
  			required: true
  		},
  		phoneNumber: {
- 			type: 'numeric',
+ 			type: 'string',
  			required: true
  		},
- 		client: {
- 			model: 'Client'
+ 		users: {
+ 			collection: 'User',
+ 			via: 'address'
+ 		},
+ 		clients: {
+ 			collection: 'Client',
+ 			via: 'address'
+ 		},
+ 		agencies: {
+ 			collection: 'Agency',
+ 			via: 'address'
+ 		},
+ 		hosts: {
+ 			collection: 'Host',
+ 			via: 'address'
  		}
 	}
 };

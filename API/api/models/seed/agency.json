@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Lovepad",
+    "description": "This is some sample description for agency: Lovepad",
+    "agencyStatus": "Prospect",
+    "address": 4,
+    "host": 1
+  },
+  {
+    "name": "Zaggle",
+    "description": "This is some sample description for agency: Zaggle",
+    "agencyStatus": "Inactive",
+    "address": 9,
+    "host": 1
+  },
+  {
+    "name": "Senmei",
+    "description": "This is some sample description for agency: Senmei",
+    "agencyStatus": "Inactive",
+    "address": 3,
+    "host": 1
+  },
+  {
+    "name": "Datacator",
+    "description": "This is some sample description for agency: Datacator",
+    "agencyStatus": "Inactive",
+    "address": 5,
+    "host": 1
+  },
+  {
+    "name": "Puria",
+    "description": "This is some sample description for agency: Puria",
+    "agencyStatus": "Active",
+    "address": 4,
+    "host": 1
+  },
+  {
+    "name": "Repetwire",
+    "description": "This is some sample description for agency: Repetwire",
+    "agencyStatus": "Inactive",
+    "address": 3,
+    "host": 1
+  },
+  {
+    "name": "Zenthall",
+    "description": "This is some sample description for agency: Zenthall",
+    "agencyStatus": "Inactive",
+    "address": 6,
+    "host": 1
+  },
+  {
+    "name": "Xixan",
+    "description": "This is some sample description for agency: Xixan",
+    "agencyStatus": "Active",
+    "address": 9,
+    "host": 1
+  },
+  {
+    "name": "Marvane",
+    "description": "This is some sample description for agency: Marvane",
+    "agencyStatus": "Prospect",
+    "address": 7,
+    "host": 1
+  },
+  {
+    "name": "Medmex",
+    "description": "This is some sample description for agency: Medmex",
+    "agencyStatus": "Inactive",
+    "address": 3,
+    "host": 1
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Comtext",
+    "description": "This is some sample description for agency: Comtext",
+    "agencyStatus": "Prospect",
+    "address": 8
+  },
+  {
+    "name": "Viagrand",
+    "description": "This is some sample description for agency: Viagrand",
+    "agencyStatus": "Prospect",
+    "address": 2
+  },
+  {
+    "name": "Zentime",
+    "description": "This is some sample description for agency: Zentime",
+    "agencyStatus": "Inactive",
+    "address": 8
+  },
+  {
+    "name": "Permadyne",
+    "description": "This is some sample description for agency: Permadyne",
+    "agencyStatus": "Prospect",
+    "address": 1
+  },
+  {
+    "name": "Konnect",
+    "description": "This is some sample description for agency: Konnect",
+    "agencyStatus": "Active",
+    "address": 3
+  },
+  {
+    "name": "Cytrex",
+    "description": "This is some sample description for agency: Cytrex",
+    "agencyStatus": "Active",
+    "address": 9
+  },
+  {
+    "name": "Puria",
+    "description": "This is some sample description for agency: Puria",
+    "agencyStatus": "Inactive",
+    "address": 3
+  },
+  {
+    "name": "Exoblue",
+    "description": "This is some sample description for agency: Exoblue",
+    "agencyStatus": "Active",
+    "address": 4
+  },
+  {
+    "name": "Xplor",
+    "description": "This is some sample description for agency: Xplor",
+    "agencyStatus": "Inactive",
+    "address": 8
+  },
+  {
+    "name": "Comveyer",
+    "description": "This is some sample description for agency: Comveyer",
+    "agencyStatus": "Prospect",
+    "address": 6
+  }
+]

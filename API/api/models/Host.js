@@ -9,6 +9,8 @@ module.exports = {
 
 	schema: true,
 
+	seedData: require('./seed/host.json'),
+
 	attributes: {
 		name: {
 			type: 'string',

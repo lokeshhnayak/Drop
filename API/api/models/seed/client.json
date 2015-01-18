@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Otherway",
+    "description": "Id duis excepteur anim fugiat consectetur pariatur dolor reprehenderit et exercitation do.",
+    "clientType": "Individual",
+    "clientStatus": "Inactive",
+    "address": 8,
+    "agency": 9
+  },
+  {
+    "name": "Waab",
+    "description": "Mollit laboris do officia qui tempor.",
+    "clientType": "Office",
+    "clientStatus": "Active",
+    "address": 4,
+    "agency": 6
+  },
+  {
+    "name": "Sensate",
+    "description": "Nulla nisi eiusmod enim aliquip mollit proident pariatur ex laborum sunt ullamco aliquip aliquip.",
+    "clientType": "Individual",
+    "clientStatus": "Prospect",
+    "address": 5,
+    "agency": 5
+  },
+  {
+    "name": "Geeketron",
+    "description": "Dolore non consequat irure sint amet consectetur cupidatat laborum magna consectetur ex.",
+    "clientType": "Individual",
+    "clientStatus": "Prospect",
+    "address": 8,
+    "agency": 9
+  },
+  {
+    "name": "Cosmetex",
+    "description": "Tempor ex excepteur et sunt.",
+    "clientType": "School",
+    "clientStatus": "Active",
+    "address": 10,
+    "agency": 9
+  },
+  {
+    "name": "Entroflex",
+    "description": "Consectetur ex elit ad consectetur esse veniam excepteur in deserunt adipisicing.",
+    "clientType": "School",
+    "clientStatus": "Prospect",
+    "address": 4,
+    "agency": 5
+  },
+  {
+    "name": "Buzzopia",
+    "description": "Sunt culpa eu velit dolor pariatur ex ea sit mollit laboris aute sunt.",
+    "clientType": "Individual",
+    "clientStatus": "Prospect",
+    "address": 10,
+    "agency": 8
+  },
+  {
+    "name": "Ginkle",
+    "description": "Voluptate eu laboris irure reprehenderit exercitation id elit.",
+    "clientType": "Contractor",
+    "clientStatus": "Inactive",
+    "address": 6,
+    "agency": 1
+  },
+  {
+    "name": "Norali",
+    "description": "Consequat cillum aliquip laboris eiusmod est ipsum nostrud.",
+    "clientType": "Contractor",
+    "clientStatus": "Prospect",
+    "address": 7,
+    "agency": 5
+  },
+  {
+    "name": "Fangold",
+    "description": "Occaecat dolore minim ex culpa enim ea exercitation exercitation laboris labore veniam enim consectetur reprehenderit.",
+    "clientType": "Office",
+    "clientStatus": "Inactive",
+    "address": 4,
+    "agency": 5
+  }
+]
