@@ -9,15 +9,17 @@ module.exports = {
 
 	schema: true,
 
+	seedData: require('./seed/routes.json'),
+
 	attributes: {
-		routeId: {
+		routeCode: {
 			type: 'string',
 			required: true
 		},
 		description: 'string',
-		stopSequence: {
-			type: 'int',
-			required: true,
+		stops: {
+			collection: 'Stop',
+			via: 'route'
 		},
 		client: {
 			model: 'Client'

@@ -9,6 +9,8 @@ module.exports = {
 
 	schema: true,
 
+	seedData: require('./seed/stops.json'),
+
 	types: {
 		is_point: function(geoLocation) {
 			return geoLocation.x && geoLocation.y;

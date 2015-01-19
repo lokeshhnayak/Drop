@@ -52,11 +52,15 @@ module.exports = {
 			collection: 'Role',
 			via: 'users'
 		},
+		passenger: {
+			model: 'Passenger',
+			via: 'user'
+		},
 		getFullName: function() {
 			return this.firstName + ' ' + this.lastName;
 		}
 	}),
-	
+
 	beforeCreate: require('waterlock').models.user.beforeCreate,
 	beforeUpdate: require('waterlock').models.user.beforeUpdate
 };
