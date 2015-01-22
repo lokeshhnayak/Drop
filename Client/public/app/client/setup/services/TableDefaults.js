@@ -2,7 +2,8 @@ define([
 	'client/setup/module',   // Angular Module for WebArtists VTSS app.
 	'common/utils/supplant', // Supplant
 	'common/utils/Utils',    // Utils Library
-	'lodash'                 // Lodash Library
+	'lodash',                // Lodash Library
+	'moment'
 ],
 function(module, supplant) {
 
@@ -15,6 +16,7 @@ function(module, supplant) {
 			var logger = Logger.getInstance('TableDefaults');
 			logger.info("In TableDefaults");
 
+			/** Vehicles Datatable Options - BEGIN */
 			var getVehiclesDTOptions = function () {
 				return {
 					"sDom": "L<'dt-toolbar'<'col-xs-12 col-sm-6'l><'col-sm-6 hidden-xs'TC>r>" +
@@ -142,8 +144,143 @@ function(module, supplant) {
 				};
 			};
 
+			/** Vehicles Datatable Options - END */
+
+			/** Holidays Datatable Options - BEGIN */
+
+			var getHolidaysDTOptions = function () {
+				return {
+					"sDom": "L<'dt-toolbar'<'col-xs-12 col-sm-6'l><'col-sm-6 hidden-xs'TC>r>" +
+						"t" +
+						"<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
+					//"sDom": "LTC<'clear'>R<'dt-toolbar'lr>" + "t" + "<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
+					"oTableTools": {
+						"aButtons": ["copy", {
+							"sExtends": "print",
+							"sMessage": "Print Holidays Report <i>(press Esc to close)</i>"
+						}, "csv", "xls", "pdf"],
+						"sSwfPath": "plugin/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
+					},
+					"colVis": {
+						activate: "mouseover",
+						aiExclude: [0]
+					},
+					"aaSorting": [[1, "asc"]],
+					drawCallback: function (oSettings) {
+						if ($.fn.DataTable.ColVis) {
+							$('.ColVis_MasterButton').addClass('btn btn-default');
+							$('.ColVis_Button').removeClass('ColVis_Button');
+						}
+						$('.DTTT_container a').removeClass('DTTT_button').addClass("btn btn-default");
+						$('.DTTT_container').removeClass('DTTT_container').addClass('DTTT btn-group');
+						$('.dt-toolbar input, select').addClass('form-control input-sm');
+					}
+				};
+			};
+
+			var getHolidaysColumns = function () {
+				return [{
+					"bSortable": false,
+					"mDataProp": null,
+					"sDefaultContent": '',
+					"aTargets": [0],
+					'sWidth': '15px'
+				},
+				{
+					"mDataProp": 'name',
+					"aTargets": [1],
+					"sDefaultContent": ''
+				},
+				{
+					"mDataProp": 'description',
+					"aTargets": [2],
+					"sDefaultContent": ''
+				},
+				{
+					"mDataProp": 'dateFrom',
+					"aTargets": [3],
+					"sType": 'date',
+					"sDefaultContent": '',
+					'mRender': function(data, type, obj) {
+						// Format Date Here.
+						return moment(data).format("ll");
+					}
+				},
+				{
+					"mDataProp": 'dateTo',
+					"aTargets": [4],
+					"sType": 'date',
+					"sDefaultContent": '',
+					'mRender': function(data, type, obj) {
+						// Format Date Here.
+						return moment(data).format("ll");
+					}
+				},
+				{
+					"mDataProp": null,
+					"aTargets": [5],
+					"sWidth": "70px",
+					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
+						'<button type="button" data-toggle="tooltip" title="Edit Holiday Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-holiday"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
+						'<button type="button" data-toggle="tooltip" title="Delete Holiday" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-holiday"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
+						'</div>',
+					"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+						$(".btn-icon", nTd).tooltip();
+					}
+				}];
+			};
+
+			var getHolidaysFilters = function() {
+				return [null,
+				{
+					type: "text"
+				},
+				{
+					type: "text"
+				},
+				{
+					type: "text"
+				},
+				{
+					type: "text"
+				},
+				null];
+			};
+
+			var getHolidaysCustomActions = function() {
+				return [{
+					actionControlId: "#edit-holiday",
+					actionHandler: "editHoliday(row)"
+				}, {
+					actionControlId: "#delete-holiday",
+					actionHandler: "deleteHoliday(row)"
+				}];
+			};
+
+			var getHolidaysSelectableOptions = function() {
+				return {
+					bShowControls: true,
+					bSelectAllCheckbox: true,
+					sSelectionTrigger: "cell",
+					sSelectedRowClass: "success"
+				};
+			};
+
+			var getHolidaysTableDefaults = function() {
+				return {
+					dtOptions : getHolidaysDTOptions(),
+					dtColumns : getHolidaysColumns(),
+					dtColumnFilters : getHolidaysFilters(),
+					dtCustomActions : getHolidaysCustomActions(),
+					dtSelectableOptions : getHolidaysSelectableOptions()
+				};
+			};
+
+			/** Holidays Datatable Options - END */
+
 			return {
-				getVehiclesTableDefaults : getVehiclesTableDefaults
+				getVehiclesTableDefaults : getVehiclesTableDefaults,
+				getHolidaysTableDefaults : getHolidaysTableDefaults
 			};
 		}
 	]);

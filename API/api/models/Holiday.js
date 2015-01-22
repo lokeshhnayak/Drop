@@ -21,6 +21,10 @@ module.exports = {
 			required: true
 		},
 		description: 'string',
+		name: {
+			type: 'string',
+			required: true
+		},
 		client: {
 			model: 'Client'
 		}

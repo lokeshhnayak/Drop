@@ -84,9 +84,9 @@ function(module, supplant) {
 				}
 
 				// Tell the dataTables plugin what columns to use
-				// We can either derive them from the dom, or use setup from the controller           
+				// We can either derive them from the dom, or use setup from the controller
 				var explicitColumns = [];
-				
+
 				// Reverting to jQuery here since element.find in angular is only limited to tag ids.
 				$(element).find('thead>tr[0]>th').each(function(index, elem) {
 					explicitColumns.push($(elem).text());
@@ -162,7 +162,6 @@ function(module, supplant) {
 							rowHandler(scope, { row: rowData });
 						});
 					});
-					
 				}
 
 				// watch for any changes to our data, rebuild the DataTable
@@ -170,8 +169,10 @@ function(module, supplant) {
 					var val = value || null;
 					if (val) {
 						dataTable.fnClearTable();
-						dataTable.fnAddData(scope.$eval(attrs.aaData));
 						clearSelection();
+						if(val.length > 0) {
+							dataTable.fnAddData(scope.$eval(attrs.aaData));
+						}
 					}
 				}, true);
 

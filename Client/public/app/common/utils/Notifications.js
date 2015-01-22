@@ -20,7 +20,7 @@ function(module, supplant) {
 					title: notificationData.title || "Success",
 					content: notificationData.content,
 					color: "#739E73",
-					icon: notificationData.icon || "fa fa-check shake animated",
+					icon: notificationData.icon || "fa fa-check rotateIn animated",
 					timeout: notificationData.timeout || 6000
 				});
 			};
@@ -30,7 +30,7 @@ function(module, supplant) {
 					title: notificationData.title || "Info",
 					content: notificationData.content,
 					color: "#3276B1",
-					icon: notificationData.icon || "fa fa-info shake animated",
+					icon: notificationData.icon || "fa fa-info rotateIn animated",
 					timeout: notificationData.timeout || 6000
 				});
 			};
@@ -40,7 +40,7 @@ function(module, supplant) {
 					title: notificationData.title || "Warning",
 					content: notificationData.content,
 					color: "#C79121",
-					icon: notificationData.icon || "fa fa-warning shake animated",
+					icon: notificationData.icon || "fa fa-warning rotateIn animated",
 					timeout: notificationData.timeout || 6000
 				});
 			};
@@ -50,7 +50,7 @@ function(module, supplant) {
 					title: notificationData.title || "Error!",
 					content: notificationData.content,
 					color: "#C46A69",
-					icon: notificationData.icon || "fa fa-close shake animated",
+					icon: notificationData.icon || "fa fa-close rotateIn animated",
 					timeout: notificationData.timeout || 6000
 				});
 			};

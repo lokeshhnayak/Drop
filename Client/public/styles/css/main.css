@@ -100,10 +100,12 @@ wa-multi-select.font-bold .text {
 .dataTables_selectionControls .selection_clear {
   cursor: pointer;
 }
-#vehiclesTable thead tr.filters th:first-child input {
+#vehiclesTable thead tr.filters th:first-child input,
+#holidaysTable thead tr.filters th:first-child input {
   display: none;
 }
-#vehiclesTable tbody td:first-child {
+#vehiclesTable tbody td:first-child,
+#holidaysTable tbody td:first-child {
   text-align: center;
 }
 .table-actions {
@@ -146,4 +148,10 @@ wa-multi-select.font-bold .text {
 }
 body .ui-tooltip {
   border-width: 1px;
+}
+.smart-form .btn {
+  padding: 6px 12px;
+}
+.smart-form .btn .btn-info .active span.text-info {
+  color: #fff;
 }

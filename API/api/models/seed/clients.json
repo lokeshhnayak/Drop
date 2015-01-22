@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Otherway",
     "description": "Id duis excepteur anim fugiat consectetur pariatur dolor reprehenderit et exercitation do.",
     "clientType": "Individual",
@@ -8,6 +9,7 @@
     "agency": 9
   },
   {
+    "id": 2,
     "name": "Waab",
     "description": "Mollit laboris do officia qui tempor.",
     "clientType": "Office",
@@ -16,6 +18,7 @@
     "agency": 6
   },
   {
+    "id": 3,
     "name": "Sensate",
     "description": "Nulla nisi eiusmod enim aliquip mollit proident pariatur ex laborum sunt ullamco aliquip aliquip.",
     "clientType": "Individual",
@@ -24,6 +27,7 @@
     "agency": 5
   },
   {
+    "id": 4,
     "name": "Geeketron",
     "description": "Dolore non consequat irure sint amet consectetur cupidatat laborum magna consectetur ex.",
     "clientType": "Individual",
@@ -32,6 +36,7 @@
     "agency": 9
   },
   {
+    "id": 5,
     "name": "Cosmetex",
     "description": "Tempor ex excepteur et sunt.",
     "clientType": "School",
@@ -40,6 +45,7 @@
     "agency": 9
   },
   {
+    "id": 6,
     "name": "Entroflex",
     "description": "Consectetur ex elit ad consectetur esse veniam excepteur in deserunt adipisicing.",
     "clientType": "School",
@@ -48,6 +54,7 @@
     "agency": 5
   },
   {
+    "id": 7,
     "name": "Buzzopia",
     "description": "Sunt culpa eu velit dolor pariatur ex ea sit mollit laboris aute sunt.",
     "clientType": "Individual",
@@ -56,6 +63,7 @@
     "agency": 8
   },
   {
+    "id": 8,
     "name": "Ginkle",
     "description": "Voluptate eu laboris irure reprehenderit exercitation id elit.",
     "clientType": "Contractor",
@@ -64,6 +72,7 @@
     "agency": 1
   },
   {
+    "id": 9,
     "name": "Norali",
     "description": "Consequat cillum aliquip laboris eiusmod est ipsum nostrud.",
     "clientType": "Contractor",
@@ -72,6 +81,7 @@
     "agency": 5
   },
   {
+    "id": 10,
     "name": "Fangold",
     "description": "Occaecat dolore minim ex culpa enim ea exercitation exercitation laboris labore veniam enim consectetur reprehenderit.",
     "clientType": "Office",

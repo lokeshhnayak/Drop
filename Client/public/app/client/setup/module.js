@@ -30,8 +30,15 @@ define([
 					views: {
 						"content@app": {
 							templateUrl: "app/client/setup/views/holidays.html",
+							controller: "HolidaysController",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
+									'client/setup/controllers/HolidaysController',
+									'client/setup/services/HolidaysService',
+									'client/setup/services/TableDefaults',
+									'common/directives/waDatatables',
+									'common/services/ModalService',
+									'client/common/ClientModalService'
 								])
 							}
 						}

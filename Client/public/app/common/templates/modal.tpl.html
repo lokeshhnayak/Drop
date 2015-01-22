@@ -1,0 +1,16 @@
+<div class="modal-header">
+	<h4>{{modalOptions.headerText}}</h4>
+</div>
+<div class="modal-body">
+	<p>{{modalOptions.bodyText}}</p>
+</div>
+<div class="modal-footer">
+	<button type="button" class="btn btn-sm" ng-if="modalOptions.showCloseButton" ng-class="modalOptions.closeButtonCss" data-ng-click="modalOptions.close()">
+		<i class="fa fa-fw" ng-class="modalOptions.closeButtonIcon" ng-show="modalOptions.closeButtonIcon"></i>
+	{{modalOptions.closeButtonText}}
+	</button>
+	<button class="btn btn-sm" ng-if="modalOptions.showActionButton" ng-class="modalOptions.actionButtonCss" data-ng-click="modalOptions.ok();">
+		<i class="fa fa-fw" ng-class="modalOptions.actionButtonIcon" ng-show="modalOptions.actionButtonIcon"></i>
+	{{modalOptions.actionButtonText}}
+	</button>
+</div>

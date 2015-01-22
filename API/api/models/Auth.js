@@ -8,18 +8,17 @@
 
 module.exports = {
 
-  attributes: require('waterlock').models.auth.attributes({
-    
-    /* e.g.
-    nickname: 'string'
-    */
-    username: {
-    	type: 'string',
-    	unique: true
-    }
-    
-  }),
-  
-  beforeCreate: require('waterlock').models.auth.beforeCreate,
-  beforeUpdate: require('waterlock').models.auth.beforeUpdate
+	seedData: require('./seed/auths.json'),
+
+	attributes: require('waterlock').models.auth.attributes({
+		/* e.g.
+		nickname: 'string'
+		*/
+		username: {
+			type: 'string',
+			unique: true
+		}
+	}),
+	beforeCreate: require('waterlock').models.auth.beforeCreate,
+	beforeUpdate: require('waterlock').models.auth.beforeUpdate
 };

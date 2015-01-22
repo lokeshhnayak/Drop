@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Lovepad",
     "description": "This is some sample description for agency: Lovepad",
     "agencyStatus": "Prospect",
@@ -7,6 +8,7 @@
     "host": 1
   },
   {
+    "id": 2,
     "name": "Zaggle",
     "description": "This is some sample description for agency: Zaggle",
     "agencyStatus": "Inactive",
@@ -14,6 +16,7 @@
     "host": 1
   },
   {
+    "id": 3,
     "name": "Senmei",
     "description": "This is some sample description for agency: Senmei",
     "agencyStatus": "Inactive",
@@ -21,6 +24,7 @@
     "host": 1
   },
   {
+    "id": 4,
     "name": "Datacator",
     "description": "This is some sample description for agency: Datacator",
     "agencyStatus": "Inactive",
@@ -28,6 +32,7 @@
     "host": 1
   },
   {
+    "id": 5,
     "name": "Puria",
     "description": "This is some sample description for agency: Puria",
     "agencyStatus": "Active",
@@ -35,6 +40,7 @@
     "host": 1
   },
   {
+    "id": 6,
     "name": "Repetwire",
     "description": "This is some sample description for agency: Repetwire",
     "agencyStatus": "Inactive",
@@ -42,6 +48,7 @@
     "host": 1
   },
   {
+    "id": 7,
     "name": "Zenthall",
     "description": "This is some sample description for agency: Zenthall",
     "agencyStatus": "Inactive",
@@ -49,6 +56,7 @@
     "host": 1
   },
   {
+    "id": 8,
     "name": "Xixan",
     "description": "This is some sample description for agency: Xixan",
     "agencyStatus": "Active",
@@ -56,6 +64,7 @@
     "host": 1
   },
   {
+    "id": 9,
     "name": "Marvane",
     "description": "This is some sample description for agency: Marvane",
     "agencyStatus": "Prospect",
@@ -63,6 +72,7 @@
     "host": 1
   },
   {
+    "id": 10,
     "name": "Medmex",
     "description": "This is some sample description for agency: Medmex",
     "agencyStatus": "Inactive",
