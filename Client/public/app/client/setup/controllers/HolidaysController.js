@@ -35,6 +35,8 @@ function(module, supplant) {
 				holidaysList : []
 			};
 
+			$scope.loading = true;
+
 			$scope.onHolidaysSelectionChanged = function (selection) {
 				$scope.selectables.holidaysList = selection;
 				$timeout(function() {
@@ -46,6 +48,9 @@ function(module, supplant) {
 				HolidaysService.getHolidays()
 					.then(function(holidays) {
 						$scope.holidays.data = holidays;
+						$timeout(function() {
+							$scope.loading = false;
+						}, 100);
 					});
 			};
 
@@ -64,8 +69,8 @@ function(module, supplant) {
 				ClientModalService.saveHoliday({}, modalOptions)
 					.then(function (holiday) {
 						HolidaysService.createHoliday(holiday)
-							.then(function(updatedHoliday) {
-								$scope.holidays.data.push(holiday);
+							.then(function(updatedHolidays) {
+								$scope.holidays.data = updatedHolidays;
 								Notifications.success({
 									title: "Success",
 									content: supplant("Holiday - {0} added successfully", [holiday.name])

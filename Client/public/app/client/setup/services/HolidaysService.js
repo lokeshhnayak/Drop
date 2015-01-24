@@ -1,10 +1,9 @@
 define([
-	'client/setup/module',                      // Angular Module for WebArtists VTSS app.
-	'common/utils/supplant',                    // Supplant
-	'common/utils/Utils',                       // Utils Library
-	'lodash',                                   // Lodash Library
-	'common/services/resources/Resources',       // CommonResources Service
-	'client/common/resources/ClientResources'   // ClientResources Service
+	'client/setup/module',                             // Angular Module for WebArtists VTSS app.
+	'common/utils/supplant',                           // Supplant
+	'common/utils/Utils',                              // Utils Library
+	'lodash',                                          // Lodash Library
+	'client/common/resources/ClientRestangularFactory' // ClientRestangularFactory Service
 ],
 function(module, supplant) {
 
@@ -14,19 +13,24 @@ function(module, supplant) {
 		'$q',
 		'_',
 		'Logger',
-		'Resources',
-		'ClientResources',
+		'ClientRestangularFactory',
 		'TableDefaults',
-		function ($q, _, Logger, Resources, ClientResources, TableDefaults) {
+		function ($q, _, Logger, ClientRestangularFactory, TableDefaults) {
 			var logger = Logger.getInstance('HolidaysService');
 			logger.info("In HolidaysService");
 
+			var API_NAME = "holidays";
+			var Holidays = ClientRestangularFactory.getService(API_NAME);
+
 			var getHolidays = function () {
-				return ClientResources.Holidays.getList();
+				return Holidays.getList();
 			};
 
 			var createHoliday = function (holiday) {
-				return ClientResources.Holidays.post(holiday);
+				return Holidays.post(holiday)
+					.then(function(updatedClient) {
+						return ClientRestangularFactory.restangularizeCollection(updatedClient.holidays, API_NAME);
+					});
 			};
 
 			var updateHoliday = function (holiday) {
@@ -38,7 +42,7 @@ function(module, supplant) {
 			};
 
 			var copyHoliday = function (holiday) {
-				return ClientResources.copy(holiday);
+				return ClientRestangularFactory.copy(holiday);
 			};
 
 			return {

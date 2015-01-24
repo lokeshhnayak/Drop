@@ -57,15 +57,17 @@ function(module, supplant) {
 				},
 				{
 					"mDataProp": 'registrationNumber',
-					"aTargets": [1]
+					"aTargets": [1],
+					"sWidth": '150px'
 				},
 				{
 					"mDataProp": 'description',
-					"aTargets": [2],
+					"aTargets": [2]
 				},
 				{
 					"mDataProp": 'type',
 					"aTargets": [3],
+					"sWidth": '100px',
 					"sDefaultContent": '<label for="" class="badge alert-warning">Car</label>',
 					"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 						if (oData.vehicleType === "Car") {
@@ -82,12 +84,14 @@ function(module, supplant) {
 				{
 					"mDataProp": 'passengerCapacity',
 					"aTargets": [4],
+					"sWidth": '100px'
 				},
 				{
 					"mDataProp": null,
 					"aTargets": [5],
-					"sWidth": "70px",
-					"sDefaultContent": '<div class="btn-group btn-group-sm">' + 
+					"sWidth": "80px",
+					"className": "text-center",
+					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
 						'<button type="button" data-toggle="tooltip" title="Edit Vehicle Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
 						'<button type="button" data-toggle="tooltip" title="Delete Vehicle" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
 						'</div>',
@@ -198,7 +202,8 @@ function(module, supplant) {
 				{
 					"mDataProp": null,
 					"aTargets": [5],
-					"sWidth": "70px",
+					"sWidth": "80px",
+					"className": "text-center",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' + 
 						'<button type="button" data-toggle="tooltip" title="Edit Passenger Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
 						'<button type="button" data-toggle="tooltip" title="Delete Passenger" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
@@ -308,6 +313,7 @@ function(module, supplant) {
 					"mDataProp": 'dateFrom',
 					"aTargets": [3],
 					"sType": 'date',
+					"sWidth": '100px',
 					"sDefaultContent": '',
 					'mRender': function(data, type, obj) {
 						// Format Date Here.
@@ -318,6 +324,7 @@ function(module, supplant) {
 					"mDataProp": 'dateTo',
 					"aTargets": [4],
 					"sType": 'date',
+					"sWidth": '100px',
 					"sDefaultContent": '',
 					'mRender': function(data, type, obj) {
 						// Format Date Here.
@@ -327,7 +334,8 @@ function(module, supplant) {
 				{
 					"mDataProp": null,
 					"aTargets": [5],
-					"sWidth": "70px",
+					"sWidth": "80px",
+					"className": "text-center",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
 						'<button type="button" data-toggle="tooltip" title="Edit Holiday Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-holiday"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
 						'<button type="button" data-toggle="tooltip" title="Delete Holiday" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-holiday"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +

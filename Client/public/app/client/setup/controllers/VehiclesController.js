@@ -1,9 +1,9 @@
 define([
-	'client/setup/module',   // Angular Module for WebArtists VTSS app.
-	'common/utils/supplant', // Supplant
-	'common/utils/Utils',    // Utils Library
+	'client/setup/module',        // Angular Module for WebArtists VTSS app.
+	'common/utils/supplant',      // Supplant
+	'common/utils/Utils',         // Utils Library
 	'common/utils/Notifications', // Notifications
-	'lodash'                 // Lodash Library
+	'lodash'                      // Lodash Library
 ],
 function(module, supplant) {
 
@@ -30,6 +30,8 @@ function(module, supplant) {
 				dtOptions: TableDefaults.getVehiclesTableDefaults()
 			};
 
+			$scope.loading = true;
+
 			$scope.selectables = {
 				vehiclesList: []
 			};
@@ -42,14 +44,15 @@ function(module, supplant) {
 			};
 
 			$scope.deleteSelectedVehicles = function(){
-
-
 			};
 
 			$scope.getVehicles = function(){
 				VehiclesService.getVehicles()
 					.then(function(vehicles) {
 					$scope.vehicles.data = vehicles;
+					$timeout(function() {
+						$scope.loading = false;
+					}, 100);
 				});
 			};
 
@@ -67,8 +70,8 @@ function(module, supplant) {
 				ClientModalService.saveVehicle({}, modalOptions)
 					.then(function (vehicle) {
 						VehiclesService.createVehicle(vehicle)
-							.then(function(updatedClient) {
-								$scope.vehicles.data.push(vehicle);
+							.then(function(updatedVehicles) {
+								$scope.vehicles.data = updatedVehicles;
 								Notifications.success({
 									title: "Success",
 									content: supplant("Vehicle - {0} added successfully", [vehicle.registrationNumber])

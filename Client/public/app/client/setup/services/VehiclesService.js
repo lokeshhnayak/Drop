@@ -1,9 +1,9 @@
 define([
-	'client/setup/module',                     // Angular Module for WebArtists VTSS app.
-	'common/utils/supplant',                   // Supplant
-	'common/utils/Utils',                      // Utils Library
-	'lodash',                                  // Lodash Library
-	'client/common/resources/ClientResources'  // ClientResources Resource
+	'client/setup/module',                             // Angular Module for WebArtists VTSS app.
+	'common/utils/supplant',                           // Supplant
+	'common/utils/Utils',                              // Utils Library
+	'lodash',                                          // Lodash Library
+	'client/common/resources/ClientRestangularFactory' // ClientRestangularFactory Resource
 ],
 function(module, supplant) {
 
@@ -13,18 +13,24 @@ function(module, supplant) {
 		'$q',
 		'_',
 		'Logger',
-		'ClientResources',
+		'ClientRestangularFactory',
 		'TableDefaults',
-		function ($q, _, Logger, ClientResources, TableDefaults) {
+		function ($q, _, Logger, ClientRestangularFactory, TableDefaults) {
 			var logger = Logger.getInstance('VehiclesService');
 			logger.info("In VehiclesService");
 
+			var API_NAME = "vehicles";
+			var Vehicles = ClientRestangularFactory.getService(API_NAME);
+
 			var getVehicles = function () {
-				return ClientResources.Vehicles.getList();
+				return Vehicles.getList();
 			};
 
 			var createVehicle = function (vehicle) {
-				return ClientResources.Vehicles.post(vehicle);
+				return Vehicles.post(vehicle)
+					.then(function(updatedClient) {
+						return ClientRestangularFactory.restangularizeCollection(updatedClient.vehicles, API_NAME);
+					});
 			};
 
 			var updateVehicle = function (vehicle) {
@@ -36,7 +42,7 @@ function(module, supplant) {
 			};
 
 			var copyVehicle = function(vehicle){
-				return ClientResources.copy(vehicle);
+				return ClientRestangularFactory.copy(vehicle);
 			};
 
 			return {

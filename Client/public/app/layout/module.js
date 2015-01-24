@@ -10,6 +10,7 @@ define([
 	var module = ng.module('app.layout', [
 		'ui.router',
 		'app.auth',
+		'wa.common',
 		'permission'
 	]);
 
@@ -32,7 +33,8 @@ define([
 								deps: $couchPotatoProvider.resolveDependencies([
 									'auth/directives/loginInfo',
 									'auth/directives/waHasRole',
-									'layout/LayoutController'
+									'layout/LayoutController',
+									'common/directives/waLoadingSpinner'
 								])
 							}
 						}
