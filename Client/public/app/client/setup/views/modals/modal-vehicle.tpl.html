@@ -9,13 +9,13 @@
 				<label class="label">Registration Number*</label>
                 <label class="input" ng-class="{'state-error': saveVehicleForm.registrationNumber.$invalid && saveVehicleForm.registrationNumber.$dirty }">
                		<i class="icon-append fa fa-tag"></i>
-                    <input name="registrationNumber" ng-pattern="/^[a-zA-Z0-9-]*$/" id="registrationNumber" required type="text" ng-model="vehicle.registrationNumber">
+                    <input name="registrationNumber" id="registrationNumber" required type="text" ng-model="vehicle.registrationNumber">
                 </label>
                 <em class="invalid" ng-show="saveVehicleForm.registrationNumber.$invalid && saveVehicleForm.registrationNumber.$dirty">Registration Number is required and only allows '-' as separator!</em>
             </section>
             <section>
                 <label class="label">Description</label>
-                <label class="input">
+                <label class="textarea">
                 <i class="icon-append fa fa-tag"></i>
                     <textarea rows="4" name="vehicleDescription" id="vehicleDescription" ng-model="vehicle.description" style="margin: 0px; width: 568px; height: 84px;"></textarea>
                 </label>

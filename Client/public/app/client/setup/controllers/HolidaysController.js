@@ -65,6 +65,7 @@ function(module, supplant) {
 					.then(function (holiday) {
 						HolidaysService.createHoliday(holiday)
 							.then(function(updatedHoliday) {
+								$scope.holidays.data.push(holiday);
 								Notifications.success({
 									title: "Success",
 									content: supplant("Holiday - {0} added successfully", [holiday.name])
@@ -93,7 +94,7 @@ function(module, supplant) {
 							.then(function(updatedHoliday) {
 								Notifications.success({
 									title: "Success",
-									content: supplant("Holiday - {0} updated successfully", [holiday.name])
+									content: supplant("Holiday - {0} updated successfully", [editedHoliday.name])
 								});
 							});
 					});

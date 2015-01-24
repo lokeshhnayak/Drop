@@ -51,8 +51,8 @@ function(module, supplant) {
 					.then(function(vehicles) {
 					$scope.vehicles.data = vehicles;
 				});
-			};			
-			
+			};
+
 			$scope.addVehicle = function(row){
 				var modalOptions = {
 					closeButtonText: "Cancel",
@@ -65,10 +65,10 @@ function(module, supplant) {
 					vehicle: {}
 				};
 				ClientModalService.saveVehicle({}, modalOptions)
-					.then(function (vehicle) {						
+					.then(function (vehicle) {
 						VehiclesService.createVehicle(vehicle)
 							.then(function(updatedClient) {
-								$scope.vehicles.data = updatedClient.vehicles;						
+								$scope.vehicles.data.push(vehicle);
 								Notifications.success({
 									title: "Success",
 									content: supplant("Vehicle - {0} added successfully", [vehicle.registrationNumber])
@@ -96,8 +96,8 @@ function(module, supplant) {
 						VehiclesService.updateVehicle(editedVehicle)
 							.then(function(updatedVehicle) {
 								Notifications.success({
-								title: "Success",
-								content: supplant("Vehicle - {0} updated successfully", [vehicle.registrationNumber])
+									title: "Success",
+									content: supplant("Vehicle - {0} updated successfully", [editedVehicle.registrationNumber])
 								});
 							});
 					});
