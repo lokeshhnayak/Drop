@@ -31,7 +31,10 @@ module.exports.policies = {
 
   '*': true,
 
-  'User': true,
+  UserController: {
+    'profile': ['hasJsonWebToken'],
+    '*': true
+  },
 
   PostController: {
     restricted: ['sessionAuth'],

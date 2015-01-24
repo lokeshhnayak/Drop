@@ -1,9 +1,9 @@
 define([
-	'client/setup/module',                 // Angular Module for WebArtists VTSS app.
-	'common/utils/supplant',               // Supplant
-	'common/utils/Utils',                  // Utils Library
-	'lodash',                              // Lodash Library
-	'common/services/resources/Vehicles'    // Vehicles Resource
+	'client/setup/module',                     // Angular Module for WebArtists VTSS app.
+	'common/utils/supplant',                   // Supplant
+	'common/utils/Utils',                      // Utils Library
+	'lodash',                                  // Lodash Library
+	'client/common/resources/ClientResources'  // ClientResources Resource
 ],
 function(module, supplant) {
 
@@ -13,14 +13,14 @@ function(module, supplant) {
 		'$q',
 		'_',
 		'Logger',
-		'Vehicles',
+		'ClientResources',
 		'TableDefaults',
-		function ($q, _, Logger, Vehicles, TableDefaults) {
+		function ($q, _, Logger, ClientResources, TableDefaults) {
 			var logger = Logger.getInstance('VehiclesService');
 			logger.info("In VehiclesService");
 
 			var getVehicles = function () {
-				return Vehicles.getList()
+				return ClientResources.Vehicles.getList()
 					.then(function(vehicles) {
 						return vehicles;
 					});

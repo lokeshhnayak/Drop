@@ -8,11 +8,24 @@
  * @docs        :: http://waterlock.ninja/documentation
  */
 
+var Promise = require("bluebird");
+
 module.exports = require('waterlock').actions.user({
-	/* e.g.
-		action: function(req, res){
-		}
-	*/
+
+	profile: function(req, res) {
+		User.findOneById(req.currentUser.id)
+			.populate("address")
+			.populate("roles")
+			.then(function(user) {
+				return res.send(user);
+			})
+			.catch(function(err) {
+				if (err) {
+					waterlock.logger.debug(err);
+					return res.send({success:false, message:err});
+				}
+			});
+	},
 	// route to create user, user auth and associate them
 	create: function(req, res) {
 		//console.log("customsied!!!!!!");
@@ -29,56 +42,47 @@ module.exports = require('waterlock').actions.user({
 				entityType:params.entityType
 			};
 
-		Role.findOneByName(params.role, function(err, role) {
-			if (err) {
-				waterlock.logger.debug(err);
-				return res.send({success:false, message:err});
-			}
-			if (!role) {
-				var errMsg = "Role not found";
-				waterlock.logger.debug(errMsg);
-				return res.send({success:false, message:errMsg});
-			}
-
-			User.create(userObj)
-				.exec(function (err, user){
+		Promise.all([
+				Role.findOneByName(params.role),
+				User.create(userObj)
+			])
+			.spread(function (role, user) {
+				if(!role) {
+					var errMsg = "Role not found";
+					waterlock.logger.debug(errMsg);
+					return res.send({success:false, message:errMsg});
+				}
+				waterlock.engine.attachAuthToUser(auth, user, function (err) {
 					if (err) {
+						user.destroy();
 						waterlock.logger.debug(err);
-						req.session.flash = {
-							err: err
-						};
-
 						return res.send({success:false, message:err});
 					}
-					req.session.user = user;
-					req.session.authenticated = true;
-					waterlock.engine.attachAuthToUser(auth, user, function (err) {
+
+					//user.online = true;
+					user.roles.add(role.id);
+					user.save(function (err, user) {
 						if (err) {
+							auth.destroy();
 							user.destroy();
 							waterlock.logger.debug(err);
 							return res.send({success:false, message:err});
 						}
 
-						//user.online = true;
-						user.roles.add(role.id);
-						user.save(function (err, user) {
-							if (err) {
-								auth.destroy();
-								user.destroy();
-								waterlock.logger.debug(err);
-								return res.send({success:false, message:err});
-							}
+						user.action = "signed-up and logged-in.";
+						User.publishCreate(user);
 
-							user.action = "signed-up and logged-in.";
-							User.publishCreate(user);
-
-							waterlock.logger.debug('user login success');
-							return res.send({success:true});
-						});
+						waterlock.logger.debug('user login success');
+						return res.send({success:true});
 					});
+				});
+			})
+			.catch(function(err) {
+				if (err) {
+					waterlock.logger.debug(err);
+					return res.send({success:false, message:err});
 				}
-			);
-		});
+			});
 	},
 	 // route to [post] user id to delete user record from user/auth collections
 	destroy: function(req, res, next) {

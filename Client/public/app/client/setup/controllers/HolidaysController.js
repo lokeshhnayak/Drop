@@ -3,7 +3,7 @@ define([
 	'common/utils/supplant', // Supplant
 	'common/utils/Utils',    // Utils Library
 	'common/utils/Notifications', // Notifications
-	'lodash'                 // Lodash Library
+	'lodash'               // Lodash Library
 ],
 function(module, supplant) {
 
@@ -64,8 +64,7 @@ function(module, supplant) {
 				ClientModalService.saveHoliday({}, modalOptions)
 					.then(function (holiday) {
 						HolidaysService.createHoliday(holiday)
-							.then(function(updatedClient) {
-								$scope.holidays.data = updatedClient.holidays;
+							.then(function(updatedHoliday) {
 								Notifications.success({
 									title: "Success",
 									content: supplant("Holiday - {0} added successfully", [holiday.name])
@@ -83,15 +82,15 @@ function(module, supplant) {
 					actionButtonIcon: "fa-check",
 					headerText: "Edit Holiday",
 					formIcon: "fa-edit",
-					holiday: angular.copy(holiday)
+					holiday: HolidaysService.copyHoliday(holiday)
 				};
 
 				ClientModalService.saveHoliday({}, modalOptions)
 					.then(function (editedHoliday) {
-						holiday = angular.copy(editedHoliday);
-						HolidaysService.updateHoliday(holiday)
-							.then(function(updatedClient) {
-								$scope.holidays.data = updatedClient.holidays;
+						var index = $scope.holidays.data.map(function (d) { return d.id; }).indexOf(editedHoliday.id);
+						$scope.holidays.data[index] = editedHoliday;
+						HolidaysService.updateHoliday(editedHoliday)
+							.then(function(updatedHoliday) {
 								Notifications.success({
 									title: "Success",
 									content: supplant("Holiday - {0} updated successfully", [holiday.name])

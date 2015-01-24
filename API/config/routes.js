@@ -34,7 +34,13 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+  // Common
+  'GET /profile': 'UserController.profile',
+
+  // Client
+  'PUT /client/:parentid/holidays/:id': {blueprint: 'modify', alias: 'holidays'},
+  'PUT /client/:parentid/vehicles/:id': {blueprint: 'modify', alias: 'vehicles'}
 
   /***************************************************************************
   *                                                                          *

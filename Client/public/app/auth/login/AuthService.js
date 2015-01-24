@@ -105,9 +105,42 @@ function(module, supplant) {
 						}
 						return redirectState;
 					});
-
-					return redirectState;
 				}
+				return redirectState;
+			};
+
+			var getBaseUrl = function() {
+				var baseUrl = APP_CONFIG.BASE_URL;
+
+				if(loggedInUser && loggedInUser.roles) {
+					_.each(loggedInUser.roles, function(role) {
+						switch(role.name) {
+							case 'RA':
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.ROOT_URL, loggedInUser.id]);
+								break;
+							case 'HA':
+							case 'HT':
+							case 'HF':
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.HOST_URL, loggedInUser.id]);
+								break;
+							case 'CA':
+							case 'CT':
+							case 'CF':
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.CLIENT_URL, loggedInUser.id]);
+								break;
+							case 'AA':
+							case 'AT':
+							case 'AF':
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.AGENCY_URL, loggedInUser.id]);
+								break;
+							case 'P':
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.PASSENGER_URL, loggedInUser.id]);
+								break;
+						}
+						return baseUrl;
+					});
+				}
+				return baseUrl;
 			};
 
 			return {
@@ -116,7 +149,8 @@ function(module, supplant) {
 				isAuthenticated  : isAuthenticated,
 				isAuthorized     : isAuthorized,
 				currentUser      : currentUser,
-				getRedirectState : getRedirectState
+				getRedirectState : getRedirectState,
+				getBaseUrl       : getBaseUrl
 			};
 		}
 	]);

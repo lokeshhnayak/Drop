@@ -46,6 +46,7 @@ define([
 
 	// client
 	'client/module',
+	'client/common/module',
 	'client/home/module',
 	'client/account/module',
 	'client/setup/module',

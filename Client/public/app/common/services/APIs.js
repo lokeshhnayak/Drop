@@ -9,18 +9,16 @@ define([
 	module.registerService('APIs', [
 		function() {
 			var APIs = {
-				// Root
-				//
-				// Host
-				//
-				// Agency
-				AGENCY_CLIENTS: "clients",
-				// Client
-				CLIENT_VEHICLES: "vehicles",
-				CLIENT_HOLIDAYS: "holidays",
-				// Passenger
-				PASSENGER_SETUP: "api/passenger/setup.json"
-				//VEHICLES: "api/client/vehicles.json"
+				CLIENT: 'client',
+				VEHICLE: 'vehicle',
+				AGENCY: 'agency',
+				HOLIDAY: 'holiday',
+				DEVICE: 'device',
+				PASSENGER: 'passenger',
+				USER: 'user',
+				HOST: 'host',
+				ROUTE: 'route',
+				DEVICE_SOFTWARE: 'devicesoftware'
 			};
 
 			return APIs;

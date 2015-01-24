@@ -1,9 +1,10 @@
 define([
-	'client/setup/module',                 // Angular Module for WebArtists VTSS app.
-	'common/utils/supplant',               // Supplant
-	'common/utils/Utils',                  // Utils Library
-	'lodash',                              // Lodash Library
-	'common/services/resources/Holidays'   // Holidays Resource
+	'client/setup/module',                      // Angular Module for WebArtists VTSS app.
+	'common/utils/supplant',                    // Supplant
+	'common/utils/Utils',                       // Utils Library
+	'lodash',                                   // Lodash Library
+	'common/services/resources/Resources',       // CommonResources Service
+	'client/common/resources/ClientResources'   // ClientResources Service
 ],
 function(module, supplant) {
 
@@ -13,18 +14,19 @@ function(module, supplant) {
 		'$q',
 		'_',
 		'Logger',
-		'Holidays',
+		'Resources',
+		'ClientResources',
 		'TableDefaults',
-		function ($q, _, Logger, Holidays, TableDefaults) {
+		function ($q, _, Logger, Resources, ClientResources, TableDefaults) {
 			var logger = Logger.getInstance('HolidaysService');
 			logger.info("In HolidaysService");
 
 			var getHolidays = function () {
-				return Holidays.getList();
+				return ClientResources.Holidays.getList();
 			};
 
 			var createHoliday = function (holiday) {
-				return Holidays.post(holiday);
+				return ClientResources.Holidays.post(holiday);
 			};
 
 			var updateHoliday = function (holiday) {
@@ -35,11 +37,16 @@ function(module, supplant) {
 				return holiday.remove();
 			};
 
+			var copyHoliday = function (holiday) {
+				return ClientResources.copy(holiday);
+			};
+
 			return {
-				getHolidays : getHolidays,
+				getHolidays   : getHolidays,
 				createHoliday : createHoliday,
 				updateHoliday : updateHoliday,
-				deleteHoliday : deleteHoliday
+				deleteHoliday : deleteHoliday,
+				copyHoliday   : copyHoliday
 			};
 		}
 	]);

@@ -10,6 +10,7 @@ define([
 		'ui.router',
 		'permission',
 		'app.auth',
+		'app.client.common',
 		'app.client.home',
 		'app.client.account',
 		'app.client.setup',

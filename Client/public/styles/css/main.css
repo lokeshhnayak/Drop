@@ -104,6 +104,10 @@ wa-multi-select.font-bold .text {
 #holidaysTable thead tr.filters th:first-child input {
   display: none;
 }
+#vehiclesTable tbody td,
+#holidaysTable tbody td {
+  vertical-align: middle;
+}
 #vehiclesTable tbody td:first-child,
 #holidaysTable tbody td:first-child {
   text-align: center;
