@@ -20,14 +20,31 @@ function(module, supplant) {
 			logger.info("In VehiclesService");
 
 			var getVehicles = function () {
-				return ClientResources.Vehicles.getList()
-					.then(function(vehicles) {
-						return vehicles;
-					});
+				return ClientResources.Vehicles.getList();
+			};
+
+			var createVehicle = function (vehicle) {
+				return ClientResources.Vehicles.post(vehicle);
+			};
+
+			var updateVehicle = function (vehicle) {
+				return vehicle.save();
+			};
+
+			var deleteVehicle = function (vehicle) {
+				return vehicle.remove();
+			};
+
+			var copyVehicle = function(vehicle){
+				return ClientResources.copy(vehicle);
 			};
 
 			return {
-				getVehicles : getVehicles
+				getVehicles : getVehicles,
+				createVehicle : createVehicle,
+				updateVehicle : updateVehicle,
+				deleteVehicle : deleteVehicle,
+				copyVehicle : copyVehicle
 			};
 		}
 	]);

@@ -73,7 +73,9 @@ define([
 									'client/setup/controllers/VehiclesController',
 									'client/setup/services/VehiclesService',
 									'client/setup/services/TableDefaults',
-									'common/directives/waDatatables'
+									'common/directives/waDatatables',
+									'common/services/ModalService',
+									'client/common/ClientModalService'
 								])
 							}
 						}
@@ -102,8 +104,13 @@ define([
 					views: {
 						"content@app": {
 							templateUrl: "app/client/setup/views/passengers.html",
+							controller: "PassengersController",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
+									'client/setup/controllers/PassengersController',
+									'client/setup/services/PassengersService',
+									'client/setup/services/TableDefaults',
+									'common/directives/waDatatables'
 								])
 							}
 						}

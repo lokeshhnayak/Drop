@@ -60,7 +60,7 @@ function(module, supplant) {
 					"aTargets": [1]
 				},
 				{
-					"mDataProp": 'client',
+					"mDataProp": 'description',
 					"aTargets": [2],
 				},
 				{
@@ -141,6 +141,114 @@ function(module, supplant) {
 					dtColumnFilters : getVehiclesFilters(),
 					dtCustomActions : getVehiclesCustomActions(),
 					dtSelectableOptions : getVehiclesSelectableOptions()
+				};
+			};
+			var getPassengersDTOptions = function () {
+				return{
+					"sDom": "L<'dt-toolbar'<'col-xs-12 col-sm-6'l><'col-sm-6 hidden-xs'TC>r>" +
+						"t" +
+						"<'dt-toolbar-footer'<'col-xs-6'i><'col-xs-6'p>>",
+					"oTableTools": {
+						"aButtons": ["copy", {
+							"sExtends": "print",
+							"sMessage": "Print Passengers Report <i>(press Esc to close)</i>"
+						}, "csv", "xls", "pdf"],
+						"sSwfPath": "plugin/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
+					},
+					"colVis": {
+						activate: "mouseover",
+						aiExclude: [0]
+					},
+					"aaSorting": [[1, "asc"]],
+					drawCallback: function (oSettings) {
+						if ($.fn.DataTable.ColVis) {
+							$('.ColVis_MasterButton').addClass('btn btn-default');
+							$('.ColVis_Button').removeClass('ColVis_Button');
+						}
+						$('.DTTT_container a').removeClass('DTTT_button').addClass("btn btn-default");
+						$('.DTTT_container').removeClass('DTTT_container').addClass('DTTT btn-group');
+						$('.dt-toolbar input, select').addClass('form-control input-sm');
+					}
+				};
+			};
+			var getPassengersColumns = function() {
+				return [{
+					"bSortable": false,
+					"mDataProp": null,
+					"sDefaultContent": '',
+					"aTargets": [0],
+					"sWidth": '15px'
+				},
+				{
+					"mDataProp" : "passengerfirstname",
+					"aTargets":[1]
+				},
+				{
+					"mDataProp" : "clientid",
+					"aTargets" : [2]
+				},
+				{
+					"mDataProp" : "pickupstopname",
+					"aTargets" : [3]
+				},
+				{
+					"mDataProp" : "dropstopname",
+					"aTargets" : [4]
+				},
+				{
+					"mDataProp": null,
+					"aTargets": [5],
+					"sWidth": "70px",
+					"sDefaultContent": '<div class="btn-group btn-group-sm">' + 
+						'<button type="button" data-toggle="tooltip" title="Edit Passenger Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
+						'<button type="button" data-toggle="tooltip" title="Delete Passenger" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
+						'</div>',
+					"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+						$(".btn-icon", nTd).tooltip();
+					}
+				}];
+			};
+			var getPassengersFilters = function(){
+				return [null,
+				{
+					type: "text"
+				},
+				{
+					type: "text"
+				},
+				{
+					type: "text"
+				},
+				{
+					type: "text"
+				},
+				null];
+			};
+			var getPassengersCustomActions = function(){
+				return [{
+					actionControlId: "#edit-passenger",
+					actionHandler: "editPassenger(row)"
+				},
+			    {
+					actionControlId: "#delete-passenger",
+					actionHandler: "deletePassenger(row)"
+				}];
+			};
+			var getPassengersSelectableOptions = function(){
+				return {
+					bShowControls: true,
+					bSelectAllCheckbox: false,
+					sSelectionTrigger: "cell",
+					sSelectedRowClass: "success"
+				};
+			};
+			var getPassengersTableDefaults = function(){
+				return {
+					dtOptions : getVehiclesDTOptions(),
+					dtColumns : getPassengersColumns(),
+					dtColumnFilters : getPassengersFilters(),
+					dtCustomActions : getPassengersCustomActions(),
+					dtSelectableOptions: getPassengersSelectableOptions()
 				};
 			};
 
@@ -280,7 +388,8 @@ function(module, supplant) {
 
 			return {
 				getVehiclesTableDefaults : getVehiclesTableDefaults,
-				getHolidaysTableDefaults : getHolidaysTableDefaults
+				getHolidaysTableDefaults : getHolidaysTableDefaults,
+				getPassengersTableDefaults : getPassengersTableDefaults
 			};
 		}
 	]);

@@ -20,7 +20,7 @@ function(module, supplant) {
 					title: notificationData.title || "Success",
 					content: notificationData.content,
 					color: "#739E73",
-					icon: notificationData.icon || "fa fa-check rotateIn animated",
+					icon: notificationData.icon || "fa fa-thumbs-o-up rotateIn animated",
 					timeout: notificationData.timeout || 6000
 				});
 			};
