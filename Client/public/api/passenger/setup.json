@@ -1,8 +1,14 @@
 {
     "routeId": 1,
     "routeName": "360",
-    "stopNames": ["Pai Layout", "Bengaluru", "Dairy Circle", "Uday nagar"],
-    "timeBeforeStop": 10,
-    "smsEnabled": true,
-    "missCallEnabled": true
+    "stopNames": ["Pai Layout", "Bengaluru", "Dairy Circle", "Uday nagar"], 
+    "wakeupAlert1": 60,
+    "wakeupAlert2": 30,
+    "finalAlert": 10,
+    "wakeUpOneSmsEnabled": true,
+    "wakeUpOneMissCallEnabled": true,
+    "wakeUpTwoSmsEnabled": true,
+    "wakeUpTwoMissCallEnabled": true,
+    "finalAlertSmsEnabled": true,
+    "finalAlertMissCallEnabled": true
 }
