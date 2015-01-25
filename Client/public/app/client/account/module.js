@@ -15,6 +15,21 @@ define([
 		'$couchPotatoProvider',
 		function ($stateProvider, $couchPotatoProvider) {
 			$stateProvider
+				.state('app.client.profile', {
+					url: '/client/profile',
+					data: {
+						title: 'Profile'
+					},
+					views: {
+						"content@app": {
+							templateUrl: "app/client/account/views/profile.html",
+							resolve: {
+								deps: $couchPotatoProvider.resolveDependencies([
+								])
+							}
+						}
+					}
+				})
 				.state('app.client.accounts', {
 					abstract: true,
 					data:{

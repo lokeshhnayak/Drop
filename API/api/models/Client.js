@@ -41,6 +41,10 @@ module.exports = {
 			collection: 'Holiday',
 			via: 'client'
 		},
+		users: {
+			collection: 'User',
+			via: 'client',
+		},
 		vehicles: {
 			collection: 'Vehicle',
 			via: 'client'

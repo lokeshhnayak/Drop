@@ -23,8 +23,11 @@ define([
 					views: {
 						"content@app": {
 							templateUrl: "app/client/home/views/home.html",
+							controller: 'HomeController',
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
+									'common/directives/waUserProfile',
+									'client/home/controllers/HomeController'
 								])
 							}
 						}

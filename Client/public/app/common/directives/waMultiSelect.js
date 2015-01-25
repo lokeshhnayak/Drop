@@ -270,7 +270,7 @@ function(module, supplant) {
 				restrict: 'E',
 				scope: false,
 				replace: true,
-				templateUrl: 'common/directives/templates/waMultiSelect.tmpl.html',
+				templateUrl: 'app/common/directives/templates/waUserProfile.tpl.html',
 				link: linker
 			}
 		}

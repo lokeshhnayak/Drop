@@ -49,11 +49,22 @@ function(module, supplant) {
 			$scope.getVehicles = function(){
 				VehiclesService.getVehicles()
 					.then(function(vehicles) {
-					$scope.vehicles.data = vehicles;
-					$timeout(function() {
-						$scope.loading = false;
-					}, 100);
-				});
+						$scope.vehicles.data = vehicles;
+						$timeout(function() {
+							$scope.loading = false;
+							// TableTools flash buttons fix. Sometimes, depending on when the data is bound to datatables,
+							// the tableTools instance buttons need to be redrawn for the flash object to take notice.
+							$timeout(function() {
+								var dataTables = TableTools.fnGetMasters(), instances = dataTables.length;
+								while(instances--) {
+									var dataTable = dataTables[instances];
+									if(dataTable.fnResizeRequired()) {
+										dataTable.fnResizeButtons();
+									}
+								}
+							}, 1);
+						}, 100);
+					});
 			};
 
 			$scope.addVehicle = function(row){
@@ -112,10 +123,10 @@ function(module, supplant) {
 					closeButtonIcon: "fa-ban",
 					actionButtonText: "Delete Vehicle",
 					actionButtonCss: "btn-danger",
-					actionButtonIcon: "fa-remove",
+					actionButtonIcon: "fa-trash-o",
 					headerText: supplant("Delete Vehicle - {0}", [vehicle.registrationNumber]),
 					bodyText: "Are you sure you want to delete this vehicle " + vehicle.registrationNumber +" ?",
-					formIcon: "fa-remove"
+					formIcon: "fa-trash-o"
 				};
 
 				ModalService.showModal({}, modalOptions)

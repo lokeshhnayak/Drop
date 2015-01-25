@@ -1,0 +1,82 @@
+<div class="well well-light well-sm no-margin no-padding">
+	<div class="row">
+		<div class="col-sm-12">
+			<div id="myCarousel" class="carousel fade profile-carousel">
+				<div class="air air-bottom-right padding-10">
+					<a href-void class="btn txt-color-white bg-color-teal btn-sm"><i class="fa fa-edit fa-fw"></i> Edit Profile</a>
+				</div>
+				<div class="air air-top-left padding-10">
+					<h4 class="txt-color-white font-md">{{ curDate }}</h4>
+				</div>
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1" class></li>
+					<li data-target="#myCarousel" data-slide-to="2" class></li>
+				</ol>
+				<div class="carousel-inner">
+					<!-- Slide 1 -->
+					<div class="item active">
+						<img src="styles/img/demo/s1.jpg" alt="demo user">
+					</div>
+					<!-- Slide 2 -->
+					<div class="item">
+						<img src="styles/img/demo/s2.jpg" alt="demo user">
+					</div>
+					<!-- Slide 3 -->
+					<div class="item">
+						<img src="styles/img/demo/s3.jpg" alt="demo user">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="row">
+				<div class="col-sm-3 profile-pic">
+					<img src="styles/img/avatars/santhosh-big.jpeg" alt="{{ vtssUser.firstName}}">
+				</div>
+				<div class="col-sm-9">
+					<h1>{{ vtssUser.firstName }} <span class="semi-bold">{{ vtssUser.lastName }}</span>
+						<br>
+						<small> {{ vtssUser.roles[0].description }}, {{ getEntityName() }}</small>
+					</h1>
+					<ul class="list-unstyled">
+						<li>
+							<p class="text-muted">
+								<i class="fa fa-phone"></i>&#xA0;&#xA0;<span class="txt-color-darken">{{ vtssUser.phoneNumber }}</span>
+							</p>
+						</li>
+						<li>
+							<p class="text-muted">
+								<i class="fa fa-envelope"></i>&#xA0;&#xA0;<a ng-href="mailto:{{ vtssUser.email }}">{{ vtssUser.email }}</a>
+							</p>
+						</li>
+						<li>
+							<p class="text-muted">
+								<i class="fa fa-user"></i>&#xA0;&#xA0;<span class="txt-color-darken">{{ vtssUser.username }}</span>
+							</p>
+						</li>
+					</ul>
+					<br>
+					<p class="font-md">
+						A little about me...
+					</p>
+					<p>
+						{{ vtssUser.about }}
+					</p>
+
+					<div><strong>Address:</strong></div>
+					<address>
+						{{ vtssUser.address.addressLine1 }} <br />
+						{{ vtssUser.address.addressLine2 }} <br />
+						{{ vtssUser.address.city }}, {{ vtssUser.address.state }} - {{ vtssUser.address.pincode }} <br />
+						{{ vtssUser.address.country}}
+					</address>
+					<br>
+					<a href-void class="btn btn-default btn-xs"><i class="fa fa-envelope-o"></i> Send Message</a>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

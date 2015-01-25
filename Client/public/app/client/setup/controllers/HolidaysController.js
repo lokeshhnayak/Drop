@@ -50,6 +50,17 @@ function(module, supplant) {
 						$scope.holidays.data = holidays;
 						$timeout(function() {
 							$scope.loading = false;
+							// TableTools flash buttons fix. Sometimes, depending on when the data is bound to datatables,
+							// the tableTools instance buttons need to be redrawn for the flash object to take notice.
+							$timeout(function() {
+								var dataTables = TableTools.fnGetMasters(), instances = dataTables.length;
+								while(instances--) {
+									var dataTable = dataTables[instances];
+									if(dataTable.fnResizeRequired()) {
+										dataTable.fnResizeButtons();
+									}
+								}
+							}, 1);
 						}, 100);
 					});
 			};
@@ -111,10 +122,10 @@ function(module, supplant) {
 					closeButtonIcon: "fa-ban",
 					actionButtonText: "Delete Holiday",
 					actionButtonCss: "btn-danger",
-					actionButtonIcon: "fa-remove",
+					actionButtonIcon: "fa-trash-o",
 					headerText: supplant("Delete Holiday - {0}", [holiday.name]),
 					bodyText: "Are you sure you want to delete this holiday?",
-					formIcon: "fa-remove"
+					formIcon: "fa-trash-o"
 				};
 
 				ModalService.showModal({}, modalOptions)

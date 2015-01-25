@@ -1,6 +1,6 @@
 <div class="modal-container">
 	<div class="modal-header">
-		<h4>{{modalOptions.headerText}}<div class="pull-right"><i class="fa fa-fw" ng-class="modalOptions.formIcon"></i></h4>
+		<h4>{{modalOptions.headerText}}<div class="pull-right"><i class="fa fa-fw" ng-class="modalOptions.formIcon"></i></div></h4>
 	</div>
 	<div class="modal-body no-padding">
 		<form class="smart-form" role="form" ng-keyup="$event.keyCode === 13 ? modalOptions.ok() : null" name="saveHolidayForm" ng-submit="modalOptions.ok()" novalidate>

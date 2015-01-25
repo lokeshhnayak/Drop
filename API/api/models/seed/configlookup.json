@@ -1,0 +1,20 @@
+[
+  {
+    "lookupType": "dropdown",
+    "valueType": "vehicles",
+    "value": "car",
+    "name": "Car"
+  },
+  {
+    "lookupType": "dropdown",
+    "valueType": "vehicles",
+    "value": "bus",
+    "name": "Bus"
+  },
+  {
+    "lookupType": "dropdown",
+    "valueType": "vehicles",
+    "value": "car",
+    "name": "Car"
+  }
+]

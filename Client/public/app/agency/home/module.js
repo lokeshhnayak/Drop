@@ -25,6 +25,7 @@ define([
 							templateUrl: "app/agency/home/views/home.html",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
+									'common/directives/waUserProfile',
 								])
 							}
 						}

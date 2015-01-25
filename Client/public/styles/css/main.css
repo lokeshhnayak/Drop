@@ -159,3 +159,6 @@ body .ui-tooltip {
 .smart-form .btn .btn-info .active span.text-info {
   color: #fff;
 }
+.carousel-inner > .item > img {
+  width: 1200px;
+}

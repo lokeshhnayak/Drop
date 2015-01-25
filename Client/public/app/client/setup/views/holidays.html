@@ -1,9 +1,4 @@
 <div id="content">
-	<div class="row">
-		<wa-big-breadcrumbs items="['Setup', 'Holidays']" icon="calendar"
-			class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></wa-big-breadcrumbs>
-		<div data-wa-include="app/layout/partials/sub-header.tpl.html"></div>
-	</div>
 	<section id="holidays-grid" data-widget-grid wa-loading-spinner="loading">
 		<div class="row">
 			<div class="col-sm-12">
@@ -23,7 +18,7 @@
 									New
 								</button>
 								<button type="button" class="btn btn-sm btn-default" ng-click="deleteHolidays()" ng-disabled="(selectables.holidaysList.length <= 0)">
-									<i class="fa fa-fw fa-times txt-color-red"></i>
+									<i class="fa fa-fw fa-trash-o txt-color-red"></i>
 									Delete
 								</button>
 							</div>

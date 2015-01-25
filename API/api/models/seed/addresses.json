@@ -1,92 +1,92 @@
 [
   {
-    "id": 1,
-    "street": "Ridge Court",
-    "city": "Belvoir",
-    "state": "Nevada",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (819) 535-2561",
-    "pincode": "576982"
-  },
-  {
-    "id": 2,
-    "street": "Billings Place",
-    "city": "Haena",
-    "state": "American Samoa",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (914) 431-2733",
-    "pincode": "556290"
-  },
-  {
-    "id": 3,
-    "street": "Hillel Place",
-    "city": "Osmond",
-    "state": "South Dakota",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (918) 522-3166",
-    "pincode": "545866"
-  },
-  {
-    "id": 4,
-    "street": "Forbell Street",
-    "city": "Camas",
+    "pincode": "576456",
+    "country": "India",
     "state": "New Hampshire",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (859) 457-2055",
-    "pincode": "577758"
+    "city": "Summerfield",
+    "addressLine2": "deserunt velit",
+    "addressLine1": "138 Classon Avenue",
+    "id": 1
   },
   {
-    "id": 5,
-    "street": "Farragut Road",
-    "city": "Bancroft",
+    "pincode": "552563",
+    "country": "India",
+    "state": "West Virginia",
+    "city": "Reno",
+    "addressLine2": "reprehenderit veniam",
+    "addressLine1": "725 Miller Place",
+    "id": 2
+  },
+  {
+    "pincode": "534108",
+    "country": "India",
+    "state": "Idaho",
+    "city": "Robinson",
+    "addressLine2": "qui pariatur",
+    "addressLine1": "178 Coyle Street",
+    "id": 3
+  },
+  {
+    "pincode": "578854",
+    "country": "India",
+    "state": "Kansas",
+    "city": "Cobbtown",
+    "addressLine2": "ullamco in",
+    "addressLine1": "154 Dewitt Avenue",
+    "id": 4
+  },
+  {
+    "pincode": "519193",
+    "country": "India",
+    "state": "Kentucky",
+    "city": "Bartonsville",
+    "addressLine2": "nostrud velit",
+    "addressLine1": "380 Auburn Place",
+    "id": 5
+  },
+  {
+    "pincode": "515433",
+    "country": "India",
+    "state": "Oregon",
+    "city": "Geyserville",
+    "addressLine2": "anim est",
+    "addressLine1": "922 Losee Terrace",
+    "id": 6
+  },
+  {
+    "pincode": "540509",
+    "country": "India",
     "state": "Puerto Rico",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (943) 493-3267",
-    "pincode": "551318"
+    "city": "Brookfield",
+    "addressLine2": "excepteur occaecat",
+    "addressLine1": "938 Church Lane",
+    "id": 7
   },
   {
-    "id": 6,
-    "street": "Raleigh Place",
-    "city": "Ellerslie",
-    "state": "Louisiana",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (812) 581-2081",
-    "pincode": "575036"
+    "pincode": "556978",
+    "country": "India",
+    "state": "Connecticut",
+    "city": "Choctaw",
+    "addressLine2": "consectetur incididunt",
+    "addressLine1": "391 Division Place",
+    "id": 8
   },
   {
-    "id": 7,
-    "street": "Elliott Walk",
-    "city": "Barrelville",
+    "pincode": "572322",
+    "country": "India",
     "state": "Pennsylvania",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (992) 425-2508",
-    "pincode": "549199"
+    "city": "Comptche",
+    "addressLine2": "sunt nisi",
+    "addressLine1": "496 Elliott Place",
+    "id": 9
   },
   {
-    "id": 8,
-    "street": "Knickerbocker Avenue",
-    "city": "Wawona",
-    "state": "Delaware",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (936) 472-3495",
-    "pincode": "568310"
-  },
-  {
-    "id": 9,
-    "street": "Sutton Street",
-    "city": "Westphalia",
-    "state": "Marshall Islands",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (806) 561-2931",
-    "pincode": "574076"
-  },
-  {
-    "id": 10,
-    "street": "Cedar Street",
-    "city": "Greenfields",
-    "state": "Utah",
-    "mailId": "twilamcfarland@irack.com",
-    "phoneNumber": "+91 (958) 565-2248",
-    "pincode": "553123"
+    "pincode": "551281",
+    "country": "India",
+    "state": "District Of Columbia",
+    "city": "Nicholson",
+    "addressLine2": "duis amet",
+    "addressLine1": "581 Atkins Avenue",
+    "id": 10
   }
 ]

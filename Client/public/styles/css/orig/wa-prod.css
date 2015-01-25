@@ -4227,8 +4227,8 @@ textarea.clone {
   }
 }
 /*
-	 * SMART FORMS
-	 */
+   * SMART FORMS
+   */
 .smart-form *,
 .smart-form *:after,
 .smart-form *:before {
@@ -4359,8 +4359,8 @@ textarea.clone {
   -webkit-appearance: none;
 }
 /*
-		 * File inputs
-		 */
+     * File inputs
+     */
 .smart-form .input-file .button {
   position: absolute;
   top: 4px;
@@ -4385,8 +4385,8 @@ textarea.clone {
   opacity: 0;
 }
 /*
-		 * Selects
-		 */
+     * Selects
+     */
 .smart-form .select i {
   position: absolute;
   top: 10px;
@@ -4416,8 +4416,8 @@ textarea.clone {
   height: auto;
 }
 /*
-		 * Text areas
-		 */
+     * Text areas
+     */
 .smart-form .textarea textarea {
   height: auto;
   resize: none;
@@ -4432,8 +4432,8 @@ textarea.clone {
   height: auto;
 }
 /*
-		 * Radio and checkboxes
-		 */
+     * Radio and checkboxes
+     */
 .smart-form .radio,
 .smart-form .checkbox {
   margin-bottom: 4px;
@@ -4523,8 +4523,8 @@ textarea.clone {
   margin-bottom: 4px;
 }
 /*
-		 * toggles
-		 */
+     * toggles
+     */
 .smart-form .toggle {
   margin-bottom: 4px;
   padding-right: 61px;
@@ -4591,8 +4591,8 @@ textarea.clone {
   right: 36px;
 }
 /*
-		 * ratings
-		 */
+     * ratings
+     */
 .smart-form .rating {
   margin-bottom: 4px;
   font-size: 13px;
@@ -4617,8 +4617,8 @@ textarea.clone {
   cursor: pointer;
 }
 /*
-		 * buttons
-		 */
+     * buttons
+     */
 .smart-form .button {
   float: right;
   height: 31px;
@@ -4667,8 +4667,8 @@ textarea.clone {
   padding-left: 37px;
 }
 /*
-		 * grid
-		 */
+     * grid
+     */
 .smart-form .row {
   margin: 0 -15px;
 }
@@ -4719,8 +4719,8 @@ textarea.clone {
   }
 }
 /*
-		 * tooltips
-		 */
+     * tooltips
+     */
 .smart-form .select select {
   padding: 5px;
 }
@@ -4853,8 +4853,8 @@ textarea.clone {
   margin-top: 5px;
 }
 /*
-		 * normal state
-		 */
+     * normal state
+     */
 .smart-form .input input,
 .smart-form .select select,
 .smart-form .textarea textarea,
@@ -4898,8 +4898,8 @@ textarea.clone {
   color: #A2A2A2;
 }
 /*
-		 * hover state
-		 */
+     * hover state
+     */
 .smart-form .input:hover input,
 .smart-form .select:hover select,
 .smart-form .textarea:hover textarea,
@@ -4922,8 +4922,8 @@ textarea.clone {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 /*
-		 * radio/toggle/checkbox active state
-		 */
+     * radio/toggle/checkbox active state
+     */
 .smart-form .radio:active i,
 .smart-form .checkbox:active i,
 .smart-form .toggle:active i {
@@ -4932,8 +4932,8 @@ textarea.clone {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 /*
-		 * focus state
-		 */
+     * focus state
+     */
 .smart-form .input input:focus,
 .smart-form .select select:focus,
 .smart-form .textarea textarea:focus,
@@ -4943,8 +4943,8 @@ textarea.clone {
   border-color: #3276B1;
 }
 /*
-		 * checked state
-		 */
+     * checked state
+     */
 .smart-form .radio input + i:after {
   background-color: #3276B1;
 }
@@ -4960,8 +4960,8 @@ textarea.clone {
   color: #3276B1;
 }
 /*
-		 * error state
-		 */
+     * error state
+     */
 .smart-form .state-error input,
 .smart-form .state-error select,
 .smart-form .state-error textarea,
@@ -4996,8 +4996,8 @@ textarea.clone {
   color: #ed1c24;
 }
 /*
-		 * success state
-		 */
+     * success state
+     */
 .smart-form .state-success input,
 .smart-form .state-success select,
 .smart-form .state-success textarea,
@@ -5018,8 +5018,8 @@ textarea.clone {
   box-shadow: 0 0 0 9px honeyDew;
 }
 /*
-		 * disable state
-		 */
+     * disable state
+     */
 .smart-form .input.state-disabled input,
 .smart-form .select.state-disabled,
 .smart-form .textarea.state-disabled,
@@ -5050,8 +5050,8 @@ textarea.clone {
   background-color: #333;
 }
 /*
-		 * submit state
-		 */
+     * submit state
+     */
 .smart-form .message {
   display: none;
   color: #6fb679;
@@ -5078,8 +5078,8 @@ textarea.clone {
   text-align: center;
 }
 /*
-		 * JQUERY UI UPDATE
-		 */
+     * JQUERY UI UPDATE
+     */
 .smart-form .ui-widget-content .ui-spinner-input {
   margin: 0px;
   border: 0px;
@@ -5087,94 +5087,94 @@ textarea.clone {
   height: 29px;
 }
 /*
-		 * date picker
-		
-		.ui-datepicker {
-			display: none;
-			padding: 10px 12px;
-			background: #fff;
-			box-shadow: 0 0 10px rgba(0,0,0,.3);
-			font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
-			text-align: center;
-			color: #666;
-		}
-		.ui-datepicker a {
-			color: #404040;
-		}
-		.ui-datepicker-header {
-			position: relative;
-			margin: -10px -12px 10px;
-			padding: 10px;
-			border-bottom: 1px solid rgba(0,0,0,.1);
-			font-size: 15px;
-			line-height: 27px;
-		}
-		.ui-datepicker-prev, .ui-datepicker-next {
-			position: absolute;
-			top: 0;
-			display: block;
-			width: 47px;
-			height: 47px;
-			font-size: 15px;
-			line-height: 47px;
-			text-decoration: none;
-			cursor: pointer;
-		}
-		.ui-datepicker-prev {
-			left: 0;
-		}
-		.ui-datepicker-next {
-			right: 0;
-		}
-		.ui-datepicker-calendar {
-			border-collapse: collapse;
-			font-size: 13px;
-			line-height: 27px;
-		}
-		.ui-datepicker-calendar th {
-			color: #999;
-		}
-		.ui-datepicker-calendar a, .ui-datepicker-calendar span {
-			display: block;
-			width: 31px;
-			margin: auto;
-			text-decoration: none;
-			color: #404040;
-			text-align:center;
-		}
-		.ui-datepicker-unselectable.ui-state-disabled {
-			
-		}
-		.ui-datepicker-unselectable.ui-state-disabled > span {
-			color:#bfbfbf;
-			background-color: #FAFCFD;
-		}
-		
-		.ui-datepicker-calendar a:hover {
-			background: #3276B1;
-			color:#fff;
-		}
-		.ui-datepicker-calendar span {
-			
-		}
-		.ui-datepicker-today a {
-			font-weight: 700;
-		}
-		.ui-datepicker-calendar .ui-state-active {
-			background: rgba(0,0,0,.05);
-			cursor: default;
-		}
-		.ui-datepicker-inline {
-			border: 2px solid #e5e5e5;
-			background: #fff;
-			box-shadow: none;
-		}
-		.ui-datepicker-inline .ui-datepicker-calendar {
-			width: 100%;
-		} */
+     * date picker
+    
+    .ui-datepicker {
+      display: none;
+      padding: 10px 12px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,.3);
+      font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
+      text-align: center;
+      color: #666;
+    }
+    .ui-datepicker a {
+      color: #404040;
+    }
+    .ui-datepicker-header {
+      position: relative;
+      margin: -10px -12px 10px;
+      padding: 10px;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+      font-size: 15px;
+      line-height: 27px;
+    }
+    .ui-datepicker-prev, .ui-datepicker-next {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 47px;
+      height: 47px;
+      font-size: 15px;
+      line-height: 47px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .ui-datepicker-prev {
+      left: 0;
+    }
+    .ui-datepicker-next {
+      right: 0;
+    }
+    .ui-datepicker-calendar {
+      border-collapse: collapse;
+      font-size: 13px;
+      line-height: 27px;
+    }
+    .ui-datepicker-calendar th {
+      color: #999;
+    }
+    .ui-datepicker-calendar a, .ui-datepicker-calendar span {
+      display: block;
+      width: 31px;
+      margin: auto;
+      text-decoration: none;
+      color: #404040;
+      text-align:center;
+    }
+    .ui-datepicker-unselectable.ui-state-disabled {
+      
+    }
+    .ui-datepicker-unselectable.ui-state-disabled > span {
+      color:#bfbfbf;
+      background-color: #FAFCFD;
+    }
+    
+    .ui-datepicker-calendar a:hover {
+      background: #3276B1;
+      color:#fff;
+    }
+    .ui-datepicker-calendar span {
+      
+    }
+    .ui-datepicker-today a {
+      font-weight: 700;
+    }
+    .ui-datepicker-calendar .ui-state-active {
+      background: rgba(0,0,0,.05);
+      cursor: default;
+    }
+    .ui-datepicker-inline {
+      border: 2px solid #e5e5e5;
+      background: #fff;
+      box-shadow: none;
+    }
+    .ui-datepicker-inline .ui-datepicker-calendar {
+      width: 100%;
+    } */
 /*
-		 * model
-		 */
+     * model
+     */
 .smart-form-modal {
   position: fixed;
   z-index: 1;
@@ -5191,8 +5191,8 @@ textarea.clone {
   background: rgba(0, 0, 0, 0.7);
 }
 /*
-		 * Time picker
-		 */
+     * Time picker
+     */
 .ui-timepicker-div .ui-widget-header {
   margin-bottom: 8px;
 }
@@ -5231,8 +5231,8 @@ textarea.clone {
   margin: 0 40% 10px 10px;
 }
 /*
-		 * Large, small and extra small fields
-		 */
+     * Large, small and extra small fields
+     */
 .smart-form input.input-lg {
   height: 44px;
   padding: 10px 16px;
@@ -5270,7 +5270,7 @@ textarea.clone {
   top: 17px;
 }
 /* aep fix for aspnet mvc
-		   from abelepereira  */
+       from abelepereira  */
 .smart-form .checkbox input + input[type=hidden] + i:after {
   content: '\f00c';
   top: -1px;
@@ -5297,7 +5297,6 @@ textarea.clone {
 .smart-form .toggle input:checked + input[type=hidden] + i:before {
   right: 36px;
 }
-/* end of fix */
 /*
  * Error Page
  */
@@ -5337,6 +5336,9 @@ textarea.clone {
 }
 #extr-page .container {
   border: none;
+}
+.fixed-header #extr-page #main {
+  margin-top: 71px !important;
 }
 #extr-page #header {
   margin: 0;
@@ -5475,6 +5477,112 @@ textarea.clone {
 }
 .search-results .note a:hover {
   color: #ed1c24;
+}
+/*
+ * PROFILE PAGE
+ */
+.profile-pic {
+  text-align: right;
+}
+.profile-pic > img {
+  border-radius: 0%;
+  position: relative;
+  border: 5px solid #ffffff;
+  top: -30px;
+  left: 10px;
+  display: inline-block;
+  text-align: right;
+  z-index: 4;
+  max-width: 100px;
+  margin-bottom: -30px;
+}
+.profile-carousel .carousel-inner {
+  max-height: 150px;
+}
+.friends-list li {
+  margin-bottom: 10px;
+  margin-right: 3px;
+  padding: 0;
+}
+.friends-list img {
+  width: 35px;
+  border: 1px solid #ffffff;
+  outline: 1px solid #bfbfbf;
+}
+.profile-link-btn {
+  color: #999999;
+  font-size: 14px;
+}
+/*
+ * Calendar Icon
+ */
+time.icon {
+  font-size: 14px;
+  /* change icon size */
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 43px;
+  background-color: #fff;
+  margin: 3px auto;
+  border-radius: 7px;
+  box-shadow: 0 1px 0 #bdbdbd,0 2px 0 #fff,0 3px 0 #EEE9E9,0 4px 0 #fff,0 5px 0 #FFFFFF,0 0 0 1px #D3D3D3;
+  overflow: hidden;
+}
+time.icon * {
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+time.icon strong {
+  position: absolute;
+  top: 0;
+  padding: 2px 0;
+  color: #fff;
+  background-color: #3a3633;
+  -webkit-box-shadow: 0 2px 0 #3a3633;
+  box-shadow: 0 2px 0 #3a3633;
+  border-radius: 6px 6px 0 0;
+}
+time.icon em {
+  position: absolute;
+  bottom: 3px;
+  color: #3276b1;
+}
+time.icon span {
+  width: 100%;
+  font-size: 15px;
+  letter-spacing: -0.05em;
+  padding-top: 21px;
+  color: #2f2f2f;
+}
+/*
+ * New users
+ */
+.user {
+  display: block;
+  float: left;
+  width: 170px;
+  margin: 0 15px 15px 0;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.user img {
+  float: left;
+  width: 35px;
+  margin-right: 5px;
+}
+.user .email {
+  color: #999;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 /*
  * TIMELINE PAGE
@@ -5666,7 +5774,7 @@ input[type="color"]:focus,
   padding: 10px 14px;
   position: relative;
   /*position:relative;
-	 left:0px;*/
+   left:0px;*/
 }
 body.container {
   position: absolute;
@@ -5876,7 +5984,6 @@ aside {
   width: 110px;
   height: auto;
   padding-left: 3px;
-  margin-top: -4px;
 }
 #activity b.badge {
   position: absolute;
@@ -6017,7 +6124,8 @@ aside {
 #main {
   margin-left: 220px;
   padding: 0;
-  min-height: 550px;
+  padding-bottom: 52px;
+  min-height: 500px;
   position: relative;
 }
 /*
@@ -6164,11 +6272,11 @@ nav ul li.active.open > a:before {
   content: "";
 }
 nav > ul > li:last-child.open {
-  /*border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 /* All levels 
 nav ul li {
-	overflow: hidden;
+  overflow: hidden;
 }*/
 /* All levels */
 nav ul li a {
@@ -6531,11 +6639,11 @@ nav ul ul > li:hover b {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   background-color: #f4f4f4;
-  background-image: -moz-linear-gradient(top, #ffffff, #eeeeee);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#eeeeee));
-  background-image: -webkit-linear-gradient(top, #ffffff, #eeeeee);
-  background-image: -o-linear-gradient(top, #ffffff, #eeeeee);
-  background-image: linear-gradient(to bottom, #ffffff, #eeeeee);
+  background-image: -moz-linear-gradient(top, white, #eeeeee);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#eeeeee));
+  background-image: -webkit-linear-gradient(top, white, #eeeeee);
+  background-image: -o-linear-gradient(top, white, #eeeeee);
+  background-image: linear-gradient(to bottom, white, #eeeeee);
   background-repeat: repeat-x;
   -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.3);
@@ -7982,8 +8090,8 @@ img.away {
 }
 /* removed as it was too jerky */
 /*#main {
-	-webkit-transition: all .2s ease-out;
-	transition: all .2s ease-out;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
 }*/
 /*
  * CHARTS
@@ -8277,7 +8385,7 @@ img.away {
 
  .ajax-dropdown .btn-group >:last-child {
  border-right-width:1px !important;
- }	*/
+ }  */
 .ajax-dropdown .btn-group .btn:active {
   top: 0px;
   left: 0px;
@@ -10390,21 +10498,21 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
  */
 /* Navigation icon first level 
 .desktop-detected nav > ul > li > a:hover i {
-	-webkit-animation-name: wobble;
-	-moz-animation-name: wobble;
-	-o-animation-name: wobble;
-	animation-name: wobble;
+  -webkit-animation-name: wobble;
+  -moz-animation-name: wobble;
+  -o-animation-name: wobble;
+  animation-name: wobble;
 }
 
 .desktop-detected nav > ul > li > a:hover i {
-	-webkit-animation-duration: .7s;
-	-moz-animation-duration: .7s;
-	-o-animation-duration: .7s;
-	animation-duration: .7s;
-	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode: both;
-	-o-animation-fill-mode: both;
-	animation-fill-mode: both;
+  -webkit-animation-duration: .7s;
+  -moz-animation-duration: .7s;
+  -o-animation-duration: .7s;
+  animation-duration: .7s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
 }*/
 /* All dropdowns */
 .open > .dropdown-menu {
@@ -10436,8 +10544,8 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
   animation-fill-mode: both;
 }
 /*
-	 * USED WITH DEMO
-	 */
+   * USED WITH DEMO
+   */
 .square {
   display: block;
   float: left;
@@ -10446,15 +10554,15 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
   width: 20px;
 }
 /*
-	 * RESET BOOTSTRAP DEFAULT IE FILTER
-	 */
+   * RESET BOOTSTRAP DEFAULT IE FILTER
+   */
 [class^="bg-"],
 [class*=" bg-"] {
   filter: none !important;
 }
 /*
-	 * TEXT COLOR
-	 */
+   * TEXT COLOR
+   */
 .txt-color-blue {
   color: #57889c !important;
 }
@@ -10516,8 +10624,8 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
   color: #a65858 !important;
 }
 /*
-	 * BACKGROUNDS
-	 */
+   * BACKGROUNDS
+   */
 .bg-color-blue {
   background-color: #57889c !important;
 }
@@ -10579,13 +10687,13 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
   background-color: #a65858 !important;
 }
 /*
- * WebArtists Colorblind CSS
+ * SmartAdmin Colorblind CSS
  * Description: This is an experimental CSS based on 
  * several design factors and pointers derived from
  * http://blog.templatemonster.com/2012/03/21/designing-colorblind-friendly-website/
  * 
  * While this may not be 100% accurate, but makes
- * WebArtists's components much more accessable
+ * SmartAdmin's components much more accessable
  * for the colorblind
  */
 .colorblind-friendly .alert,
@@ -10714,9 +10822,9 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
     padding-right: 30px;
   }
   /* added new class per version 1.3 
-	html, body {
-		overflow-x: hidden !important;
-	}*/
+  html, body {
+    overflow-x: hidden !important;
+  }*/
   #fullscreen > :first-child > a {
     display: none !important;
   }
@@ -10842,8 +10950,8 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
     overflow: hidden;
   }
   /*
-	 * Header search
-	 */
+   * Header search
+   */
   .header-search > input[type="text"] {
     margin-top: 9px;
   }
@@ -10928,8 +11036,8 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
     overflow: hidden;
   }
   /*
-	 * Header search
-	 */
+   * Header search
+   */
   .header-search > input[type="text"] {
     margin-top: 9px;
   }
@@ -11036,20 +11144,20 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
     left: 0px;
   }
   /*.fixed-navigation #left-panel {
-		position:absolute !important;
-	}*/
+    position:absolute !important;
+  }*/
   body.fixed-navigation.hidden-menu {
     overflow: hidden !important;
   }
   /*
-	 * fixed ribbon
-	 */
+   * fixed ribbon
+   */
   .fixed-ribbon #content {
     padding-top: 52px;
   }
   /*
-	 * header search
-	 */
+   * header search
+   */
   .header-search {
     display: none;
   }
@@ -11214,8 +11322,8 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
     left: 0px;
   }
   /*
-	 * header search
-	 */
+   * header search
+   */
   .header-search {
     display: none;
   }
@@ -11441,8 +11549,8 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
     margin-left: -13px;
   }
   /*
-	 * header search
-	 */
+   * header search
+   */
   .header-search {
     display: none;
   }
@@ -11489,15 +11597,8 @@ label:hover input[type="checkbox"][disabled].checkbox:checked + span:before {
     overflow: hidden;
   }
 }
-@-ms-viewport {
-  
-}
 #extr-page #main {
   margin-top: 0px !important;
-}
-
-.fixed-header #extr-page #main {
-  margin-top: 71px !important;
 }
 #mobile-profile-img {
   display: none !important;

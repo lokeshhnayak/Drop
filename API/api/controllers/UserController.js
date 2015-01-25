@@ -16,13 +16,17 @@ module.exports = require('waterlock').actions.user({
 		User.findOneById(req.currentUser.id)
 			.populate("address")
 			.populate("roles")
+			.populate("client")
+			.populate("agency")
+			.populate("host")
+			.populate("passenger")
 			.then(function(user) {
-				return res.send(user);
+				res.send(user);
 			})
 			.catch(function(err) {
 				if (err) {
 					waterlock.logger.debug(err);
-					return res.send({success:false, message:err});
+					return res.serverError({success:false, message:err});
 				}
 			});
 	},

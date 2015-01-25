@@ -24,6 +24,10 @@ module.exports = {
 		},
 		address: {
 			model: 'Address'
+		},
+		users: {
+			collection: 'User',
+			via: 'host'
 		}
 	}
 };

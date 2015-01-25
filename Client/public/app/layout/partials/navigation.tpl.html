@@ -42,14 +42,15 @@
 				<a data-ui-sref="app.client.home" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span
 						class="menu-item-parent">{{getWord('Home')}}</span></a>
 			</li>
+			<li data-ui-sref-active="active" data-wa-has-role="['CA', 'CT', 'CF']">
+				<a data-ui-sref="app.client.profile" title="Profile"><i class="fa fa-lg fa-fw fa-user"></i> <span
+						class="menu-item-parent">{{getWord('Profile')}}</span></a>
+			</li>
 			<li data-menu-collapse data-wa-has-role="['CA']">
 				<a href="#">
 					<i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">{{getWord('Accounts')}}</span>
 				</a>
 				<ul>
-					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.client.accounts.profile">{{getWord('Profile')}}</a>
-					</li>
 					<li data-ui-sref-active="active">
 						<a data-ui-sref="app.client.accounts.users">{{getWord('Users')}}</a>
 					</li>
@@ -117,13 +118,14 @@
 				<a data-ui-sref="app.host.home" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span
 						class="menu-item-parent">{{getWord('Home')}}</span></a>
 			</li>
+			<li data-ui-sref-active="active" data-wa-has-role="['HA', 'HT', 'HF']">
+				<a data-ui-sref="app.host.account.profile" title="Profile"><i class="fa fa-lg fa-fw fa-user"></i> <span
+						class="menu-item-parent">{{getWord('Profile')}}</span></a>
+			</li>
 			<li data-menu-collapse data-wa-has-role="['HA']">
 				<a href="#" title="Accounts"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span
 						class="menu-item-parent">{{getWord('Accounts')}}</span></a>
 				<ul>
-					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.host.account.profile">{{getWord('Profile')}}</a>
-					</li>
 					<li data-ui-sref-active="active">
 						<a data-ui-sref="app.host.account.users">{{getWord('Users')}}</a>
 					</li>
@@ -157,13 +159,14 @@
 				<a data-ui-sref="app.agency.home" title="Home"><i class="fa fa-lg fa-fw fa-home"></i> <span
 						class="menu-item-parent">{{getWord('Home')}}</span></a>
 			</li>
+			<li data-ui-sref-active="active" data-wa-has-role="['AA', 'AT', 'AF']">
+				<a data-ui-sref="app.agency.account.profile" title="Profile"><i class="fa fa-lg fa-fw fa-user"></i> <span
+						class="menu-item-parent">{{getWord('Profile')}}</span></a>
+			</li>
 			<li data-menu-collapse data-wa-has-role="['AA']">
 				<a href="#" title="Accounts"><i class="fa fa-lg fa-fw fa-briefcase"></i> <span
 						class="menu-item-parent">{{getWord('Accounts')}}</span></a>
 				<ul>
-					<li data-ui-sref-active="active">
-						<a data-ui-sref="app.agency.account.profile">{{getWord('Profile')}}</a>
-					</li>
 					<li data-ui-sref-active="active">
 						<a data-ui-sref="app.agency.account.users">{{getWord('Users')}}</a>
 					</li>

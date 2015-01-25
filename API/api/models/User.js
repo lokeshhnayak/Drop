@@ -23,11 +23,17 @@ module.exports = {
 			required: true,
 			defaultsTo: ''
 		},
+		about: {
+			type: 'string'
+		},
 		email: {
 			type: 'string',
 			email: true,
 			required: true,
 			unique: true
+		},
+		phoneNumber: {
+			type: 'string'
 		},
 		username: {
 			type: 'string',
@@ -51,6 +57,15 @@ module.exports = {
 		roles: {
 			collection: 'Role',
 			via: 'users'
+		},
+		client: {
+			model: 'Client'
+		},
+		agency: {
+			model: 'Agency'
+		},
+		host: {
+			model: 'Host'
 		},
 		passenger: {
 			model: 'Passenger',

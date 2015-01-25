@@ -27,10 +27,6 @@ define([
 						$state.go(response.redirectState);
 					});
 			};
-
-			/*if(AuthService.isAuthenticated()) {
-				$state.go(AuthService.getRedirectState());
-			}*/
 		}
 	]);
 });

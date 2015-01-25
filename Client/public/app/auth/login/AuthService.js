@@ -26,7 +26,9 @@ function(module, supplant) {
 				return $auth.login(user)
 					.then(function(response) {
 						loggedInUser = response.data.user;
-						response.data.redirectState = getRedirectState();
+						var entity = getEntity();
+						loggedInUser.entity = entity.obj;
+						response.data.redirectState = entity.redirectState;
 						return response.data;
 					});
 			};
@@ -71,42 +73,47 @@ function(module, supplant) {
 				return authorized;
 			};
 
-			var getRedirectState = function () {
-				var redirectState = "app.login";
+			var getEntity = function () {
+				var entity = {redirectState: "app.login"};
 				if(loggedInUser && loggedInUser.roles) {
 					_.each(loggedInUser.roles, function(role) {
 						switch(role.name) {
 							case 'RA':
-								redirectState = "app.root.home";
+								entity.obj = loggedInUser.root;
+								entity.redirectState = "app.root.home";
 								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.ROOT_URL, loggedInUser.id]));
 								break;
 							case 'HA':
 							case 'HT':
 							case 'HF':
-								redirectState = "app.host.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.HOST_URL, loggedInUser.id]));
+								entity.obj = loggedInUser.host;
+								entity.redirectState = "app.host.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.HOST_URL, loggedInUser.host]));
 								break;
 							case 'CA':
 							case 'CT':
 							case 'CF':
-								redirectState = "app.client.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.CLIENT_URL, loggedInUser.id]));
+								entity.obj = loggedInUser.client;
+								entity.redirectState = "app.client.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.CLIENT_URL, loggedInUser.client]));
 								break;
 							case 'AA':
 							case 'AT':
 							case 'AF':
-								redirectState = "app.agency.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.AGENCY_URL, loggedInUser.id]));
+								entity.obj = loggedInUser.agency;
+								entity.redirectState = "app.agency.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.AGENCY_URL, loggedInUser.agency]));
 								break;
 							case 'P':
-								redirectState = "app.passenger.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.PASSENGER_URL, loggedInUser.id]));
+								entity.obj = loggedInUser.passenger;
+								entity.redirectState = "app.passenger.home";
+								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.PASSENGER_URL, loggedInUser.passenger]));
 								break;
 						}
-						return redirectState;
+						return entity;
 					});
 				}
-				return redirectState;
+				return entity;
 			};
 
 			var getBaseUrl = function() {
@@ -121,17 +128,17 @@ function(module, supplant) {
 							case 'HA':
 							case 'HT':
 							case 'HF':
-								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.HOST_URL, loggedInUser.id]);
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.HOST_URL, loggedInUser.host.id]);
 								break;
 							case 'CA':
 							case 'CT':
 							case 'CF':
-								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.CLIENT_URL, loggedInUser.id]);
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.CLIENT_URL, loggedInUser.client.id]);
 								break;
 							case 'AA':
 							case 'AT':
 							case 'AF':
-								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.AGENCY_URL, loggedInUser.id]);
+								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.AGENCY_URL, loggedInUser.agency.id]);
 								break;
 							case 'P':
 								baseUrl = supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.PASSENGER_URL, loggedInUser.id]);
@@ -149,7 +156,7 @@ function(module, supplant) {
 				isAuthenticated  : isAuthenticated,
 				isAuthorized     : isAuthorized,
 				currentUser      : currentUser,
-				getRedirectState : getRedirectState,
+				getEntity : getEntity,
 				getBaseUrl       : getBaseUrl
 			};
 		}

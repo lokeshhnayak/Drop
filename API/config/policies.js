@@ -36,6 +36,10 @@ module.exports.policies = {
     '*': true
   },
 
+  ConfigLookupController: {
+    'find': ['hasJsonWebToken']
+  },
+
   PostController: {
     restricted: ['sessionAuth'],
     open: true,

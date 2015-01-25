@@ -31,6 +31,10 @@ module.exports = {
 		},
 		host: {
 			model: 'Host'
+		},
+		users: {
+			collection: 'User',
+			via: 'agency'
 		}
 	}
 };

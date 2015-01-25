@@ -12,19 +12,15 @@ module.exports = {
 	seedData: require('./seed/addresses.json'),
 
 	attributes: {
- 		street: 'string',
+ 		addressLine1: {
+ 			type: 'string',
+ 			required: true
+ 		},
+ 		addressLine2: 'string',
  		city: 'string',
  		state: 'string',
  		country: 'string',
  		pincode: 'string',
- 		mailId: {
- 			type: 'email',
- 			required: true
- 		},
- 		phoneNumber: {
- 			type: 'string',
- 			required: true
- 		},
  		users: {
  			collection: 'User',
  			via: 'address'
