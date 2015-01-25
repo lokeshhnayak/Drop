@@ -34,7 +34,7 @@ define([
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 									'client/setup/controllers/HolidaysController',
-									'client/setup/services/HolidaysService',
+									'client/common/resources/HolidaysService',
 									'client/setup/services/TableDefaults',
 									'common/directives/waDatatables',
 									'common/services/ModalService',
@@ -71,7 +71,7 @@ define([
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 									'client/setup/controllers/VehiclesController',
-									'client/setup/services/VehiclesService',
+									'client/common/resources/VehiclesService',
 									'client/setup/services/TableDefaults',
 									'common/directives/waDatatables',
 									'common/services/ModalService',
@@ -108,7 +108,7 @@ define([
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 									'client/setup/controllers/PassengersController',
-									'client/setup/services/PassengersService',
+									'client/common/resources/PassengersService',
 									'client/setup/services/TableDefaults',
 									'common/directives/waDatatables'
 								])

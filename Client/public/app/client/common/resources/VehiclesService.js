@@ -1,5 +1,5 @@
 define([
-	'client/setup/module',                             // Angular Module for WebArtists VTSS app.
+	'client/common/module',                            // Angular Module for WebArtists VTSS app.
 	'common/utils/supplant',                           // Supplant
 	'common/utils/Utils',                              // Utils Library
 	'lodash',                                          // Lodash Library
