@@ -29,7 +29,7 @@ define([
 	'common/directives/waHrefVoid',
 	'common/directives/demo/demoStates',
 	'common/services/SmartCss',
-	'common/services/APIs',
+	'common/services/LookupService',
 
 	// widgets
 	'modules/widgets/module',

@@ -2,7 +2,6 @@ define([
 	'auth/module',           // Angular Module for WebArtists VTSS app.
 	'common/utils/supplant', // Supplant
 	'lodash',                // Lodash Library
-	'restangular',           // Restangular
 	'satellizer'             // Satellizer
 ],
 function(module, supplant) {
@@ -16,8 +15,7 @@ function(module, supplant) {
 		'Logger',
 		'USER_ROLES',
 		'APP_CONFIG',
-		'Restangular',
-		function ($auth, $rootScope, _, Logger, USER_ROLES, APP_CONFIG, Restangular) {
+		function ($auth, $rootScope, _, Logger, USER_ROLES, APP_CONFIG) {
 			var logger = Logger.getInstance('AuthService');
 			var loggedInUser;
 			logger.info("In AuthService");
@@ -81,33 +79,28 @@ function(module, supplant) {
 							case 'RA':
 								entity.obj = loggedInUser.root;
 								entity.redirectState = "app.root.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.ROOT_URL, loggedInUser.id]));
 								break;
 							case 'HA':
 							case 'HT':
 							case 'HF':
 								entity.obj = loggedInUser.host;
 								entity.redirectState = "app.host.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.HOST_URL, loggedInUser.host]));
 								break;
 							case 'CA':
 							case 'CT':
 							case 'CF':
 								entity.obj = loggedInUser.client;
 								entity.redirectState = "app.client.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.CLIENT_URL, loggedInUser.client]));
 								break;
 							case 'AA':
 							case 'AT':
 							case 'AF':
 								entity.obj = loggedInUser.agency;
 								entity.redirectState = "app.agency.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.AGENCY_URL, loggedInUser.agency]));
 								break;
 							case 'P':
 								entity.obj = loggedInUser.passenger;
 								entity.redirectState = "app.passenger.home";
-								Restangular.setBaseUrl(supplant("{0}/{1}/{2}", [APP_CONFIG.BASE_URL, APP_CONFIG.PASSENGER_URL, loggedInUser.passenger]));
 								break;
 						}
 						return entity;
@@ -151,13 +144,13 @@ function(module, supplant) {
 			};
 
 			return {
-				login            : login,
-				logout           : logout,
-				isAuthenticated  : isAuthenticated,
-				isAuthorized     : isAuthorized,
-				currentUser      : currentUser,
-				getEntity : getEntity,
-				getBaseUrl       : getBaseUrl
+				login           : login,
+				logout          : logout,
+				isAuthenticated : isAuthenticated,
+				isAuthorized    : isAuthorized,
+				currentUser     : currentUser,
+				getBaseUrl      : getBaseUrl,
+				getEntity       : getEntity,
 			};
 		}
 	]);

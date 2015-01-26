@@ -42,7 +42,7 @@ module.exports = {
 		},
 		entityType: {
 			type: "string",
-			enum: ['R', 'H', 'A', 'C', 'P'],
+			enum: ['R', 'H', 'A', 'C', 'P', 'L', 'AU'],
 			defaultsTo: 'P'
 		},
 		address: {

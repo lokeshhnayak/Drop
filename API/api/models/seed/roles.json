@@ -1,53 +1,61 @@
 [{
 	"id": 1,
 	"name": "RA",
+	"entityType": "R",
 	"description": "Root Admin"
 }, {
 	"id": 2,
 	"name": "HA",
+	"entityType": "H",
 	"description": "Host Admin"
 }, {
 	"id": 3,
 	"name": "HT",
+	"entityType": "H",
 	"description": "Host Technician"
 }, {
 	"id": 4,
 	"name": "HF",
+	"entityType": "H",
 	"description": "Host Finance"
 }, {
 	"id": 5,
 	"name": "AA",
+	"entityType": "A",
 	"description": "Agency Admin"
 }, {
 	"id": 6,
 	"name": "AT",
+	"entityType": "A",
 	"description": "Agency Technician"
 }, {
 	"id": 7,
 	"name": "AF",
+	"entityType": "A",
 	"description": "Agency Finance"
 }, {
 	"id": 8,
 	"name": "CA",
+	"entityType": "C",
 	"description": "Client Admin"
 }, {
 	"id": 9,
 	"name": "CT",
+	"entityType": "C",
 	"description": "Client Technician"
 }, {
 	"id": 10,
 	"name": "CF",
+	"entityType": "C",
 	"description": "Client Finance"
 }, {
 	"id": 11,
 	"name": "P",
+	"entityType": "P",
 	"description": "Passenger"
 }, {
 	"id": 12,
-	"name": "A",
-	"description": "All"
-}, {
-	"id": 13,
 	"name": "L",
+	"entityType": "L",
 	"description": "Logged In"
 }]

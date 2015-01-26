@@ -24,6 +24,11 @@ module.exports = {
 		description: {
 			type: 'string'
 		},
+		entityType: {
+			type: "string",
+			enum: ['R', 'H', 'A', 'C', 'P', 'L', 'AU'],
+			defaultsTo: 'P'
+		},
 		/*users: {
 			collection: 'User',
 			via: 'roles',

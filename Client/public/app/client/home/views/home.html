@@ -9,6 +9,47 @@
 			<div class="col-sm-12 col-md-12 col-lg-7">
 				<div wa-user-profile=""></div>
 			</div>
+			<div class="col-sm-12 col-md-12 col-lg-5">
+				<div class="well well-light well-sm">
+					<div class="row">
+						<div class="col-sm-12">
+							<fieldset>
+								<legend>Organization</legend>
+								<h1>{{ client.name }} <br />
+								<small>{{ client.description }}</small>
+								</h1>
+								Status: <span class="badge">{{ client.clientStatus }}</span> <br />
+								<br />
+								<strong>Address:</strong>
+								<address>
+									{{ client.address.addressLine1 }} <br />
+									{{ client.address.addressLine2 }} <br />
+									{{ client.address.city }}, {{ client.address.state }} - {{ client.address.pincode }} <br />
+									{{ client.address.country}}
+								</address>
+							</fieldset>
+						</div>
+					</div>
+					<hr />
+					<div class="row">
+						<div class="col-sm-12">
+							<fieldset>
+								<legend>Agency</legend>
+								<h1>{{ agency.name }} <br />
+								<small>{{ agency.description }}</small>
+								</h1>
+								<strong>Address:</strong>
+								<address>
+									{{ agency.address.addressLine1 }} <br />
+									{{ agency.address.addressLine2 }} <br />
+									{{ agency.address.city }}, {{ agency.address.state }} - {{ agency.address.pincode }} <br />
+									{{ agency.address.country}}
+								</address>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

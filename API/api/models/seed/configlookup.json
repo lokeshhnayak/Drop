@@ -2,19 +2,91 @@
   {
     "lookupType": "dropdown",
     "valueType": "vehicles",
-    "value": "car",
+    "value": "Car",
     "name": "Car"
   },
   {
     "lookupType": "dropdown",
     "valueType": "vehicles",
-    "value": "bus",
+    "value": "Bus",
     "name": "Bus"
   },
   {
     "lookupType": "dropdown",
     "valueType": "vehicles",
-    "value": "car",
-    "name": "Car"
+    "value": "Van",
+    "name": "Van"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "entities",
+    "value": "R",
+    "name": "Root"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "entities",
+    "value": "H",
+    "name": "Host"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "entities",
+    "value": "A",
+    "name": "Agency"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "entities",
+    "value": "C",
+    "name": "Client"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "entities",
+    "value": "P",
+    "name": "Passenger"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "entities",
+    "value": "L",
+    "name": "Logged In Users"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "entities",
+    "value": "AU",
+    "name": "All Users"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "passengerAlerts",
+    "value": "I",
+    "name": "Initial Alert"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "passengerAlerts",
+    "value": "R",
+    "name": "Reminder Alert"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "passengerAlerts",
+    "value": "F",
+    "name": "Final Alert"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "routes",
+    "value": "P",
+    "name": "Pickup"
+  },
+  {
+    "lookupType": "enum",
+    "valueType": "routes",
+    "value": "D",
+    "name": "Drop"
   }
 ]

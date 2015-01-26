@@ -42,26 +42,28 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
 					<div class="well no-padding">
-						<form id="login-form" class="smart-form client-form" data-wa-validate-form>
+						<form id="login-form" class="smart-form client-form" name="loginForm">
 							<header>
 								Sign In
 							</header>
 							<fieldset>
 								<section>
 									<label class="label">User ID</label>
-									<label class="input"> <i class="icon-append fa fa-user"></i>
-										<input type="text" name="username" data-ng-model="user.username" data-wa-validate-input data-required data-minlength="3" data-maxlength="20" data-message-required="Please enter your User ID">
+									<label class="input" ng-class="{'state-error': loginForm.username.$invalid && loginForm.username.$dirty }"> <i class="icon-append fa fa-user"></i>
+										<input type="text" name="username" data-ng-model="user.username" data-required>
 										<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>
 										Please enter username</b>
 									</label>
+									<em class="invalid" ng-show="loginForm.username.$invalid && loginForm.username.$dirty">Username is required</em>
 								</section>
 								<section>
 									<label class="label">Password</label>
-									<label class="input"> <i class="icon-append fa fa-lock"></i>
-										<input type="password" name="password" data-ng-model="user.password" data-wa-validate-input data-required data-minlength="3" data-maxlength="20" data-message="Please enter your password">
+									<label class="input" ng-class="{'state-error': loginForm.password.$invalid && loginForm.password.$dirty }"> <i class="icon-append fa fa-lock"></i>
+										<input type="password" name="password" data-required data-ng-model="user.password">
 										<b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter
-										your password</b> </label>
-
+										your password</b>
+									</label>
+									<em class="invalid" ng-show="loginForm.password.$invalid && loginForm.password.$dirty">Password is required</em>
 									<div class="note">
 										<a ui-sref="forgotPassword">Forgot password?</a>
 									</div>
@@ -73,7 +75,7 @@
 								</section>
 							</fieldset>
 							<footer>
-								<button type="submit" ng-click="login(user)" class="btn btn-primary">
+								<button type="submit" ng-click="login(user)" class="btn btn-primary" ng-disabled="loginForm.$invalid">
 									Sign in
 								</button>
 							</footer>

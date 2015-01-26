@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	find: function (req, res) {
+	/*find: function (req, res) {
 
 		var params = req.params.all();
 
@@ -30,6 +30,6 @@ module.exports = {
 				}
 				return res.send(configValues);
 			})
-	}
+	}*/
 };
 

@@ -16,6 +16,14 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
+		description: {
+			type: 'string'
+		},
+		entityType: {
+			type: "string",
+			enum: ['R', 'H', 'A', 'C', 'P', 'L', 'AU'],
+			defaultsTo: 'P'
+		},
 		module: 'string',
 		category: 'string',
 		clientUrl: 'string',

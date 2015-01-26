@@ -27,7 +27,9 @@ define([
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
 									'common/directives/waUserProfile',
-									'client/home/controllers/HomeController'
+									'client/home/controllers/HomeController',
+									'common/services/resources/AgencyService',
+									'common/services/resources/ClientService'
 								])
 							}
 						}

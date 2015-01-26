@@ -11,19 +11,27 @@ function(module, supplant) {
 
 	module.registerController('HomeController', [
 		'$scope',
-		'$state',
+		'$q',
 		'_',
 		'Logger',
 		'AuthService',
-		function ($scope, $state, _, Logger, AuthService) {
+		'ClientService',
+		'AgencyService',
+		'LookupService',
+		function ($scope, $q, _, Logger, AuthService, ClientService, AgencyService, LookupService) {
 			var logger = Logger.getInstance('HomeController');
 			logger.info("In HomeController");
 
-			$scope.vtssUser = AuthService.currentUser();
-			$scope.curDate = moment(new Date()).format("ll");
-			$scope.getEntityName = function() {
-				return ($scope.vtssUser.entity) ? $scope.vtssUser.entity.name : '';
-			};
+			$scope.entity = AuthService.currentUser().client;
+
+			$q.all([
+				ClientService.getClient($scope.entity.id),
+				AgencyService.getAgency($scope.entity.agency)
+			])
+			.then($q.spread(function(client, agency) {
+				$scope.client = client;
+				$scope.agency = agency;
+			}));
 		}
 	]);
 });

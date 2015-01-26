@@ -28,6 +28,11 @@ module.exports = {
 			collection: 'Timing',
 			via: 'route'
 		},
+		routeType: {
+			type: 'string',
+			enum: ['P', 'D'],
+			defaultsTo: 'P'
+		},
 		vehicles: {
 			collection: 'Vehicle',
 			via: 'routes'

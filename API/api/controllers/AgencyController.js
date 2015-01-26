@@ -1,17 +1,17 @@
 /**
- * ClientController - Provides access to Clients related data.
+ * AgencyController
  *
- * @description :: Server-side logic for managing Clients
+ * @description :: Server-side logic for managing Agencies
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
 module.exports = {
 	findOne: function(req, res) {
 		var params = req.params.all();
-		Client.findOne(params.id)
+		Agency.findOne(params.id)
 			.populate("address")
-			.then(function(client) {
-				return res.send(client);
+			.then(function(agency) {
+				return res.send(agency);
 			})
 			.catch(function(err) {
 				return res.serverError(err);
