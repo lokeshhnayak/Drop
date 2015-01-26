@@ -49,7 +49,7 @@ define([
 								deps: $couchPotatoProvider.resolveDependencies([
 									'agency/account/controllers/UsersController',
 									'agency/common/resources/UsersService',
-									'agency/account/services/TableDefaults',
+									'agency/account/services/AATableDefaults',
 									'common/directives/waDatatables',
 									'common/services/ModalService',
 									'agency/common/AgencyModalService'

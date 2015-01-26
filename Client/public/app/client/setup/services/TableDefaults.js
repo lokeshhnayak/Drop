@@ -65,7 +65,7 @@ function(module, supplant) {
 					"aTargets": [2]
 				},
 				{
-					"mDataProp": 'type',
+					"mDataProp": 'vehicleType',
 					"aTargets": [3],
 					"sWidth": '100px',
 					"sDefaultContent": '<label for="" class="badge alert-warning">Car</label>',

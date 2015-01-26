@@ -101,15 +101,18 @@ wa-multi-select.font-bold .text {
   cursor: pointer;
 }
 #vehiclesTable thead tr.filters th:first-child input,
-#holidaysTable thead tr.filters th:first-child input {
+#holidaysTable thead tr.filters th:first-child input,
+#usersTable thead tr.filters th:first-child input {
   display: none;
 }
 #vehiclesTable tbody td,
-#holidaysTable tbody td {
+#holidaysTable tbody td,
+#usersTable tbody td {
   vertical-align: middle;
 }
 #vehiclesTable tbody td:first-child,
-#holidaysTable tbody td:first-child {
+#holidaysTable tbody td:first-child,
+#usersTable tbody td:first-child {
   text-align: center;
 }
 .table-actions {

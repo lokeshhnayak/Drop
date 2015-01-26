@@ -14,8 +14,7 @@ function(module, supplant) {
 		'_',
 		'Logger',
 		'AgencyRestangularFactory',
-		'TableDefaults',
-		function ($q, _, Logger, AgencyRestangularFactory, TableDefaults) {
+		function ($q, _, Logger, AgencyRestangularFactory) {
 			var logger = Logger.getInstance('UsersService');
 			logger.info("In UsersService");
 

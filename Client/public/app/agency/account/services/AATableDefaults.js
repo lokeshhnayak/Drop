@@ -9,14 +9,15 @@ function(module, supplant) {
 
 	'use strict';
 
-	module.registerService('TableDefaults', [
+	module.registerService('AATableDefaults', [
 		'_',
 		'Logger',
 		function (_, Logger) {
-			var logger = Logger.getInstance('TableDefaults');
-			logger.info("In TableDefaults");
+			var logger = Logger.getInstance('AATableDefaults');
+			logger.info("In AATableDefaults");
 
-			/** Vehicles Datatable Options - BEGIN */
+			/** Users Datatable Options - BEGIN */
+
 			var getUsersDTOptions = function () {
 				return {
 					"sDom": "L<'dt-toolbar'<'col-xs-12 col-sm-6'l><'col-sm-6 hidden-xs'TC>r>" +
@@ -170,7 +171,6 @@ function(module, supplant) {
 
 			/** Users Datatable Options - END */
 
-			
 			return {
 				getUsersTableDefaults : getUsersTableDefaults,
 			};

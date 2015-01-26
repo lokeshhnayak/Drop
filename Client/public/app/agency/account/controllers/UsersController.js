@@ -1,9 +1,9 @@
 define([
-	'agency/account/module',        // Angular Module for WebArtists VTSS app.
-	'common/utils/supplant',      // Supplant
-	'common/utils/Utils',         // Utils Library
-	'common/utils/Notifications', // Notifications
-	'lodash'                      // Lodash Library
+	'agency/account/module',                 // Angular Module for WebArtists VTSS app.
+	'common/utils/supplant',                 // Supplant
+	'common/utils/Utils',                    // Utils Library
+	'common/utils/Notifications',            // Notifications
+	'lodash'                                 // Lodash Library
 ],
 function(module, supplant) {
 
@@ -19,15 +19,15 @@ function(module, supplant) {
 		'UsersService',
 		'ModalService',
 		'AgencyModalService',
-		'TableDefaults',
-		function ($scope, $state, $timeout, _, Logger, Notifications, UsersService, ModalService, AgencyModalService, TableDefaults) {
+		'AATableDefaults',
+		function ($scope, $state, $timeout, _, Logger, Notifications, UsersService, ModalService, AgencyModalService, AATableDefaults) {
 			var logger = Logger.getInstance('UsersController');
 			logger.info("In UsersController");
 
 			/*Scope Variables*/
 
 			$scope.users = {
-				dtOptions: TableDefaults.getUsersTableDefaults()
+				dtOptions: AATableDefaults.getUsersTableDefaults()
 			};
 
 			$scope.loading = true;
