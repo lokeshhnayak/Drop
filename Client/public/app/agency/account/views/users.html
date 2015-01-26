@@ -1,7 +1,71 @@
 <div id="content">
-	<div class="row">
-		<wa-big-breadcrumbs items="['Account', 'Users']" icon="users"
-			class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></wa-big-breadcrumbs>
-		<div data-wa-include="app/layout/partials/sub-header.tpl.html"></div>
-	</div>
+	<section id="users-grid" data-widget-grid wa-loading-spinner="loading">
+		<div class="row">
+			<div class="col-sm-12">
+				<div jarvis-widget id="users-widget"
+					data-widget-color="blueLight"
+					data-widget-editbutton="false"
+					data-widget-deletebutton="false">
+					<header>
+						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+						<h2>Manage Users </h2>
+					</header>
+					<div>
+						<div class="widget-body no-padding">
+							<div class="table-actions pull-right">
+								<button type="button" class="btn btn-sm btn-default" ng-click="addUser()">
+									<i class="fa fa-fw fa-plus txt-color-green"></i>
+									New
+								</button>
+								<button type="button" class="btn btn-sm btn-default" ng-click="deleteSelectedUsers()" ng-disabled="(selectables.usersList.length <= 0)">
+									<i class="fa fa-fw fa-trash-o txt-color-red"></i>
+									Delete
+								</button>
+							</div>
+							<table id="usersTable" class="table table-hover table-striped table-bordered" width="100%"
+								wa-datatables="users.dtOptions.dtOptions"
+								aa-data="users.data"
+								ao-column-defs="users.dtOptions.dtColumns"
+								col-filter-ao-columns="users.dtOptions.dtColumnFilters"
+								selectable-options="users.dtOptions.dtSelectableOptions"
+								on-selection-changed="onUsersSelectionChanged(selection)"
+								custom-actions="users.dtOptions.dtCustomActions">
+								<thead>
+									<tr class="filters text-muted">
+										<th data-class="none">Select All</th>
+										<th data-class="none">First Name</th>
+										<th data-class="none">Last Name</th>
+										<th data-class="expand">About</th>
+										<th data-class="none">Email</th>
+										<th data-class="none">Phone Number</th>
+										<th data-class="none">User Name</th>
+										<th data-class="none">Entity Type</th>
+										<th data-class="expand">Address</th>
+										<th data-class="none">Roles</th>
+										<th>Actions</th>
+									</tr>
+									<tr>
+										<th data-class="none">Select All</th>
+										<th data-class="none">First Name</th>
+										<th data-class="none">Last Name</th>
+										<th data-class="expand">About</th>
+										<th data-class="none">Email</th>
+										<th data-class="none">Phone Number</th>
+										<th data-class="none">User Name</th>
+										<th data-class="none">Entity Type</th>
+										<th data-class="expand">Address</th>
+										<th data-class="none">Roles</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
 </div>

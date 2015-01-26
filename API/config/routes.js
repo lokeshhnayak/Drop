@@ -40,7 +40,8 @@ module.exports.routes = {
 
   // Client
   'PUT /client/:parentid/holidays/:id': {blueprint: 'modify', alias: 'holidays'},
-  'PUT /client/:parentid/vehicles/:id': {blueprint: 'modify', alias: 'vehicles'}
+  'PUT /client/:parentid/vehicles/:id': {blueprint: 'modify', alias: 'vehicles'},
+  'GET /agency/:parentid/users': 'AgencyController.getAgencyUsers'
 
   /***************************************************************************
   *                                                                          *

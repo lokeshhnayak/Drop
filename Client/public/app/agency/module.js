@@ -11,6 +11,7 @@ define([
 		'ui.router',
 		'permission',
 		'app.auth',
+		'app.agency.common',
 		'app.agency.home',
 		'app.agency.account',
 		'app.agency.devices',

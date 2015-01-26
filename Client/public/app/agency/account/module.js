@@ -44,8 +44,15 @@ define([
 					views: {
 						"content@app": {
 							templateUrl: "app/agency/account/views/users.html",
+							controller:"UsersController",
 							resolve: {
 								deps: $couchPotatoProvider.resolveDependencies([
+									'agency/account/controllers/UsersController',
+									'agency/common/resources/UsersService',
+									'agency/account/services/TableDefaults',
+									'common/directives/waDatatables',
+									'common/services/ModalService',
+									'agency/common/AgencyModalService'
 								])
 							}
 						}

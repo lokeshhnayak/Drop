@@ -1,0 +1,54 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <h4>{{modalOptions.headerText}}<div class="pull-right"><i class="fa fa-fw" ng-class="modalOptions.formIcon"></i></div></h4>
+    </div>
+    <div class="modal-body no-padding">
+        <form class="smart-form" role="form" ng-keyup="$event.keyCode === 13 ? modalOptions.ok() : null" name="saveUserForm" ng-submit="modalOptions.ok()" novalidate>
+        <fieldset>
+            <section>
+                <label class="label">Registration Number <span class="text-danger" ng-show="saveUserForm.registrationNumber.$invalid">*</span></label>
+                <label class="input" ng-class="{'state-error': saveUserForm.registrationNumber.$invalid && saveUserForm.registrationNumber.$dirty }">
+                    <i class="icon-append fa fa-tag"></i>
+                    <input name="registrationNumber" ng-pattern="/^[a-zA-Z0-9- ]*$/" id="registrationNumber" required type="text" ng-model="vehicle.registrationNumber">
+                </label>
+                <em class="invalid" ng-show="saveUserForm.registrationNumber.$invalid && saveUserForm.registrationNumber.$dirty">Registration Number is required and only allows '-' as separator!</em>
+            </section>
+            <section>
+                <label class="label">Description</label>
+                <label class="textarea">
+                <i class="icon-append fa fa-comment"></i>
+                    <textarea rows="4" name="vehicleDescription" id="vehicleDescription" ng-model="vehicle.description" style="margin: 0px; width: 568px; height: 84px;"></textarea>
+                </label>
+            </section>
+            <section>
+                <label class="label">Passenger Capacity <span class="text-danger" ng-show="saveUserForm.passengerCapacity.$invalid">*</span></label>
+                <label class="input" ng-class="{'state-error': saveUserForm.passengerCapacity.$invalid && saveUserForm.passengerCapacity.$dirty}">
+                    <i class="icon-append fa fa-taxi"></i>
+                    <input id="passengerCapacity" min="0" name="passengerCapacity" required="required"  type="number" ng-model="vehicle.passengerCapacity">
+                </label>
+                <em class="invalid" ng-show="saveUserForm.passengerCapacity.$invalid && saveUserForm.passengerCapacity.$dirty">Passenger Capacity is required and has to be a number!</em>
+            </section>
+            <section>
+                <label class="label">Vehicle Type <span class="text-danger" ng-show="saveUserForm.vehicleType.$invalid">*</span></label>
+                <label class="select">
+                <i class="icon-append fa fa-tag"></i>
+                    <select ng-model="vehicle.vehicleType" required name="vehicleType">
+                        <option value="">Select Vehicle Type</option>
+                        <option value="Car">Car</option>
+                        <option value="Van">Van</option>
+                        <option value="Bus">Bus</option>
+                    </select><i></i>
+                </label>
+            </section>
+        </fieldset>
+        <footer>
+            <button type="submit" ng-if="modalOptions.showActionButton" class="btn btn-sm" ng-class="modalOptions.actionButtonCss" ng-disabled="saveUserForm.$invalid">
+            <i class="fa fa-fw" ng-class="modalOptions.actionButtonIcon" ng-show="modalOptions.actionButtonIcon"></i> {{modalOptions.actionButtonText}}
+            </button>
+            <button type="button" ng-if="modalOptions.showCloseButton" class="btn btn-sm" ng-class="modalOptions.closeButtonCss" data-ng-click="modalOptions.close()">
+            <i class="fa fa-fw" ng-class="modalOptions.closeButtonIcon" ng-show="modalOptions.closeButtonIcon"></i> {{modalOptions.closeButtonText}}
+            </button>
+        </footer>
+        </form>
+    </div>
+</div>

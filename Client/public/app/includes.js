@@ -71,6 +71,7 @@ define([
 	'agency/devices/module',
 	'agency/finance/module',
 	'agency/messages/module',
+	'agency/common/module',
 
 	// passenger
 	'passenger/module',

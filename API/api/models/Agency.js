@@ -25,7 +25,7 @@ module.exports = {
 		address: {
 			model: 'Address'
 		},
-		client: {
+		clients: {
 			collection: 'Client',
 			via: 'agency'
 		},
