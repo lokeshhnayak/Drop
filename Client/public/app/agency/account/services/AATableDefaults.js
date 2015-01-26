@@ -33,7 +33,7 @@ function(module, supplant) {
 					},
 					"colVis": {
 						activate: "mouseover",
-						aiExclude: [0, 10]
+						aiExclude: [0, 9]
 					},
 					"aaSorting": [[1, "asc"]],
 					drawCallback: function (oSettings) {
@@ -82,20 +82,16 @@ function(module, supplant) {
 					"aTargets": [6],
 				},
 				{
-					"mDataProp": 'entityType',
+					"mDataProp": 'address',
 					"aTargets": [7],
 				},
 				{
-					"mDataProp": 'address',
+					"mDataProp": 'roles',
 					"aTargets": [8],
 				},
 				{
-					"mDataProp": 'roles',
-					"aTargets": [9],
-				},
-				{
 					"mDataProp": null,
-					"aTargets": [10],
+					"aTargets": [9],
 					"sWidth": "80px",
 					"className": "text-center",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
@@ -110,9 +106,6 @@ function(module, supplant) {
 
 			var getUsersFilters = function() {
 				return [null,
-				{
-					type: "text"
-				},
 				{
 					type: "text"
 				},

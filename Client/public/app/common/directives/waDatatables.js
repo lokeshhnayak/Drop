@@ -121,8 +121,7 @@ function(module, supplant) {
 				// check if column filters are defined.
 				if (attrs.colFilterAoColumns) {
 					dataTable.columnFilter({
-						aoColumns: scope.$eval(attrs.colFilterAoColumns),
-						sPlaceHolder: "head:before"
+						aoColumns: scope.$eval(attrs.colFilterAoColumns)
 					});
 				}
 
