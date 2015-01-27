@@ -33,9 +33,9 @@ function(module, supplant) {
 					},
 					"colVis": {
 						activate: "mouseover",
-						aiExclude: [0, 9]
+						aiExclude: [0, 1, 10]
 					},
-					"aaSorting": [[1, "asc"]],
+					"aaSorting": [[2, "asc"]],
 					drawCallback: function (oSettings) {
 						if ($.fn.DataTable.ColVis) {
 							$('.ColVis_MasterButton').addClass('btn btn-default');
@@ -52,48 +52,56 @@ function(module, supplant) {
 				return [{
 					"bSortable": false,
 					"mDataProp": null,
+					"sClass": 'wa-select',
 					"sDefaultContent": '',
 					"aTargets": [0],
 					'sWidth': '15px'
 				},
 				{
-					"mDataProp": 'firstName',
-					"aTargets": [1],
+					"bSortable": false,
+					"mDataProp": null,
+					"sClass": "control",
+					"sDefaultContent": '<div><i class="fa fa-plus fa-fw"></i></div>',
+					"aTargets": [1]
 				},
 				{
-					"mDataProp": 'lastName',
+					"mDataProp": 'firstName',
 					"aTargets": [2],
 				},
 				{
-					"mDataProp": 'about',
+					"mDataProp": 'lastName',
 					"aTargets": [3],
+				},
+				{
+					"mDataProp": 'about',
+					"aTargets": [4],
 					"bVisible": false
 				},
 				{
 					"mDataProp": 'email',
-					"aTargets": [4],
-				},
-				{
-					"mDataProp": 'phoneNumber',
 					"aTargets": [5],
 				},
 				{
-					"mDataProp": 'username',
+					"mDataProp": 'phoneNumber',
 					"aTargets": [6],
 				},
 				{
-					"mDataProp": 'address',
+					"mDataProp": 'username',
 					"aTargets": [7],
 				},
 				{
-					"mDataProp": 'roles',
+					"mDataProp": 'address',
 					"aTargets": [8],
 				},
 				{
-					"mDataProp": null,
+					"mDataProp": 'roles',
 					"aTargets": [9],
+				},
+				{
+					"mDataProp": null,
+					"aTargets": [10],
 					"sWidth": "80px",
-					"className": "text-center",
+					"className": "text-center wa-actions",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
 						'<button type="button" data-toggle="tooltip" title="Edit User Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
 						'<button type="button" data-toggle="tooltip" title="Delete User" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
@@ -106,6 +114,7 @@ function(module, supplant) {
 
 			var getUsersFilters = function() {
 				return [null,
+				null,
 				{
 					type: "text"
 				},
@@ -152,13 +161,24 @@ function(module, supplant) {
 				};
 			};
 
+			var getUsersChildTableColumns = function() {
+				return [{
+					heading: 'About',
+					field: 'about'
+				}, {
+					heading: 'Address',
+					field: 'address'
+				}];
+			};
+
 			var getUsersTableDefaults = function() {
 				return {
 					dtOptions : getUsersDTOptions(),
 					dtColumns : getUsersColumns(),
 					dtColumnFilters : getUsersFilters(),
 					dtCustomActions : getUsersCustomActions(),
-					dtSelectableOptions : getUsersSelectableOptions()
+					dtSelectableOptions : getUsersSelectableOptions(),
+					dtChildColumns : getUsersChildTableColumns()
 				};
 			};
 

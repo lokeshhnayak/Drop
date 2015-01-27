@@ -91,6 +91,7 @@ wa-multi-select.font-bold .text {
   src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(/public/styles/fonts/OpenSans-BoldItalic.ttf) format('ttf');
 }
 
+/* Datatables */
 .dataTables_wrapper {
   .DTTT {
     &.btn-group {
@@ -112,9 +113,25 @@ wa-multi-select.font-bold .text {
   }
 }
 
-#vehiclesTable,
-#holidaysTable,
-#usersTable {
+
+.table-actions {
+  padding-top: 10px;
+  padding-right: 7px;
+}
+
+td.child-details {
+  background-color: #ddd;
+
+  &>div.child-table {
+    padding-left: 70px;
+    td.heading {
+      font-weight: bold;
+      width: 15%;
+    }
+  }
+}
+
+table.wa-datatables {
   thead tr.filters {
     th:first-child {
       input {
@@ -131,11 +148,23 @@ wa-multi-select.font-bold .text {
       }
     }
   }
-}
 
-.table-actions {
-  padding-top: 10px;
-  padding-right: 7px;
+  .control {
+    &> div {
+      cursor: pointer;
+    }
+  }
+
+  .wa-select {
+    cursor: pointer;
+    &[input] {
+      cursor: pointer;
+    }
+  }
+
+  .wa-actions {
+    padding: 0;
+  }
 }
 
 /*

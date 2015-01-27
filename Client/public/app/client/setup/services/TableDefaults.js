@@ -52,6 +52,7 @@ function(module, supplant) {
 					"bSortable": false,
 					"mDataProp": null,
 					"sDefaultContent": '',
+					"sClass": "wa-select",
 					"aTargets": [0],
 					'sWidth': '15px'
 				},
@@ -90,7 +91,7 @@ function(module, supplant) {
 					"mDataProp": null,
 					"aTargets": [5],
 					"sWidth": "80px",
-					"className": "text-center",
+					"className": "text-center wa-actions",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
 						'<button type="button" data-toggle="tooltip" title="Edit Vehicle Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
 						'<button type="button" data-toggle="tooltip" title="Delete Vehicle" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
@@ -180,6 +181,7 @@ function(module, supplant) {
 					"bSortable": false,
 					"mDataProp": null,
 					"sDefaultContent": '',
+					"sClass": "wa-select",
 					"aTargets": [0],
 					"sWidth": '15px'
 				},
@@ -203,7 +205,7 @@ function(module, supplant) {
 					"mDataProp": null,
 					"aTargets": [5],
 					"sWidth": "80px",
-					"className": "text-center",
+					"className": "text-center wa-actions",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' + 
 						'<button type="button" data-toggle="tooltip" title="Edit Passenger Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
 						'<button type="button" data-toggle="tooltip" title="Delete Passenger" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
@@ -296,6 +298,7 @@ function(module, supplant) {
 					"bSortable": false,
 					"mDataProp": null,
 					"sDefaultContent": '',
+					"sClass": "wa-select",
 					"aTargets": [0],
 					'sWidth': '15px'
 				},
@@ -335,7 +338,7 @@ function(module, supplant) {
 					"mDataProp": null,
 					"aTargets": [5],
 					"sWidth": "80px",
-					"className": "text-center",
+					"className": "text-center wa-actions",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
 						'<button type="button" data-toggle="tooltip" title="Edit Holiday Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-holiday"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
 						'<button type="button" data-toggle="tooltip" title="Delete Holiday" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-holiday"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +

@@ -130,7 +130,7 @@ function(module, supplant) {
 						var childColumns = scope.$eval(attrs.childTableOptions);
 						var childTableColumns = '';
 						angular.forEach(childColumns, function(eachColumn) {
-							childTableColumns += supplant('<tr><td class="heading">{0}</td><td>{1}</td></tr>', [eachColumn.heading, aData[eachColumn.field]]);
+							childTableColumns += supplant('<tr><td class="heading">{0}</td><td class="text-left">{1}</td></tr>', [eachColumn.heading, aData[eachColumn.field]]);
 						});
 						var childTableHtml = supplant('<div class="child-table"><table class="table table-condensed table-bordered">{0}</table></div>', [childTableColumns]);
 						return childTableHtml;

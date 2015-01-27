@@ -86,6 +86,7 @@ wa-multi-select.font-bold .text {
   font-weight: 700;
   src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(/public/styles/fonts/OpenSans-BoldItalic.ttf) format('ttf');
 }
+/* Datatables */
 .dataTables_wrapper .DTTT.btn-group {
   float: right;
   padding-left: 5px;
@@ -100,24 +101,40 @@ wa-multi-select.font-bold .text {
 .dataTables_selectionControls .selection_clear {
   cursor: pointer;
 }
-#vehiclesTable thead tr.filters th:first-child input,
-#holidaysTable thead tr.filters th:first-child input,
-#usersTable thead tr.filters th:first-child input {
-  display: none;
-}
-#vehiclesTable tbody td,
-#holidaysTable tbody td,
-#usersTable tbody td {
-  vertical-align: middle;
-}
-#vehiclesTable tbody td:first-child,
-#holidaysTable tbody td:first-child,
-#usersTable tbody td:first-child {
-  text-align: center;
-}
 .table-actions {
   padding-top: 10px;
   padding-right: 7px;
+}
+td.child-details {
+  background-color: #ddd;
+}
+td.child-details > div.child-table {
+  padding-left: 70px;
+}
+td.child-details > div.child-table td.heading {
+  font-weight: bold;
+  width: 15%;
+}
+table.wa-datatables thead tr.filters th:first-child input {
+  display: none;
+}
+table.wa-datatables tbody td {
+  vertical-align: middle;
+}
+table.wa-datatables tbody td:first-child {
+  text-align: center;
+}
+table.wa-datatables .control > div {
+  cursor: pointer;
+}
+table.wa-datatables .wa-select {
+  cursor: pointer;
+}
+table.wa-datatables .wa-select[input] {
+  cursor: pointer;
+}
+table.wa-datatables .wa-actions {
+  padding: 0;
 }
 /*
  * jQuery UI Tooltip 1.10.3
