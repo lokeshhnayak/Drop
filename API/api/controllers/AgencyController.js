@@ -33,6 +33,7 @@ module.exports = {
 	findOne: function(req, res) {
 		var params = req.params.all();
 		Agency.findOne(params.id)
+			.populate("roles")
 			.populate("address")
 			.then(function(agency) {
 				return res.send(agency);
