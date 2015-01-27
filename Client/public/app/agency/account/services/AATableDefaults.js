@@ -65,38 +65,37 @@ function(module, supplant) {
 					"aTargets": [1]
 				},
 				{
-					"mDataProp": 'firstName',
+					"mDataProp": 'username',
 					"aTargets": [2],
 				},
 				{
-					"mDataProp": 'lastName',
+					"mDataProp": 'roles.0.description',
 					"aTargets": [3],
 				},
 				{
-					"mDataProp": 'about',
+					"mDataProp": 'firstName',
 					"aTargets": [4],
-					"bVisible": false
 				},
 				{
-					"mDataProp": 'email',
+					"mDataProp": 'lastName',
 					"aTargets": [5],
 				},
 				{
-					"mDataProp": 'phoneNumber',
+					"mDataProp": 'email',
 					"aTargets": [6],
 				},
 				{
-					"mDataProp": 'username',
+					"mDataProp": 'phoneNumber',
 					"aTargets": [7],
 				},
 				{
-
-					"mDataProp": 'address.addressLine1',
+					"mDataProp": 'address.city',
 					"aTargets": [8],
 				},
 				{
-					"mDataProp": 'roles.0.description',
+					"mDataProp": 'about',
 					"aTargets": [9],
+					"bVisible": false
 				},
 				{
 					"mDataProp": null,
