@@ -6,34 +6,42 @@
         <form class="smart-form" role="form" ng-keyup="$event.keyCode === 13 ? modalOptions.ok() : null" name="saveUserForm" ng-submit="modalOptions.ok()" novalidate>
         <fieldset>
             <section>
-                <label class="label">Registration Number <span class="text-danger" ng-show="saveUserForm.registrationNumber.$invalid">*</span></label>
-                <label class="input" ng-class="{'state-error': saveUserForm.registrationNumber.$invalid && saveUserForm.registrationNumber.$dirty }">
+                <label class="label">First Name<span class="text-danger" ng-show="saveUserForm.firstName.$invalid">*</span></label>
+                <label class="input" ng-class="{'state-error': saveUserForm.firstName.$invalid && saveUserForm.firstName.$dirty }">
                     <i class="icon-append fa fa-tag"></i>
-                    <input name="registrationNumber" ng-pattern="/^[a-zA-Z0-9- ]*$/" id="registrationNumber" required type="text" ng-model="vehicle.registrationNumber">
+                    <input name="firstName" ng-pattern="/^[a-zA-Z ]*$/" id="firstName" required type="text" ng-model="user.firstName">
                 </label>
-                <em class="invalid" ng-show="saveUserForm.registrationNumber.$invalid && saveUserForm.registrationNumber.$dirty">Registration Number is required and only allows '-' as separator!</em>
+                <em class="invalid" ng-show="saveUserForm.firstName.$invalid && saveUserForm.firstName.$dirty">Registration Number is required and only allows '-' as separator!</em>
+            </section>
+            <section>
+                <label class="label">Last Name<span class="text-danger" ng-show="saveUserForm.lastName.$invalid">*</span></label>
+                <label class="input" ng-class="{'state-error': saveUserForm.lastName.$invalid && saveUserForm.lastName.$dirty }">
+                    <i class="icon-append fa fa-tag"></i>
+                    <input name="lastName" ng-pattern="/^[a-zA-Z ]*$/" id="lastName" required type="text" ng-model="user.lastName">
+                </label>
+                <em class="invalid" ng-show="saveUserForm.lastName.$invalid && saveUserForm.lastName.$dirty">Registration Number is required and only allows '-' as separator!</em>
             </section>
             <section>
                 <label class="label">Description</label>
                 <label class="textarea">
                 <i class="icon-append fa fa-comment"></i>
-                    <textarea rows="4" name="vehicleDescription" id="vehicleDescription" ng-model="vehicle.description" style="margin: 0px; width: 568px; height: 84px;"></textarea>
+                    <textarea rows="4" name="userDescription" id="userDescription" ng-model="user.description" style="margin: 0px; width: 568px; height: 84px;"></textarea>
                 </label>
             </section>
             <section>
                 <label class="label">Passenger Capacity <span class="text-danger" ng-show="saveUserForm.passengerCapacity.$invalid">*</span></label>
                 <label class="input" ng-class="{'state-error': saveUserForm.passengerCapacity.$invalid && saveUserForm.passengerCapacity.$dirty}">
                     <i class="icon-append fa fa-taxi"></i>
-                    <input id="passengerCapacity" min="0" name="passengerCapacity" required="required"  type="number" ng-model="vehicle.passengerCapacity">
+                    <input id="passengerCapacity" min="0" name="passengerCapacity" required="required"  type="number" ng-model="user.passengerCapacity">
                 </label>
                 <em class="invalid" ng-show="saveUserForm.passengerCapacity.$invalid && saveUserForm.passengerCapacity.$dirty">Passenger Capacity is required and has to be a number!</em>
             </section>
             <section>
-                <label class="label">Vehicle Type <span class="text-danger" ng-show="saveUserForm.vehicleType.$invalid">*</span></label>
+                <label class="label">user Type <span class="text-danger" ng-show="saveUserForm.userType.$invalid">*</span></label>
                 <label class="select">
                 <i class="icon-append fa fa-tag"></i>
-                    <select ng-model="vehicle.vehicleType" required name="vehicleType">
-                        <option value="">Select Vehicle Type</option>
+                    <select ng-model="user.userType" required name="userType">
+                        <option value="">Select user Type</option>
                         <option value="Car">Car</option>
                         <option value="Van">Van</option>
                         <option value="Bus">Bus</option>

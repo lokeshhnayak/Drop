@@ -90,11 +90,12 @@ function(module, supplant) {
 					"aTargets": [7],
 				},
 				{
-					"mDataProp": 'address',
+
+					"mDataProp": 'address.addressLine1',
 					"aTargets": [8],
 				},
 				{
-					"mDataProp": 'roles',
+					"mDataProp": 'roles.0.description',
 					"aTargets": [9],
 				},
 				{
@@ -103,8 +104,8 @@ function(module, supplant) {
 					"sWidth": "80px",
 					"className": "text-center wa-actions",
 					"sDefaultContent": '<div class="btn-group btn-group-sm">' +
-						'<button type="button" data-toggle="tooltip" title="Edit User Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-vehicle"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
-						'<button type="button" data-toggle="tooltip" title="Delete User" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-vehicle"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
+						'<button type="button" data-toggle="tooltip" title="Edit User Details" class="btn btn-default btn-sm btn-icon" data-container="td" id="edit-user"><i class="fa fa-edit fa-lg txt-color-green"></i></button>' +
+						'<button type="button" data-toggle="tooltip" title="Delete User" class="btn btn-default btn-sm btn-icon" data-container="td" id="delete-user"><i class="fa fa-trash-o fa-lg txt-color-red"></i></button>' +
 						'</div>',
 					"fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
 						$(".btn-icon", nTd).tooltip();
@@ -115,9 +116,6 @@ function(module, supplant) {
 			var getUsersFilters = function() {
 				return [null,
 				null,
-				{
-					type: "text"
-				},
 				{
 					type: "text"
 				},

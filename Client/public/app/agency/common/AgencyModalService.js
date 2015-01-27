@@ -48,7 +48,7 @@ function(module, supplant) {
 				//Map modal.html $scope custom properties to defaults defined in service
 				angular.extend(tempModalOptions, modalOptions, customModalOptions);
 
-				tempModalDefaults.templateUrl = 'app/Agency/account/views/modals/modal-user.tpl.html';
+				tempModalDefaults.templateUrl = 'app/agency/account/views/modals/modal-user.tpl.html';
 				if (!tempModalDefaults.controller) {
 					tempModalDefaults.controller = function ($scope, $modalInstance, $filter) {
 						$scope.modalOptions = tempModalOptions;
