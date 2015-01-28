@@ -4,4 +4,166 @@
 			class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></wa-big-breadcrumbs>
 		<div data-wa-include="app/layout/partials/sub-header.tpl.html"></div>
 	</div>
-</div>
+	<article class="col-sm-12 col-md-12">
+        <ul id="ProfileSetupTab" class="nav nav-tabs bordered">
+            <li class="active">
+                <a data-toggle="tab" href="#general"><i class="fa fa-fw fa-lg fa-star"></i> General</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#client"><i class="fa fa-fw fa-lg fa-star-o"></i> Client</a>
+            </li>
+        </ul>
+         <div id="GeneralProfileSetupTabContent" class="tab-content padding-10">
+            <div class="tab-pane fade in active" id="general">
+            	<form id="formGeneral" class="smart-form">
+            		<fieldset> 
+            			<section>
+            				<div height="140px" border="5px">
+            					
+            				</div>
+            			</section>
+						<section>
+							<label class="label">First Name</label>
+							<label class="input"><i class="icon-append fa fa-tag"></i>
+							<input type="text" name="firstName" placeholder="First Name" id="firstName" ng-	model="userProfile.firstName" required>
+        					</label>
+						</section>
+						<section>
+							<label class="label">Last Name</label>
+							<label class="input">
+							<i class="icon-append fa fa-tag"></i>
+							<input type="text" name="lastName" id="lastName" placeholder="Last Name" ng-model="userProfile.lastName" required>
+							</label>
+						</section>
+						<section>
+							<label class="label">Username</label>
+							<label class="input">
+							<i class="icon-append fa fa-tag"></i>
+							<input type="text" name="userName" id="userName" placeholder="Username" ng-model="userProfile.username" readonly="true">
+							</label>
+						</section>
+						<section>
+							<label class="label">About</label>
+							<label class="textarea">
+							<i class="icon-append fa fa-tag"></i>
+							<textarea type="text" rows="4" name="about" id="about" placeholder="About" ng-model="userProfile.about"></textarea>
+							</label>
+						</section>
+						<section>
+							<label class="label">Email</label>
+							<label class="input">
+							<i class="icon-append fa fa-envelope"></i>
+							<input type="text" name="email" id="email" placeholder="Email" ng-model="userProfile.email" required>
+							</label>
+						</section>							
+						<section>
+							<label class="label">Phone Number</label>
+							<label class="input">
+							<i class="icon-append fa fa-phone"></i>
+							<input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" ng-model="userProfile.phoneNumber" required>
+							</label>
+						</section>
+						<section>
+							<label class="label">Address</label>
+							<label class="input">
+							<i class="icon-append fa fa-home"></i>
+							<input type="text" placeholder="Address Line 1" name="addressLine1" id="addressLine1" ng-model="userProfile.address.addressLine1" required>
+							</label>
+						</section>
+						<section>
+							<label class="input">
+							<i class="icon-append fa fa-home"></i>
+							<input type="text" placeholder="Address Line 2" name="addressLine2" id="addressLine2" ng-model="userProfile.address.addressLine2" required>
+							</label>
+						</section>
+						<section>
+							<label class="input">
+							<i class="icon-append fa fa-tag"></i>
+							<input type="text" name="city" id="city" placeholder="City" ng-model="userProfile.address.city" required>
+							</label>
+						</section>
+						<section>
+							<label class="input">
+							<i class="icon-append fa fa-tag"></i>
+							<input type="text" name="state" id="state" placeholder="State" ng-model="userProfile.address.state" required>
+							</label>
+						</section>
+						<section>
+							<label class="input">
+							<i class="icon-append fa fa-tag"></i>
+							<input type="text" name="country" id="country" placeholder="Country" ng-model="userProfile.address.country" required>
+							</label>
+						</section>
+						<section>
+							<label class="input">
+							<i class="icon-append fa fa-tag"></i>
+							<input type="text" name="pincode" id="pincode" placeholder="Pincode" ng-model="userProfile.address.pincode" required>
+							</label>
+						</section>														
+					</fieldset>						           
+            	</form>
+            	<div class="form-actions">
+            		<div class="row">
+                    	<div class="col-md-12">
+                        	<button class="btn btn-default" onclick="window.history.back();" type="submit">Cancel</button>
+                        	<button class="btn btn-primary" ng-click="" type="submit">
+                        	<i class="fa fa-save"></i> Update General</button>
+                        </div>
+            	    </div>
+                </div> 
+            </div>
+            <div class="tab-pane fade" id="client">
+            	<form id="formClient" class="smart-form">
+            	<fieldset>
+						<section>
+							<label class="label">Client Name</label>
+							<label class="input"><i class="icon-append fa fa-tag"></i>
+							<input type="text" name="clientName" placeholder="Client Name" id="clientName" ng-	model="clientProfile.name" required>
+        					</label>
+						</section>
+						<section>
+							<label class="label">Description</label>
+							<label class="textarea">
+							<i class="icon-append fa fa-tag"></i>
+							<textarea type="text" rows="4" name="description" id="description" placeholder="Client Description" ng-model="clientProfile.description" required></textarea>
+							</label>
+						</section>
+						<section>
+							<label class="label">Client Type</label>
+							<label class="select">
+							<i class="icon-append fa fa-envelope"></i>
+							 <select ng-model="clientProfile.clientType" required name="clientType">
+                        		<option value="">Select Client Type</option>
+                        		<option value="Office">Office</option>                        		
+                    		</select>
+                    		</label>
+						</section>							
+						<section>
+							<label class="label">Client Status</label>
+							<label class="select">
+							<i class="icon-append fa fa-phone"></i>
+							<select ng-model="clientProfile.clientStatus" required name="clientStatus">
+                        		<option value="">Select Client Status</option>
+                        		<option value="A">Active</option>                        		
+                        		<option value="I">In-Active</option> 
+                    		</select>
+							</label>
+						</section>
+		        	</form>
+            		<div class="form-actions">
+                		<div class="row">
+                    		<div class="col-md-12">
+                      		  <button class="btn btn-default" onclick="window.history.back();" type="submit">
+                       		 Cancel
+                        		</button>
+                        		<button class="btn btn-primary" ng-click="" type="submit">
+                        		<i class="fa fa-save"></i>
+                        		Update Client
+                        		</button>
+                    		</div>
+                		</div>
+                	</div>
+         	</div>
+         </div>
+    </article>
+</div><!--End Content-->
