@@ -315,7 +315,7 @@ module.exports = function (grunt) {
 		'clean:post'
 	]);
 
-	grunt.registerTask('vtp', [
+	grunt.registerTask('droplet', [
 		'vendor-to-plugin',
 		'default'
 	]);

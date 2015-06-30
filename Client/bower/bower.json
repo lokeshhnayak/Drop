@@ -1,5 +1,5 @@
 {
-  "name": "VTSS",
+  "name": "Droplets",
   "version": "0.0.0",
   "dependencies": {
     "requirejs-domready": "~2.0.1",
